@@ -17,7 +17,7 @@
           ></div>
           <a class="block absolute top-0 left-0 p-12" href="#">
             <span class="sr-only">Ivory Streets Login Page</span>
-            <img src="../assets/image/logo-wh.png" alt="Your Image" class="h-7" />
+            <img src="../assets/images/logo-wh.png" alt="Logo" class="h-7" />
           </a>
           <div class="hidden lg:relative lg:block lg:p-12">
             <h2
