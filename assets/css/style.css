@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 /*
 ! tailwindcss v3.4.6 | MIT License | https://tailwindcss.com
 */
@@ -779,6 +781,14 @@ video {
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.font-poppins{
+  font-family: Poppins, sans-serif;
+}
+
+.font-nunito{
+  font-family: Nunito, sans-serif;
 }
 
 .text-2xl{

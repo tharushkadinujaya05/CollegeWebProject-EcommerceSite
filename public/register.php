@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <link href="../assets/css/style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
@@ -18,16 +17,16 @@
           ></div>
           <a class="block absolute top-0 left-0 p-12" href="#">
             <span class="sr-only">Ivory Streets Login Page</span>
-            <img src="./logo-wh.png" alt="Your Image" class="h-7" />
+            <img src="../assets/image/logo-wh.png" alt="Your Image" class="h-7" />
           </a>
           <div class="hidden lg:relative lg:block lg:p-12">
             <h2
-              class="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl"
+              class="font-poppins mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl"
             >
               Welcome to IvoryStreets
             </h2>
 
-            <p class="mt-4 leading-relaxed text-white/90">
+            <p class="font-nunito mt-4 leading-relaxed text-white/90">
               Unlock your gateway to a world of exclusive finds and tailored
               recommendations. If you need assistance, please contact us at
               <i>ivorystreets@gmail.com</i>. We’re here to help!
@@ -59,12 +58,12 @@
               </a>
 
               <h1
-                class="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
+                class=" font-poppins mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
               >
                 Welcome to IvoryStreets
               </h1>
 
-              <p class="mt-4 leading-relaxed text-gray-500">
+              <p class="font-nunito mt-4 leading-relaxed text-gray-500">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
               </p>
