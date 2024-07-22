@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IvoryStreets | Login</title>
   </head>
@@ -15,7 +15,7 @@
           <div
             class="absolute inset-0 h-full w-full bg-gradient-to-r from-black to-gray-900 opacity-80"
           ></div>
-          <a class="block absolute top-0 left-0 p-12" href="#">
+          <a class="absolute top-0 left-0 p-12 hidden lg:block" href="#">
             <span class="sr-only">Ivory Streets Login Page</span>
             <img src="../assets/images/logo-wh.png" alt="Logo" class="h-7" />
           </a>
@@ -43,7 +43,7 @@
                 class="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20"
                 href="#"
               >
-                <span class="sr-only">Home</span>
+                <span class="sr-only">Ivory Streets Login Page</span>
                 <svg
                   class="h-8 sm:h-10"
                   viewBox="0 0 28 24"
@@ -58,14 +58,15 @@
               </a>
 
               <h1
-                class=" font-poppins mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
+                class="font-poppins mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
               >
                 Welcome to IvoryStreets
               </h1>
 
-              <p class="font-nunito mt-4 leading-relaxed text-gray-500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
+              <p class="font-nunito mt-4 leading-snug text-gray-500">
+                Unlock your gateway to a world of exclusive finds and tailored
+                recommendations. If you need assistance, please contact us at
+                <i>ivorystreets@gmail.com</i>. We’re here to help!
               </p>
             </div>
 
