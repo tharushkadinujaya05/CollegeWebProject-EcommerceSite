@@ -73,7 +73,7 @@
                   type="text"
                   id="FirstName"
                   name="first_name"
-                  class="mt-1 w-full h-10 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  class="mt-1 w-full h-10 pl-3 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
 
@@ -89,7 +89,7 @@
                   type="text"
                   id="LastName"
                   name="last_name"
-                  class="mt-1 w-full h-10 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  class="mt-1 w-full h-10 pl-3 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
 
@@ -105,7 +105,7 @@
                   type="email"
                   id="Email"
                   name="email"
-                  class="mt-1 w-full h-10 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  class="mt-1 w-full h-10 pl-3 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
 
@@ -121,7 +121,7 @@
                   type="password"
                   id="Password"
                   name="password"
-                  class="mt-1 w-full h-10 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  class="mt-1 w-full h-10 pl-3 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
 
@@ -137,7 +137,7 @@
                   type="password"
                   id="PasswordConfirmation"
                   name="password_confirmation"
-                  class="mt-1 w-full h-10 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  class="mt-1 w-full h-10 pl-3 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
 
