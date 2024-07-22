@@ -44,7 +44,7 @@
                 href="#"
               >
                 <span class="sr-only">Ivory Streets Login Page</span>
-                <img src="../assets/images/logo-wh.png" alt="Logo" class="h-7" />
+                <img src="../assets/images/logo-bl-s.png" alt="Logo" class="h-6" />
               </a>
 
               <h1
