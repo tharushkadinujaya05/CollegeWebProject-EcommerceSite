@@ -63,7 +63,7 @@
                 Welcome to IvoryStreets
               </h1>
 
-              <p class="font-nunito mt-4 leading-snug text-gray-500">
+              <p class="font-nunito mt-4 leading-tight text-gray-500">
                 Unlock your gateway to a world of exclusive finds and tailored
                 recommendations. If you need assistance, please contact us at
                 <i>ivorystreets@gmail.com</i>. We’re here to help!
@@ -90,7 +90,7 @@
               <div class="col-span-6 sm:col-span-3">
                 <label
                   for="LastName"
-                  class="block htext-sm font-medium text-gray-700"
+                  class="block text-sm font-medium text-gray-700"
                 >
                   Last Name
                 </label>
