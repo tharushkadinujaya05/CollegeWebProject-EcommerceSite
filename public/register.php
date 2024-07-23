@@ -13,7 +13,7 @@
           class="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
         >
           <div
-            class="absolute inset-0 h-full w-full bg-gradient-to-r from-black to-gray-900 opacity-80"
+            class="absolute inset-0 h-full w-full bg-gradient-to-r from-black to-[#130F40] opacity-80"
           ></div>
           <a class="absolute top-0 left-0 p-12 hidden lg:block" href="#">
             <span class="sr-only">Ivory Streets Login Page</span>
