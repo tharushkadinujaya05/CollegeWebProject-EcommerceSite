@@ -16,7 +16,7 @@
             class="absolute inset-0 h-full w-full bg-gradient-to-r from-black to-[#130F40] opacity-80"
           ></div>
           <a class="absolute top-0 left-0 p-12 hidden lg:block" href="#">
-            <span class="sr-only">Ivory Streets Login Page</span>
+            <span class="sr-only">Ivory Streets | SignUp </span>
             <img src="../assets/images/logo-wh.png" alt="Logo" class="h-7" />
           </a>
           <div class="hidden lg:relative lg:block lg:p-12">
