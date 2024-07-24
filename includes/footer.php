@@ -7,9 +7,9 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-lightGray">
+<body>
 
-  <footer class="bg-lightGray text-gray-700 py-10">
+  <footer class="bg-gray-200 text-gray-700 py-10">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
         
@@ -23,7 +23,7 @@
         </div>
         
         <div>
-          <h5 class="font-bold mb-4">Ready to Buy</h5>
+          <h5 class="font-bold mb-4">READY TO BUY</h5>
           <ul>
             <li class="mb-2"><a href="#" class="hover:underline">T-shirts and Vests</a></li>
             <li class="mb-2"><a href="#" class="hover:underline">Hoodies and Sweaters</a></li>
@@ -46,7 +46,7 @@
         </div>
         
         <div>
-          <h5 class="font-bold mb-4">Contact Us</h5>
+          <h5 class="font-bold mb-4">CONTACT US</h5>
           <ul>
             <li class="mb-2"><a href="#" class="hover:underline">Terms of Use</a></li>
             <li class="mb-2"><a href="#" class="hover:underline">Returns</a></li>
@@ -68,8 +68,8 @@
       
       <div class="mt-10 flex flex-col md:flex-row justify-between items-center">
         <p class="text-sm" id="year">
-            <img src="assets\images\logo-wh.png" class="w-130 h-70"><br>
-            &copy;2024 IVORY STREETS All rights reserved</p>
+            <img class="h-5" src="../assets/images/logo-bl.png" ><br>
+            &copy;2024 IVORYSTREETS All rights reserved</p>
         <div class="flex space-x-4 mt-4 md:mt-0 mx-10">
           <a href="https://www.facebook.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
           <a href="https://www.twitter.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
