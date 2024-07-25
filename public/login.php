@@ -17,12 +17,10 @@
         </a>
         <div class="hidden lg:relative lg:block lg:p-12">
           <h2 class="font-poppins mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-            Welcome to IvoryStreets
-          </h2>
+          "Discover the Extraordinary"          </h2>
           <p class="font-nunito mt-4 leading-relaxed text-white/90">
-            Unlock your gateway to a world of exclusive finds and tailored recommendations.
-            If you need assistance, please contact us at <i>ivorystreets@gmail.com</i>.
-            We’re here to help!
+          IvoryStreets is your gateway to a world of fashion and exclusive finds. Join us to explore a curated selection that speaks to your unique taste.
+
           </p>
         </div>
       </section>
