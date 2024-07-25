@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IvoryStreets | Login</title>
 </head>
-<body>
+<body class="h-screen w-screen">
   <section class="bg-white">
     <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
       <section class="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
@@ -35,19 +35,17 @@
               <img src="../assets/images/logo-bl-s.png" alt="Logo" class="h-6" />
             </a>
             <h1 class="font-poppins mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-              Welcome to IvoryStreets
+            "Discover the Extraordinary"
             </h1>
             <p class="font-nunito mt-4 leading-tight text-gray-500">
-              Unlock your gateway to a world of exclusive finds and tailored recommendations.
-              If you need assistance, please contact us at <i>ivorystreets@gmail.com</i>.
-              We’re here to help!
+              IvoryStreets is your gateway to a world of fashion and exclusive finds. Join us to explore a curated selection that speaks to your unique taste.
             </p>
           </div>
-          <div class="p-6">
-            <div class="relative flex flex-col sm:w-[30rem] rounded-lg border-gray-400 bg-white shadow-lg px-4">
+          <div class="pt-4 flex items-center justify-center h-full">
+            <div class="relative flex flex-col sm:w-[30rem] rounded-lg border-gray-400 bg-white shadow-lg">
               <div class="flex-auto p-6">
-                <h4 class="mb-2 font-medium text-gray-700 xl:text-xl font-poppins">Welcome to IvoryStreets!</h4>
-                <p class="mb-6 text-gray-500 font-nunito">Please sign-in to access your account</p>
+                <h4 class="mb-2 font-medium text-gray-700 xl:text-xl font-poppins">Sign in to IvoryStreets</h4>
+                <p class="mb-6 text-gray-500 font-nunito">Welcome back! Please sign in to continue</p>
                 <form id="" class="mb-4" action="#" method="POST">
                   <div class="mb-4">
                     <label for="email" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700 font-nunito">Email or Username</label>
@@ -76,7 +74,7 @@
                 </form>
                 <p class="mb-4 text-center font-poppins">
                   New on IvoryStreets?
-                  <a href="#" class="cursor-pointer text-gray-500 no-underline hover:text-indigo-500 font-nunito"> Create an account </a>
+                  <a href="./register.php" class="cursor-pointer text-gray-500 no-underline hover:text-indigo-500 font-nunito"> Create an account </a>
                 </p>
               </div>
             </div>

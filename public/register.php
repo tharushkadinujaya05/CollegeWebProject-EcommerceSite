@@ -171,14 +171,14 @@
 
               <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
                 <button
-                  class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                  class="inline-block shrink-0 rounded-md border border-black bg-black px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-blue-500"
                 >
                   Create an account
                 </button>
 
                 <p class="mt-4 text-sm text-gray-500 sm:mt-0">
                   Already have an account?
-                  <a href="#" class="text-gray-700 underline">Log in</a>.
+                  <a href="./login.php" class="text-gray-700 underline">Log in</a>.
                 </p>
               </div>
             </form>
