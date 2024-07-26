@@ -9,7 +9,9 @@ module.exports = {
       },
       colors: {
         background: "rgba(var(--background))",
-        text: "rgba(var(--text))",
+        whitetext: "rgba(var(--whitetext))",
+        graytext: "rgba(var(--graytext))",
+        whiteground: "rgba(var(--whiteground))",
       }
     },
   },
@@ -17,6 +19,6 @@ module.exports = {
     require('daisyui'),
   ],
   daisyui: {
-    themes: [],
+    themes:["light","black"],
   },
 };

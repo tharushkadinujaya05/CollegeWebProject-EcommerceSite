@@ -5,12 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:dark {
+.dark {
     --background: 0, 0, 0;
-    --text: 255, 255, 255;
+    --whitetext: 255, 255, 255;
+    --graytext: 161, 161, 169;
+    --whiteground: 255, 255, 255;
 }
 
-.light {
-    --background: 255, 255, 255;
-    --text: 0, 0, 0;
+* {
+    @apply transition-colors duration-200;
 }
