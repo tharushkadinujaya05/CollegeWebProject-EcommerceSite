@@ -7,6 +7,10 @@ module.exports = {
         nunito: ["Nunito", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
       },
+      colors: {
+        background: "rgba(var(--background))",
+        text: "rgba(var(--text))",
+      }
     },
   },
   plugins: [

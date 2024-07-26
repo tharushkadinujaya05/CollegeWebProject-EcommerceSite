@@ -4,3 +4,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:dark {
+    --background: 0, 0, 0;
+    --text: 255, 255, 255;
+}
+
+.light {
+    --background: 255, 255, 255;
+    --text: 0, 0, 0;
+}

@@ -2296,6 +2296,16 @@ html{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+:dark {
+  --background: 0, 0, 0;
+  --text: 255, 255, 255;
+}
+
+.light {
+  --background: 255, 255, 255;
+  --text: 0, 0, 0;
+}
+
 .checked\:bg-blue-500:checked{
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
