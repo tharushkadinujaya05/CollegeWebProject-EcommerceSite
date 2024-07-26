@@ -25,9 +25,7 @@
         </div>
       </section>
       <main class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
-        <div class="absolute top-0 right-0 p-4">
-          <?php include '../includes/themecontroller.php'; ?>
-        </div>
+        
         <div class="max-w-xl lg:max-w-3xl">
           <div class="relative -mt-16 block lg:hidden">
             <a class="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20" href="#">
@@ -41,6 +39,9 @@
               IvoryStreets is your gateway to a world of fashion and exclusive finds. Join us to explore a curated selection that speaks to your unique taste.
             </p>
           </div>
+          <div class="absolute top-0 right-0 p-4">
+          <?php include '../includes/themecontroller.php'; ?>
+        </div>
           <div class="pt-4 flex items-center justify-center h-full">
             <div class="relative flex flex-col sm:w-[30rem] rounded-lg border-gray-400 bg-white shadow-lg">
               <div class="flex-auto p-6">
