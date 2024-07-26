@@ -24,8 +24,10 @@
           </p>
         </div>
       </section>
-
       <main class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+        <div class="absolute top-0 right-0 p-4">
+          <?php include '../includes/themecontroller.php'; ?>
+        </div>
         <div class="max-w-xl lg:max-w-3xl">
           <div class="relative -mt-16 block lg:hidden">
             <a class="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20" href="#">
