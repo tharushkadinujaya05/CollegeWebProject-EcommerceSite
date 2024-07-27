@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./public/**/*.{html,js,php}"],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -12,6 +13,8 @@ module.exports = {
         whitetext: "rgba(var(--whitetext))",
         graytext: "rgba(var(--graytext))",
         whiteground: "rgba(var(--whiteground))",
+        buttondark: "rgba(var(--buttondark))",
+        blackcol: "rgba(var(--blackcol))",
       }
     },
   },
