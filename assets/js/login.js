@@ -1,4 +1,4 @@
-/*/ Check if user has a theme set and if not, check if system is set to dark
+// Check if user has a theme set and if not, check if system is set to dark
 const checkbox = document.querySelector('.theme-controller');
 const body = document.body;
 
@@ -48,12 +48,10 @@ moonIcon.addEventListener("click",() => {
     themeSwitch();
 });
 
-themeCheck(); */
+themeCheck(); 
 
 
-    const checkbox = document.querySelector('.theme-controller');
-    const body = document.body;
-
+/*
     checkbox.addEventListener('click', function () {
       if (checkbox.checked) {
         body.classList.add('dark');
@@ -61,3 +59,4 @@ themeCheck(); */
         body.classList.remove('dark');
       }
     });
+*/
