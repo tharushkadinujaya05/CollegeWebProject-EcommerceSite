@@ -1,1 +1,0 @@
-<button class="bg-blackcol grid w-full cursor-pointer select-none rounded-md py-2 px-5 text-center align-middle text-sm text-white shadow hover:border border-black hover:text-black focus:border-black  focus:text-black transition-colors duration-300 ease-in-out group-hover:text-white focus:shadow-none" type="submit">Sign in</button>
