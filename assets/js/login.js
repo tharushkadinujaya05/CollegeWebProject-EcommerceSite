@@ -1,4 +1,4 @@
-// Check if user has a theme set and if not, check if system is set to dark
+/*/ Check if user has a theme set and if not, check if system is set to dark
 const checkbox = document.querySelector('.theme-controller');
 const body = document.body;
 
@@ -21,11 +21,11 @@ const themeCheck = () => {
     if (userTheme === 'dark' || (!userTheme && systemTheme)) {
         document.documentElement.classList.add('dark');
         sunIcon.classList.toggle('swap-on');
-        sunIcon.classList.toggle('swap-off'); 
+        sunIcon.classList.toggle('swap-off', !sunIcon.classList.contains('swap-on')); // Toggle swap-off based on swap-on
         return;
     }
         moonIcon.classList.toggle('swap-on');
-        moonIcon.classList.toggle('swap-off'); 
+        moonIcon.classList.toggle('swap-off', !moonIcon.classList.contains('swap-on')); // Toggle swap-off based on swap-on
     };
 
 // Manual Theme Switch
@@ -48,12 +48,16 @@ moonIcon.addEventListener("click",() => {
     themeSwitch();
 });
 
-themeCheck();
+themeCheck(); */
 
-/* checkbox.addEventListener('click', function () {
-  if (checkbox.checked) {
-    body.classList.add('dark');
-  } else {
-    body.classList.remove('dark');
-  }
-}); */
+
+    const checkbox = document.querySelector('.theme-controller');
+    const body = document.body;
+
+    checkbox.addEventListener('click', function () {
+      if (checkbox.checked) {
+        body.classList.add('dark');
+      } else {
+        body.classList.remove('dark');
+      }
+    });
