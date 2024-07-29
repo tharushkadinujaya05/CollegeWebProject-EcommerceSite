@@ -2,7 +2,7 @@
 const checkbox = document.querySelector('.theme-controller');
 const body = document.body;
 
-/*/ Icons
+// Icons
 const sunIcon = document.querySelector('.sun');
 const moonIcon = document.querySelector('.moon');
 
@@ -51,7 +51,7 @@ moonIcon.addEventListener("click",() => {
 themeCheck(); 
 
 
-*/
+
     checkbox.addEventListener('click', function () {
       if (checkbox.checked) {
         body.classList.add('dark');
