@@ -26,9 +26,9 @@ const themeCheck = () => {
     }
         moonIcon.classList.toggle('swap-on');
         moonIcon.classList.toggle('swap-off', !moonIcon.classList.contains('swap-on')); // Toggle swap-off based on swap-on
-    };
+    }; 
 
-// Manual Theme Switch
+/*/ Manual Theme Switch
     const themeSwitch = () => {
      if(document.documentElement.classList.contains('dark')){
         document.documentElement.classList.remove('dark');
@@ -58,4 +58,4 @@ themeCheck();
       } else {
         body.classList.remove('dark');
       }
-    });
+    }); */
