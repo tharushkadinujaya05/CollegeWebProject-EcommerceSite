@@ -10,10 +10,9 @@
 </head>
 <body>
 
-  
   <!-- HERO1 -->
   <div class="relative h-screen">
-    <!-- Background Image -->
+    <!-- Background Images -->
     <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('home01_desktop.jpg');"></div>
     <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('home01_mobile.jpg');"></div>
     <!-- Hero Text + CTA -->
@@ -33,7 +32,7 @@
   </div>
 
 
-  <!-- HERO2 -->
+  <!-- HERO2 -->`
   
 </body>
 </html>
