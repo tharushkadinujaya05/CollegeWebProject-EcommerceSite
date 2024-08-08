@@ -21,7 +21,7 @@
       <!-- Desktop -->
       <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold text-black mb-4 font-serif hidden sm:block">
         The<br>Statement<br>Maker</h1>
-      <h2 class="text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 hidden sm:block" style="font-family: 'Inter', sans-serif; font-weight: 500;">
+      <h2 class="text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 hidden sm:block" style="font-family: 'Integitr', sans-serif; font-weight: 500;">
         Refresh Your Look,<br>20% Off Graphic Tees!</h2>
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline hidden sm:block">
         Shop Now
