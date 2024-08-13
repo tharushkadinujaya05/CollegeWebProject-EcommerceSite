@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-  </style>
+  </style>`
 </head>
 <body>
 
@@ -15,8 +15,8 @@
   <div class="relative h-screen">
 
     <!-- Background Image -->
-    <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/home01_desktop.jpg');"></div>       
-    <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/home01_mobile.jpg');"></div>
+    <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/images/home01_desktop.jpg');"></div>       
+    <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/images/home01_mobile.jpg');"></div>
 
     <!-- Hero Text + CTA -->
     <div class="absolute inset-0 flex flex-col justify-center items-center px-8 py-12 md:items-start md:px-16 lg:items-start lg:px-24">
@@ -54,5 +54,6 @@
   <!-- HERO2: EDITOR'S PICK-->
   <div class="relative h-screen"></div>
 
+  <?php include '../includes/footer.php'; ?>
 </body>
 </html>
