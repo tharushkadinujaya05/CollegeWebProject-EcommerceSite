@@ -23,6 +23,7 @@ module.exports = {
   plugins: [
     require('daisyui'),
     require('preline/plugin'),
+    require('@tailwindcss/forms'),
   ],
   daisyui: {
     themes:["light","black"],
