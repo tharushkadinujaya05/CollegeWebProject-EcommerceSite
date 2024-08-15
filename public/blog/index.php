@@ -5,7 +5,6 @@
     <title>Explore Page - Ivory Streets</title>
     <link href="../../assets/css/style.css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/favicon-og.png" type="image/x-icon">
-    <script src="./node_modules/preline/dist/preline.js"></script>
     <style>
         .hidden-content{
             display: none;
@@ -43,48 +42,88 @@
 
   
   
-  <center>
-  <div class="flex flex-wrap -mx-2 md:-mx-4 mx-4 md:mx-4 mt-16  "> 
-    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2 md:px-4 mb-6">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="'../../assets/images/blog04.jpg" alt="Blog post 1 image">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Music & Streetwear</div>
-                <a href="Music and Streetwear.html">
-                    <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full md:w-40 mt-4 md:mt-0 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Dive deeper</button>
-
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2 md:px-4 mb-6">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="../../assets/images/blog05.jpg" alt="Blog post 2 image">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">The Fabric of Exploration</div>
-                <a href="The Fabric of Exploration.html">
-                    <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full md:w-40 mt-4 md:mt-0 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Dive deeper</button>
-
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2 md:px-4 mb-6">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="../../assets/images/blog06.jpg" alt="Blog post 3 image">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Discover more with Ivory Streets</div>
-                <a href="Discover More with Ivory Streets.html">
-                    <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full md:w-40 mt-4 md:mt-0 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Dive deeper</button>
-
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-  </center>
+ <!-- Updated Blog Post Cards -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <!-- Title -->
+  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">The Blog</h2>
+    <p class="mt-1 text-gray-600 dark:text-neutral-400">Explore our latest posts and insights.</p>
   </div>
+  <!-- End Title -->
+
+  <!-- Grid -->
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Card 1 -->
+    <a class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="Music and Streetwear.html">
+      <div class="aspect-w-16 aspect-h-11">
+        <img class="w-full object-cover rounded-xl" src="../../assets/images/blog04.jpg" alt="Music & Streetwear">
+      </div>
+      <div class="my-6">
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">Music & Streetwear</h3>
+        <p class="mt-5 text-gray-600 dark:text-neutral-400">Dive deeper into the world of music and fashion.</p>
+      </div>
+      <div class="mt-auto flex items-center gap-x-3">
+        <!-- Replace with actual author image and name if applicable -->
+        <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+        <div>
+          <h5 class="text-sm text-gray-800 dark:text-neutral-200">By Your Name</h5>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+
+    <!-- Card 2 -->
+    <a class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="The Fabric of Exploration.html">
+      <div class="aspect-w-16 aspect-h-11">
+        <img class="w-full object-cover rounded-xl" src="../../assets/images/blog05.jpg" alt="The Fabric of Exploration">
+      </div>
+      <div class="my-6">
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">The Fabric of Exploration</h3>
+        <p class="mt-5 text-gray-600 dark:text-neutral-400">Explore the intricate fabric of discovery.</p>
+      </div>
+      <div class="mt-auto flex items-center gap-x-3">
+        <!-- Replace with actual author image and name if applicable -->
+        <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+        <div>
+          <h5 class="text-sm text-gray-800 dark:text-neutral-200">By Your Name</h5>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+
+    <!-- Card 3 -->
+    <a class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="Discover More with Ivory Streets.html">
+      <div class="aspect-w-16 aspect-h-11">
+        <img class="w-full object-cover rounded-xl" src="../../assets/images/blog06.jpg" alt="Discover more with Ivory Streets">
+      </div>
+      <div class="my-6">
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">Discover more with Ivory Streets</h3>
+        <p class="mt-5 text-gray-600 dark:text-neutral-400">Uncover more about Ivory Streets in our latest post.</p>
+      </div>
+      <div class="mt-auto flex items-center gap-x-3">
+        <!-- Replace with actual author image and name if applicable -->
+        <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+        <div>
+          <h5 class="text-sm text-gray-800 dark:text-neutral-200">By Your Name</h5>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+  </div>
+  <!-- End Grid -->
+
+  <!-- Read More -->
+  <div class="mt-12 text-center">
+    <a class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="#">
+      Read more
+      <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </a>
+  </div>
+  <!-- End Read More -->
+</div>
+<!-- End Updated Blog Post Cards -->
+  </div>
+  <script src="../../node_modules/preline/dist/preline.js"></script>
+
   </body>
   </html>
