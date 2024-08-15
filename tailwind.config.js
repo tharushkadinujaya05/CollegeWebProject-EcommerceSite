@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: [
     require('daisyui'),
+    require('preline/plugin'),
   ],
   daisyui: {
     themes:["light","black"],
