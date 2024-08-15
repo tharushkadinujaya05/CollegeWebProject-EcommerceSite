@@ -5,6 +5,7 @@
     <title>Explore Page - Ivory Streets</title>
     <link href="../../assets/css/style.css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/favicon-og.png" type="image/x-icon">
+    <script src="./node_modules/preline/dist/preline.js"></script>
     <style>
         .hidden-content{
             display: none;
