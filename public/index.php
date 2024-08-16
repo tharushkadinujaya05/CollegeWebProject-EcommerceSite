@@ -7,10 +7,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-  </style>`
+  </style>
 </head>
 <body>
 
+  <!-- FOOTER -->
+  <?php include '../includes/footer.php'; ?>
+  
   <!-- HERO1: OFFERS -->
   <div class="relative h-screen">
 
@@ -51,9 +54,7 @@
     </div>
   </div>
 
-  <!-- HERO2: EDITOR'S PICK-->
+  <!-- HERO2: EDITOR'S PICKS-->
   <div class="relative h-screen"></div>
-
-  <?php include '../includes/footer.php'; ?>
 </body>
 </html>
