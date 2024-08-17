@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*.{html,js,php}"],
+  content: ["./public/**/*.{html,js,php}",
+    'node_modules/preline/dist/*.js'],
+  
   darkMode: 'class',
   theme: {
     extend: {
@@ -20,6 +22,8 @@ module.exports = {
   },
   plugins: [
     require('daisyui'),
+    require('preline/plugin'),
+    require('@tailwindcss/forms'),
   ],
   daisyui: {
     themes:["light","black"],
