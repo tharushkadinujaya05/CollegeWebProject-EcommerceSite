@@ -7,8 +7,8 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     </head>
     <body>
+         <?php include '../includes/navbar.php'; ?>
         <div class="flex flex-col items-center bg-white-100 p-6">
-
         <div class="relative isolate px-6 pt-20 lg:px-8 pb-14">
         <section class="text-center mb-12 relative isolate px-6 pt-14 lg:px-8">
             <h1 class="text-5xl font-bold text-gray-800">
