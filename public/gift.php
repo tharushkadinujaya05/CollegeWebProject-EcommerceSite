@@ -7,8 +7,8 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     </head>
     <body>
+         <?php include '../includes/navbar.php'; ?>
         <div class="flex flex-col items-center bg-white-100 p-6">
-
         <div class="relative isolate px-6 pt-20 lg:px-8 pb-14">
         <section class="text-center mb-12 relative isolate px-6 pt-14 lg:px-8">
             <h1 class="text-5xl font-bold text-gray-800">
@@ -62,6 +62,48 @@
                 </div>
             </main>
         </div>
+        <div class="flex flex-col items-center bg-white-100 p-6">
+    <section class="flex flex-col items-center justify-center min-h-screen -mt-64">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto p-6 lg:px-8 text-center h-screen place-items-center -mb-24">
+            <div class="flex flex-col items-center container mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="stroke-1 h-12 w-12 text-gray-700 mb-4">
+                    <path d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 
+                    4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 
+                    4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 
+                    0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 
+                    17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 
+                    1.157-4.418" />
+                </svg>
+                <h3 class="text-xl font-bold mb-4">Crafted with care</h3>
+                <p class="text-gray-700"> Each package is thoughtfully curated with high-quality Ivory 
+                    Streets apparel and accessories, ensuring a unique and memorable gift.</p>
+            </div>
+
+                
+            <div class="flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="stroke-1 h-12 w-12 text-gray-700 mb-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 
+                    11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 
+                    2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                </svg>
+                
+                <h3 class="text-xl font-bold mb-2">Tailored to their style</h3>
+                <p class="text-gray-700">Choose from a variety of packages designed for different interests and personalities, from the city slicker to the outdoor enthusiast.</p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-8 mx-auto p-2 lg:px-8 text-center h-screen place-items-center -mt-24 w-81">
+            <div class="flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="stroke-1 h-12 w-12 text-gray-700 mb-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 
+                    11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 
+                    2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                </svg>     
+                <h3 class="text-xl font-bold mb-2">Tailored to their style</h3>
+                <p class="text-gray-700">Choose from a variety of packages designed for different <br></br>interests and personalities, from the city slicker to the <br></br>outdoor enthusiast.</p>
+            </div>
+        </div>
+    </section>
+</div>
     </body>
 </html>
 

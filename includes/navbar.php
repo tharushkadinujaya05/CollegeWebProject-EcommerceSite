@@ -3,29 +3,27 @@
     <div class="px-4">
         <div class="flex items-center justify-between">
             <div class="flex shrink-0">
-            <a aria-current="page" class="flex items-center" href="/">
+            <a aria-current="page" class="flex items-center" href="../public/index.php">
                 <img class="h-5 px-3" src="../assets/images/logo-bl.png" alt="">
                 <p class="sr-only">Website Title</p>
             </a>
             </div>
             <div class="flex items-center justify-end gap-1">
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                href="/login">Ready to Wear</a>
+                href="../public/products.php">Ready to Wear</a>
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                href="/login">Gifts</a>
+                href="../public/gift.php">Gifts</a>
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                href="/login">About Us</a>
+                href="../public/contactus.php">Contact Us</a>
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                href="/login">Contact Us</a>
+                href="../public/faq/index.php">FAQ</a>
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                href="/login">FAQ</a>
+                href="../public/blog/index.php">Explore</a>
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                href="/login">Explore</a>
-            <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                href="/search">
+                href="#">
                 <img width="20" height="20" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/></i></a>
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                href="/cart"><img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/shopping-trolley--v2.png" alt="shopping-trolley--v2"/></i></a>
+                href="#"><img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/shopping-trolley--v2.png" alt="shopping-trolley--v2"/></i></a>
             </div>
         </div>
         </div>
