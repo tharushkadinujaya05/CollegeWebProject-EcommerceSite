@@ -12,7 +12,6 @@
         </ul>
       </div>
       
-<<<<<<< HEAD
       <div class="mt-10 flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center mx-10">
         <p class="text-sm" id="year">
             <img class="h-5" src="../assets/images/logo-bl.png"><br>
@@ -25,7 +24,6 @@
           <a href="https://www.linkedin.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-linkedin fa-lg"></i></a>
         </div>
     </div>
-=======
       <div>
         <h5 class="font-bold mb-4">READY TO BUY</h5>
         <ul>
@@ -67,7 +65,6 @@
         </form>
         <p class="text-sm">By signing up, you agree to our <a href="#" class="underline">Privacy Policy</a> and <a href="#" class="underline">Terms of Service</a>.</p>
       </div>
->>>>>>> bbc1e5430d93136c161bddf656581101e4d02c1b
       
     </div>
     
