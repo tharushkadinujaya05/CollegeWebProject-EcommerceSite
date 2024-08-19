@@ -71,17 +71,17 @@
       
     </div>
     
-    <div class="mt-10 flex flex-col md:flex-row justify-between items-center">
+    <div class="mt-10 flex flex-col md:flex-row md:justify-between md:items-center">
       <p class="text-sm" id="year">
           <img class="h-5" src="../assets/images/logo-bl.png" ><br>
-          &copy;2024 IVORYSTREETS All rights reserved</p>
-      <div class="flex space-x-4 mt-4 md:mt-0">
+          &copy;2024 IVORYSTREETS All rights reserved</p> 
+      <div class="flex space-x-4 mt-4 md:mt-0 mx-10">
         <a href="https://www.facebook.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
         <a href="https://www.twitter.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
         <a href="https://www.instagram.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-instagram fa-lg"></i></a>
         <a href="https://www.linkedin.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-linkedin fa-lg"></i></a>
       </div>
     </div>
-    
+    n
   </div>
 </footer>
