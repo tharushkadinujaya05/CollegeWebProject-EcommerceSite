@@ -12,6 +12,20 @@
         </ul>
       </div>
       
+<<<<<<< HEAD
+      <div class="mt-10 flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center mx-10">
+        <p class="text-sm" id="year">
+            <img class="h-5" src="../assets/images/logo-bl.png"><br>
+            &copy;2024 IVORYSTREETS All rights reserved
+        </p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="https://www.facebook.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="https://www.twitter.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="https://www.instagram.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="https://www.linkedin.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+    </div>
+=======
       <div>
         <h5 class="font-bold mb-4">READY TO BUY</h5>
         <ul>
@@ -53,6 +67,7 @@
         </form>
         <p class="text-sm">By signing up, you agree to our <a href="#" class="underline">Privacy Policy</a> and <a href="#" class="underline">Terms of Service</a>.</p>
       </div>
+>>>>>>> bbc1e5430d93136c161bddf656581101e4d02c1b
       
     </div>
     
@@ -60,7 +75,7 @@
       <p class="text-sm" id="year">
           <img class="h-5" src="../assets/images/logo-bl.png" ><br>
           &copy;2024 IVORYSTREETS All rights reserved</p>
-      <div class="flex space-x-4 mt-4 md:mt-0 mx-10">
+      <div class="flex space-x-4 mt-4 md:mt-0">
         <a href="https://www.facebook.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
         <a href="https://www.twitter.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
         <a href="https://www.instagram.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-instagram fa-lg"></i></a>
