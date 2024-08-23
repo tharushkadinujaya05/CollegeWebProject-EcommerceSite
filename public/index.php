@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IvoryStreets | Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../assets/css/style.css" rel="stylesheet" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
   </style>
@@ -56,5 +56,6 @@
 
   <!-- HERO2: EDITOR'S PICKS-->
   <div class="relative h-screen"></div>
+  <?php include '../includes/cookies.php'; ?>
 </body>
 </html>
