@@ -1,6 +1,4 @@
-
-<script src="https://cdn.tailwindcss.com"></script>
-  <footer class="bg-gray-200 text-gray-700 py-10">
+<footer class="bg-gray-200 text-gray-700 py-10">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
         
