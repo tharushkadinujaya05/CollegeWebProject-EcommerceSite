@@ -1,5 +1,5 @@
 
-
+<script src="https://cdn.tailwindcss.com"></script>
   <footer class="bg-gray-200 text-gray-700 py-10">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
@@ -59,7 +59,7 @@
       
       <div class="mt-10 flex flex-col md:flex-row md:justify-between md:items-center mx-10 ">
         <p class="text-sm" id="year">
-          <img src="assets\images\logo-bl.png" class="w-130 h-70"><br>
+          <img src="../assets/images/logo-bl.png" class="w-130 h-70"><br>
           &copy;2024 IVORY STREETS All rights reserved</p>
         <div class="flex space-x-4 mt-4 md:mt-0">
           <a href="https://www.facebook.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
