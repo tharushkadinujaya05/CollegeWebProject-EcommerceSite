@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php include '../includes/navbar.php'; ?>
-<div class="relative bg-cover bg-center h-[36rem] md:h-[40rem]" style="background-image: url('../../assets/images/readytowearhero.png')">
+<div class="relative bg-cover bg-center h-[36rem] md:h-[40rem]" style="background-image: url('../assets/images/readytowearhero.png')">
   <div class="absolute inset-0 bg-gradient-to-l w-4/4 from-transparent to-black opacity-80"></div>
   <div class="absolute inset-0 flex flex-col items-center justify-center px-4">
     <p class="text-white text-3xl md:text-5xl text-center mb-4 font-poppins">Ready to wear</p>
@@ -33,7 +33,7 @@
       <li>
         <a href="#" class="group block overflow-hidden">
           <img
-            src="../../assets/images/model.png"
+            src="../assets/images/model.png"
             alt=""
             class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
           />
