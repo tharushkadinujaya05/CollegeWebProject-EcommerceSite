@@ -3044,6 +3044,14 @@ details.collapse summary::-webkit-details-marker{
   z-index: 30;
 }
 
+.z-10{
+  z-index: 10;
+}
+
+.z-20{
+  z-index: 20;
+}
+
 .order-first{
   order: -9999;
 }
@@ -3364,6 +3372,18 @@ details.collapse summary::-webkit-details-marker{
   height: 100vh;
 }
 
+.h-16{
+  height: 4rem;
+}
+
+.h-\[1\.5rem\]{
+  height: 1.5rem;
+}
+
+.h-\[2\.5rem\]{
+  height: 2.5rem;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -3412,8 +3432,16 @@ details.collapse summary::-webkit-details-marker{
   width: 100%;
 }
 
+.w-64{
+  width: 16rem;
+}
+
 .min-w-0{
   min-width: 0px;
+}
+
+.min-w-full{
+  min-width: 100%;
 }
 
 .max-w-2xl{
@@ -3669,6 +3697,12 @@ details.collapse summary::-webkit-details-marker{
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.space-x-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]){
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -3686,6 +3720,10 @@ details.collapse summary::-webkit-details-marker{
 
 .overflow-x-auto{
   overflow-x: auto;
+}
+
+.overflow-y-auto{
+  overflow-y: auto;
 }
 
 .truncate{
@@ -3841,6 +3879,16 @@ details.collapse summary::-webkit-details-marker{
 .bg-yellow-400{
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+}
+
+.bg-gray-700{
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+.bg-gray-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20{
@@ -4019,6 +4067,11 @@ details.collapse summary::-webkit-details-marker{
   padding-bottom: 2rem;
 }
 
+.px-0{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .pb-14{
   padding-bottom: 3.5rem;
 }
@@ -4063,6 +4116,14 @@ details.collapse summary::-webkit-details-marker{
   padding-top: 1.5rem;
 }
 
+.pt-16{
+  padding-top: 4rem;
+}
+
+.text-left{
+  text-align: left;
+}
+
 .text-center{
   text-align: center;
 }
@@ -4105,6 +4166,10 @@ details.collapse summary::-webkit-details-marker{
 
 .font-serif{
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-sans{
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .text-2xl{
@@ -4288,6 +4353,11 @@ details.collapse summary::-webkit-details-marker{
 
 .text-whitetext{
   color: rgba(var(--whitetext));
+}
+
+.text-green-500{
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -4526,6 +4596,11 @@ details.collapse summary::-webkit-details-marker{
 .hover\:bg-yellow-500:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-600:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
 .hover\:text-black:hover{
@@ -5385,6 +5460,10 @@ details.collapse summary::-webkit-details-marker{
     margin-top: 2rem;
   }
 
+  .lg\:ml-64{
+    margin-left: 16rem;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -5411,6 +5490,10 @@ details.collapse summary::-webkit-details-marker{
 
   .lg\:w-1\/3{
     width: 33.333333%;
+  }
+
+  .lg\:w-64{
+    width: 16rem;
   }
 
   .lg\:max-w-3xl{
@@ -5489,6 +5572,10 @@ details.collapse summary::-webkit-details-marker{
   .lg\:py-14{
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
+  }
+
+  .lg\:pt-6{
+    padding-top: 1.5rem;
   }
 
   .lg\:text-2xl{
