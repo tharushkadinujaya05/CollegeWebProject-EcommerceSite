@@ -19,7 +19,7 @@
                 </div>
                 <div class="flex items-center justify-end gap-1">
                 <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                    href="../../public/products.php">Ready to Wear</a>
+                    href="../../public/readytowear.php">Ready to Wear</a>
                 <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
                     href="../../public/gift.php">Gifts</a>
                 <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
