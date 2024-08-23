@@ -518,8 +518,28 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <div>
+          <div
+            class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md"
+          >
+          <div class="max-w-lg mx-auto mt-8">
+    <div class="text-center text-gray-500 text-sm font-medium mb-4">Express checkout</div>
+    <div class="flex flex-col space-y-4">
+      <button class="bg-yellow-400 hover:bg-yellow-500 text-blue-800 font-semibold py-3 rounded-lg shadow-lg flex items-center justify-center w-full">
+        <img class="h-6 w-30 mr-2" src="../assets/images/paypal.png" alt="PayPal">
+      </button>
+      <button class="bg-black hover:bg-gray-900 text-white font-semibold py-3 rounded-lg shadow-lg flex items-center justify-center w-full">
+        <img class="h-6 w-16 mr-2" src="../assets/images/gpay.png" alt="Google Pay">
+      </button>
+    </div>
+    <div class="flex items-center justify-center mt-6">
+        <div class="border-t border-gray-300 w-full"></div>
+        <span class="text-gray-500 mx-4">OR</span>
+        <div class="border-t border-gray-300 w-full"></div>
+    </div>
+</div>
+<div>
               <label
                 for="voucher"
                 class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
@@ -542,28 +562,6 @@
                 </button>
               </div>
             </div>
-          </div>
-
-          <div
-            class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md"
-          >
-          <div class="max-w-lg mx-auto mt-8">
-    <div class="text-center text-gray-500 text-sm font-medium mb-4">Express checkout</div>
-    <div class="flex flex-col space-y-4">
-      <!-- PayPal Button -->
-      <button class="bg-yellow-400 hover:bg-yellow-500 text-blue-800 font-semibold py-3 rounded-lg shadow-lg flex items-center justify-center w-full">
-        <img class="h-6 w-30 mr-2" src="../assets/images/paypal.png" alt="PayPal">
-      </button>
-      <button class="bg-black hover:bg-gray-900 text-white font-semibold py-3 rounded-lg shadow-lg flex items-center justify-center w-full">
-        <img class="h-6 w-16 mr-2" src="../assets/images/gpay.png" alt="Google Pay">
-      </button>
-    </div>
-    <div class="flex items-center justify-center mt-6">
-        <div class="border-t border-gray-300 w-full"></div>
-        <span class="text-gray-500 mx-4">OR</span>
-        <div class="border-t border-gray-300 w-full"></div>
-    </div>
-</div>
             <div class="flow-root">
               <div class="-my-3 divide-y divide-gray-200 dark:divide-gray-800">
                 <dl class="flex items-center justify-between gap-4 py-3">
