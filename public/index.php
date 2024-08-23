@@ -56,5 +56,6 @@
 
   <!-- HERO2: EDITOR'S PICKS-->
   <div class="relative h-screen"></div>
+  <?php include '../includes/footer.php'; ?>
 </body>
 </html>
