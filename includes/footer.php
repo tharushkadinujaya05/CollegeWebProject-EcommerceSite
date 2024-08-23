@@ -1,4 +1,15 @@
-<footer class="bg-gray-200 text-gray-700 py-10">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+
+  <footer class="bg-gray-200 text-gray-700 py-10">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
         
@@ -57,7 +68,7 @@
       
       <div class="mt-10 flex flex-col md:flex-row md:justify-between md:items-center mx-10 ">
         <p class="text-sm" id="year">
-          <img src="../assets/images/logo-bl.png" class="w-130 h-70"><br>
+          <img src="../assets/images/logo-bl.png" class="w-30 h-10"><br>
           &copy;2024 IVORY STREETS All rights reserved</p>
         <div class="flex space-x-4 mt-4 md:mt-0">
           <a href="https://www.facebook.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
@@ -74,4 +85,5 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous">
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
+</body>
+</html>
