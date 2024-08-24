@@ -7,7 +7,47 @@
     <title>IvoryStreets | Ready to Wear</title>
 </head>
 <body>
-<?php include '../includes/navbar.php'; ?>
+<?php include '../includes/navbar.php'; 
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "ivorystreetsdb";
+
+  $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+  if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+  }
+
+  $sortBy = isset($_GET['sortBy']) ? $_GET['sortBy'] : 'ASC';
+  $availability = isset($_GET['availability']) ? $_GET['availability'] : [];
+  $priceFrom = isset($_GET['From']) ? (int)$_GET['From'] : 0;
+  $priceTo = isset($_GET['To']) ? (int)$_GET['To'] : 600;
+
+  // Build availability condition
+  $availabilityCondition = '';
+  if (!empty($availability)) {
+    $availabilityConditions = [];
+    if (in_array('InStock', $availability)) {
+        $availabilityConditions[] = "product_isactive = 'A'";
+    }
+    if (in_array('OutOfStock', $availability)) {
+        $availabilityConditions[] = "product_isactive = 'I'";
+    }
+    $availabilityCondition = "AND (" . implode(" OR ", $availabilityConditions) . ")";
+  }
+  // SQL Query
+  $query = "
+      SELECT product_image, product_name, product_price
+      FROM product
+      WHERE product_price BETWEEN $priceFrom AND $priceTo
+      $availabilityCondition
+      ORDER BY product_price $sortBy
+  ";
+
+  $result = mysqli_query($conn, $query);
+
+?>
 <div class="relative bg-cover bg-center h-[36rem] md:h-[40rem]" style="background-image: url('../assets/images/readytowearhero.png')">
   <div class="absolute inset-0 bg-gradient-to-l w-4/4 from-transparent to-black opacity-80"></div>
   <div class="absolute inset-0 flex flex-col items-center justify-center px-4">
@@ -46,13 +86,14 @@
 
     <div class="mt-4 lg:mt-8 lg:grid lg:grid-cols-4 lg:items-start lg:gap-8">
       <div class="hidden space-y-4 lg:block">
+      <form method="GET" action="">
         <div>
           <label for="SortBy" class="block text-xs font-medium text-gray-700"> Sort By </label>
 
-          <select id="SortBy" class="mt-1 rounded border-gray-300 text-sm">
+          <select id="SortBy" name="sortBy" class="mt-1 rounded border-gray-300 text-sm">
             <option>Sort By</option>
-            <option value="Title, DESC">Price, Low to High</option>
-            <option value="Title, ASC">Price,, High to Low</option>
+            <option value="ASC">Price, Low to High</option>
+            <option value="DESC">Price, High to Low</option>
           </select>
         </div>
 
@@ -102,6 +143,8 @@
                         type="checkbox"
                         id="FilterInStock"
                         class="size-5 rounded border-gray-300"
+                        name="availability[]"
+                        value="InStock"
                       />
 
                       <span class="text-sm font-medium text-gray-700"> In Stock (5+) </span>
@@ -111,9 +154,11 @@
                   <li>
                     <label for="FilterPreOrder" class="inline-flex items-center gap-2">
                       <input
-                        type="checkbox"
-                        id="FilterPreOrder"
-                        class="size-5 rounded border-gray-300"
+                          type="checkbox"
+                          id="FilterPreOrder"
+                          class="size-5 rounded border-gray-300"
+                          name="availability[]"
+                          value="PreOrder"
                       />
 
                       <span class="text-sm font-medium text-gray-700"> Pre Order (3+) </span>
@@ -123,9 +168,11 @@
                   <li>
                     <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
                       <input
-                        type="checkbox"
-                        id="FilterOutOfStock"
-                        class="size-5 rounded border-gray-300"
+                          type="checkbox"
+                          id="FilterOutOfStock"
+                          class="size-5 rounded border-gray-300"
+                          name="availability[]"
+                          value="OutOfStock
                       />
 
                       <span class="text-sm font-medium text-gray-700"> Out of Stock (10+) </span>
@@ -176,10 +223,11 @@
                       <span class="text-sm text-gray-600">$</span>
 
                       <input
-                        type="number"
-                        id="FilterPriceFrom"
-                        placeholder="From"
-                        class="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                          type="number"
+                          id="FilterPriceFrom"
+                          placeholder="From"
+                          class="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                          name="From"
                       />
                     </label>
 
@@ -187,10 +235,10 @@
                       <span class="text-sm text-gray-600">$</span>
 
                       <input
-                        type="number"
-                        id="FilterPriceTo"
-                        placeholder="To"
-                        class="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                          type="number"
+                          id="FilterPriceTo"
+                          placeholder="To"
+                          class="w-full w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
                       />
                     </label>
                   </div>
@@ -200,32 +248,27 @@
 
             
           </div>
+        
         </div>
+        </form>
       </div>
 
       <div class="lg:col-span-3">
         <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <li>
-            <a href="#" class="group block overflow-hidden">
-              <img
-                src="../assets/images/model.png"
-                alt=""
-                class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-              />
-
-              <div class="relative bg-white pt-3">
-                <h3
-                  class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
-                >
-                OVERSIZED DRAGON FLORAL GRAPHIC SWEATSHIRT
-                </h3>
-
-                <p class="mt-2">
-                  <span class="tracking-wider text-gray-900">$19.75</span>
-                </p>
-              </div>
-            </a>
-          </li>
+          <?php 
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo '<li>';
+              echo '<a href="#" class="group block overflow-hidden">';
+              echo '<img src="' . htmlspecialchars($row['product_image']) . '" alt="" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />';
+              echo '<div class="relative bg-white pt-3">';
+              echo '<h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">' . htmlspecialchars($row['product_name']) . '</h3>';
+              echo '<p class="mt-2"><span class="tracking-wider text-gray-900">$' . htmlspecialchars($row['product_price']) . '</span></p>';
+              echo '</div>';
+              echo '</a>';
+              echo '</li>';
+          }
+          ?>
+          
         </ul>
         <ol class="mt-8 flex justify-center gap-1 text-xs font-medium">
      
