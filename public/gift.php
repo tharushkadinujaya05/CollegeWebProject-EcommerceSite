@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <?php include '../includes/navbar.php'; ?>
     <div class="flex flex-col items-center bg-white-100 p-6 sm:pb-8">
         <div class="relative isolate px-6 pt-40 pb-40 lg:px-8 mb-24">
             <section class="text-center relative isolate px-6 pt-14 lg:px-4">
@@ -115,6 +116,7 @@
             </div>
         </section>
     </div>
+    <?php include '../includes/navbar.php'; ?>
 </body>
 
 </html>
