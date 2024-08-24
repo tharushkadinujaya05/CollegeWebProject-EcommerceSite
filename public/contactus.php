@@ -77,8 +77,8 @@
         </div>
     </div>
     <br><br>
-    <div class="bg-[#EBEBEB] py-10 px-8 md:px-16 flex flex-col-reverse md:flex-row items-center">
-        <div class="text-black font-bold text-xl md:text-2xl mb-8 md:mb-0 md:ml-12 text-center md:text-left">
+    <div class="bg-[#EBEBEB] py-10 px-8 md:px-16 flex flex-col md:flex-row items-center">
+        <div class="text-black font-bold text-xl md:text-2xl mb-8 md:mb-0 md:ml-12 text-left">
             We're always happy to hear from you!
             <div class="text-black text-sm md:text-lg font-normal mt-4">
                 Please note:<br>
@@ -97,6 +97,6 @@
             <img src="../assets/images/con04.gif" alt="Illustration" class="w-full md:w-96 h-auto">
         </div>
     </div>
-</body>
+    </body>
 
 </html>

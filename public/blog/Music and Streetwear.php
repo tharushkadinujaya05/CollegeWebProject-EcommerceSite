@@ -20,7 +20,7 @@
     </div>
 
     <div class="overflow-hidden mx-12 rounded">
-        <img src="images/blog11.jpg" alt="Blog-post-3" class="h-72 object-cover w-full object-left">
+        <img src="../../assets/images/blog11.jpg" alt="Blog-post-3" class="h-72 object-cover w-full object-left">
     </div>
 
     <div class="mx-28 text-2xl mt-6 italic">
@@ -86,48 +86,149 @@
         Ivory Streets is more than just a clothing brand; it’s a lifestyle choice for those who embrace the city as their playground. We understand the vibe of our urban adventurers, offering clothing that is stylish, functional, and infused with the spirit of the city. Join us as we celebrate the perfect harmony of music and streetwear—a match made in the heart of the city.
     </div>
 
-    <div class="text-center text-3xl mt-6">
-        Discover the Latest
-    </div>
-
     
-    <center><div class="flex flex-wrap -mx-2 md:-mx-4 mx-4 md:mx-4 mt-16"> 
-            <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2 md:px-4 mb-6">
-                <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img class="w-full" src="images/blog07.jpg" alt="Blog post 1 image">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">Top 5 Summer Fashion Trends to Embrace with Ivory Streets</div>
-                        <a href="Top 5 Summer Fashion Trends to Embrace with Ivory Streets.html">
-                            <button type="button" class="mt-4 md:mt-0 h-10 w-full md:w-40 text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Dive deeper</button>
-                        </a>
-                    </div>
-                </div>
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+          <h2
+            class="text-2xl font-poppins md:text-4xl md:leading-tight dark:text-white"
+          >
+            Discover the Latest
+          </h2>
+          <p class="mt-1 text-gray-600 dark:text-neutral-400 font-nunito">
+            Explore other posts.
+          </p>
+        </div>
+  
+        <!--Cards-->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a
+            class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
+            href="./The Art of Layering.php"
+          >
+            <div class="aspect-w-16 aspect-h-11">
+              <img
+                class="w-full object-cover rounded-xl"
+                src="../../assets/images/card2.jpg"
+                alt="The Art of Layering"
+              />
             </div>
-        
-            <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2 md:px-4 mb-6">
-                <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img class="w-full" src="images/blog05.jpg" alt="Blog post 2 image">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">The Fabric of Exploration</div>
-                        <a href="The Fabric of Exploration.html">
-                            <button type="button" class="mt-4 md:mt-0 h-10 w-full md:w-40 text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Dive deeper</button>
-                        </a>
-                    </div>
-                </div>
+            <div class="my-6">
+              <h3
+                class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+              >
+              The Art of Layering
+              </h3>
+              <p class="mt-5 text-gray-600 dark:text-neutral-400 font-nunito">
+                Explore the Art of Layering: Get Weekend Ready with Style and Comfort!
+              </p>
             </div>
-        
-            <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2 md:px-4 mb-6">
-                <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img class="w-full" src="images/blog06.jpg" alt="Blog post 3 image">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">Discover more with Ivory Streets</div>
-                        <a href="Discover More with Ivory Streets.html">
-                            <button type="button" class="mt-4 md:mt-0 h-10 w-full md:w-40 text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Dive deeper</button>
-                        </a>
-                    </div>
-                </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <img
+                class="size-8 rounded-full"
+                src="../../assets/images/avatar6.png"
+                alt="Avatar"
+              />
+              <div>
+                <h5 class="text-sm text-gray-800 dark:text-neutral-200">
+                    By Sona Lofee
+                </h5>
+              </div>
             </div>
-        </div></center>
-    
+          </a>
+  
+          <a
+            class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
+            href="./Top 5 Summer Fashion Trends to Embrace with Ivory Streets.php"
+          >
+            <div class="aspect-w-16 aspect-h-11">
+              <img
+                class="w-full object-cover rounded-xl"
+                src="../../assets/images/card6.jpg"
+                alt="Top 5 Summer Fashion Trends to Embrace with Ivory Streets"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+              >
+              Top 5 Summer Fashion Trends to Embrace with Ivory Streets
+              </h3>
+              <p class="mt-5 text-gray-600 dark:text-neutral-400 font-nunito">
+                Summer Fashion Trends to Embrace with Ivory Streets: Stay Cool, Stylish, and Ahead of the Curve! Dive Deeper.
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <img
+                class="size-8 rounded-full"
+                src="../../assets/images/avatar1.png"
+                alt="Avatar"
+              />
+              <div>
+                <h5 class="text-sm text-gray-800 dark:text-neutral-200">
+                    By Broda Curl
+                </h5>
+              </div>
+            </div>
+          </a>
+  
+          <a
+            class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
+            href="./Dressing for Success.php"
+          >
+            <div class="aspect-w-16 aspect-h-11">
+              <img
+                class="w-full object-cover rounded-xl"
+                src="../../assets/images/card1.jpg"
+                alt="Music & Streetwear"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+              >
+              Dressing for Success
+              </h3>
+              <p class="mt-5 text-gray-600 dark:text-neutral-400 font-nunito">
+                Dive deeper into the how to dress for Success.
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <img
+                class="size-8 rounded-full"
+                src="../../assets/images/avatar1.png"
+                alt="Avatar"
+              />
+              <div>
+                <h5 class="text-sm text-gray-800 dark:text-neutral-200">
+                  By Adam Noé
+                </h5>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <div class="mt-12 text-center">
+          <a
+            class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+            href="../blog/index.php"
+          >
+            Read more
+            <svg
+              class="shrink-0 size-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </a>
+        </div>
+    </div>    
 </body>
 </html>
