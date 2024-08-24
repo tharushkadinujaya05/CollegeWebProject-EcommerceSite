@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link href="../assets/css/style.css" rel="stylesheet" />
+  <link href="../../assets/css/style.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IvoryStreets | Login</title>
 </head>
@@ -44,14 +44,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   mysqli_stmt_close($stmt);
 }
-   ?>
+   ?> 
   <section class="bg-background">
     <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
       <section class="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
         <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-black to-[#130F40] opacity-80"></div>
         <a class="absolute top-0 left-0 p-12 hidden lg:block" href="#">
           <span class="sr-only">Ivory Streets Login Page</span>
-          <img src="../assets/images/logo-wh.png" alt="Logo" class="h-7" />
+          <img src="../../assets/images/logo-wh.png" alt="Logo" class="h-7" />
         </a>
         <div class="hidden lg:relative lg:block lg:p-12">
           <h2 class="font-poppins mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
@@ -131,7 +131,79 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </main>
     </div>
   </section>
-  <script src="../assets/js/login.js"></script>
-  <?php include '../includes/footer.php'; ?>
+  <script src="../../assets/js/login.js"></script>
+  
+<!-- include/footer.php -->
+<footer class="bg-gray-200 text-gray-700 py-10 block lg:hidden">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
+      
+      <div>
+        <h5 class="font-bold mb-4">EXPLORE</h5>
+        <ul>
+          <li class="mb-2"><a href="#" class="hover:underline">New In</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Ready to Wear</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Gifts</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h5 class="font-bold mb-4">READY TO BUY</h5>
+        <ul>
+          <li class="mb-2"><a href="#" class="hover:underline">T-shirts and Vests</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Hoodies and Sweaters</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Jeans</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Shirts</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Shorts</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Cargos</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Coats & Jackets</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Graphic Tees</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h5 class="font-bold mb-4">ABOUT US</h5>
+        <ul>
+          <li class="mb-2"><a href="#" class="hover:underline">About IVORY STREETS</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Get to Know the Team</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Terms and Conditions</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h5 class="font-bold mb-4">CONTACT US</h5>
+        <ul>
+          <li class="mb-2"><a href="#" class="hover:underline">Terms of Use</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Returns</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Privacy Policy</a></li>
+          <li class="mb-2"><a href="#" class="hover:underline">Cookie Contents</a></li>
+        </ul>
+      </div>
+      
+      <div class="md:col-span-2 mx-10 mt-20"> 
+        <h5 class="font-bold mb-4">Get the latest news from us</h5>
+        <form class="mb-4">
+          <input type="email" placeholder="Enter your email address" class="w-full px-3 py-2 mb-2 border border-gray-300 rounded">
+          <button type="submit" class="w-full bg-black text-white py-2 rounded">Subscribe</button>
+        </form>
+        <p class="text-sm">By signing up, you agree to our <a href="#" class="underline">Privacy Policy</a> and <a href="#" class="underline">Terms of Service</a>.</p>
+      </div>
+      
+    </div>
+    
+    <div class="mt-10 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm" id="year">
+          <img class="h-5" src="../../assets/images/logo-bl.png" ><br>
+          &copy;2024 IVORYSTREETS All rights reserved</p>
+      <div class="flex space-x-4 mt-4 md:mt-0 mx-10">
+        <a href="https://www.facebook.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="https://www.twitter.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="https://www.instagram.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="https://www.linkedin.com" class="text-gray-500 hover:text-gray-800"><i class="fab fa-linkedin fa-lg"></i></a>
+      </div>
+    </div>
+    
+  </div>
+</footer>
 </body>
 </html>
