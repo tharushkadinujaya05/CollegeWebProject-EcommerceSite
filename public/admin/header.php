@@ -5,6 +5,6 @@
           <h2 class="text-lg font-medium mt-4 md:mt-0">Thomas Anree</h2>
           <p class="text-sm text-gray-600">UX Designer</p>
         </div>
-        <img src="../assets/images/img001.png" alt="Profile image" class="w-10 h-10 rounded-full">
+        <img src="../../assets/images/img001.png" alt="Profile image" class="w-10 h-10 rounded-full">
       </div>
     </header>
