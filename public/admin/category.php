@@ -62,7 +62,7 @@
       $servername = "localhost";
       $username = "root";
       $password = "";
-      $dbname = "ivorystreetdb";
+      $dbname = "ivorystreetsdb";
     
       $conn = mysqli_connect($servername, $username, $password, $dbname);
     
