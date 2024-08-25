@@ -8,6 +8,6 @@
     "preline": "^2.4.1"
   },
   "scripts": {
-    "start": "node public/index.php"
+    "start": "php -S 0.0.0.0:8000 -t public"
   }
 }
