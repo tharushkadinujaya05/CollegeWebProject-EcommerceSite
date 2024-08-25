@@ -12,7 +12,7 @@
 <body>
 
   <!-- NAVBAR -->
-  <?php include '../includes/navbar.php'; ?>
+  <?php include './includes/navbar.php'; ?>
   
   <!-- HERO1: OFFERS -->
   <div class="relative h-screen">
@@ -56,6 +56,6 @@
 
   <!-- HERO2: EDITOR'S PICKS-->
   <div class="relative h-screen"></div>
-  <?php include '../includes/cookies.php'; ?>
+  <?php include './includes/cookies.php'; ?>
 </body>
 </html>
