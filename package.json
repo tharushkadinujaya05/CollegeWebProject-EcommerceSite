@@ -9,6 +9,6 @@
   },
   "scripts": {
     "build": "tailwindcss build -i src/input.css -o ../assets/css/styles.css",
-    "start": "php -S 0.0.0.0:8000 -t public"
+    "start": "php -S 0.0.0.0:8000 -t public/index.html"
   }
 }
