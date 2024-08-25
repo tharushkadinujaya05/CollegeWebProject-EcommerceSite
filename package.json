@@ -8,6 +8,7 @@
     "preline": "^2.4.1"
   },
   "scripts": {
+    "build": "tailwindcss build src/styles/tailwind.css -o public/assets/styles.css",
     "start": "php -S 0.0.0.0:8000 -t public"
   }
 }
