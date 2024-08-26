@@ -61,81 +61,77 @@
   <div class="flex-1 lg:ml-64 p-6 bg-gray-100 overflow-y-auto h-screen pt-16 lg:pt-6">
 
     <?php
-    include 'header.php';
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ivorystreetsdb";
-
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-    if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
-    }
-
-    $sql_orders = "SELECT order_id, order_email, order_name, order_address, order_postcode, order_phoneno, order_date, order_status, total_price FROM orders";
-    $result_orders = mysqli_query($conn, $sql_orders);
-
-    $sql_product = "SELECT product_id, product_name FROM product";
-    $result_product = mysqli_query($conn, $sql_product);
-
+      include 'header.php';
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "ivorystreetsdb";
+  
+      $conn = mysqli_connect($servername, $username, $password, $dbname);
+  
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+  
+      $sql_orders = "SELECT order_id, order_email, order_name, order_address, order_postcode, order_phoneno, order_date, order_status, total_price FROM orders";
+      $result_orders = mysqli_query($conn, $sql_orders);
     ?>
 
     <div>
       <h3 class="text-2xl font-bold mt-6 mb-4">Recent Orders</h3>
-                </select>
-              </div>
+      <!-- Button for Add Order HIDDEN-->
+      <button id="openAddOrderModalBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 mb-4 hidden">Add Orders</button>
 
-              <div class="mb-4">
-                <table id="productTable" class="min-w-full bg-white mt-4">
-                <tbody>
-                 // Rows will be dynamically added here
-                </tbody>
-                </table>
-              </div>
-             
+      <!-- Add Order Modal -->
+      <!--<div id="addOrderModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form>-->
+            <!-- Add Order Form Fields -->
+            <!--<div class="mb-4">
+              <label class="block text-gray-700 font-medium mb-1">Order ID</label>
+              <input type="text" name="order_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
 
-            <input type="hidden" name="selected_products" id="selected_products">
+            <div class="mb-4">
+              <label class="block text-gray-700 font-medium mb-1">Product Name</label>
+              <input type="text" name="product_name" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
 
-              <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Order name</label>
-                <input type="text" name="order_name" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-              </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 font-medium mb-1">Order email</label>
+              <input type="email" name="order_email" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
 
-              <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Order email</label>
-                <input type="email" name="order_email" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-              </div>
-
-              <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Order address</label>
-                <textarea type="text" name="Order_address" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-              </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 font-medium mb-1">Order address</label>
+              <textarea name="Order_address" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
             </div>
 
             <div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Order postcode</label>
               <input type="text" name="Order_postcode" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
+
             <div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Order phoneNo.</label>
               <input type="text" name="Order_phone" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
-            //should add values
             <div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Order status</label>
-              <select name="Order_status" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="1">Ordered</option>
-                <option value="2">Processing</option>
-                <option value="3">Dispatched</option>
-                <option value="4">Delivered</option>
+              <select name="category_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="Nan">Status</option>
+                <option value="1">Status 1</option>
+                <option value="2">Status 2</option>
+                <option value="3">Status 3</option>
+                <option value="4">Status 4</option>
               </select>
             </div>
 
             <div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Order date</label>
-              <div type="date" id="date" name="update_time" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></div>
+              <div id="orderDate" name="update_time" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></div>
             </div>
 
             <div class="mb-4">
@@ -143,35 +139,31 @@
               <input type="text" name="total_price" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
             <div>
-              <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Save</button>
-              <button type="reset" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Clear</button>
+              <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Save</button>
+              <button type="reset" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Clear</button>
             </div>
-
+          </form>
         </div>
+      </div>-->
 
-        </form>-->
-      <!--</div>
-    </div>-->
-    <div class="bg-white p-6 rounded-lg shadow h-[36rem]">
-      <div class="overflow-x-auto overflow-y-auto h-full">
-        <table class="min-w-full bg-white">
-          <thead class="sticky top-0 z-10 bg-white">
-            <tr>
-              <th class="py-2 px-2 border-b text-left text-gray-600 hidden">Order ID</th>
-              <th class="py-2 px-4 border-b text-left text-gray-600">Order Email</th>
-              <th class="py-2 px-4 border-b text-left text-gray-600">Order Name</th>
-              <th class="py-2 px-4 border-b text-left text-gray-600">Order Address</th>
-              <th class="py-2 px-4 border-b text-left text-gray-600">Order Postal Code</th>
-              <th class="py-2 px-4 border-b text-left text-gray-600">Order Phone Number</th>
-              <th class="py-2 px-4 border-b text-left text-gray-600">Order Date</th>
-              <th class="py-2 px-4 border-b text-left text-gray-600">Order Status</th>
-              <th class="py-2 px-4 border-b text-left text-gray-600">Total Price</th>
-              <th class="py-2 px-4 border-b text-left text-gray-600">Edit</th>
-
-            </tr>
-          </thead>
-          <tbody>
-
+      <div class="bg-white p-6 rounded-lg shadow h-[36rem]">
+        <div class="overflow-x-auto overflow-y-auto h-full">
+          <table class="min-w-full bg-white">
+            <thead class="sticky top-0 z-10 bg-white">
+              <tr>
+                <th class="py-2 px-2 border-b text-left text-gray-600 hidden">Order ID</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Order Email</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Order Name</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Order Address</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Order Postal Code</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Order Phone Number</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Order Date</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Order Status</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Total Price</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Edit</th>
+              </tr>
+            </thead>
+            <tbody>
             <?php 
               if (mysqli_num_rows($result_orders) > 0) {
                 // Output data of each row
@@ -186,10 +178,9 @@
                     echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_date']) . "</td>";
                     echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_status']) . "</td>";
                     echo "<td class='py-2 px-4 border-b'>$" . htmlspecialchars($row['total_price']) . "</td>";
-                    echo "<td><button type='button' name='edit-btn' class='px-4 py-2 text-xs font-medium text-center 
-                    inline-flex items-center text-white bg-slate-500 rounded-lg hover:bg-slate-600 focus:ring-4 
-                    focus:outline-none focus:ring-slate-300 dark:bg-slate-600 dark:hover:bg-slate-700 
-                    dark:focus:ring-slate-800'>Edit</button>";
+                    echo "<td><button class='openEditOrderModalBtn px-2 py-2 text-xs font-medium text-center 
+                    inline-flex items-center text-white bg-slate-500 rounded-lg hover:bg-slate-600 
+                    focus:ring-4 focus:outline-none focus:ring-slate-300'>Edit</button></td>";
                     echo "</tr>";
                 }
               } else {
@@ -199,107 +190,138 @@
               // Close the database connection
               mysqli_close($conn);
             ?>
-
-          </tbody>
-        </table>
+                  
+              <!-- Add more order rows as needed -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- Edit Order Modal -->
+    <div id="editOrderModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Order</h2>
+        <form>
+          <!-- Edit Order Form Fields -->
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Order ID</label>
+            <input type="text" name="order_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="1023">
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Product Name</label>
+            <input type="text" name="product_name" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="Brayan">
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Order Email</label>
+            <input type="email" name="order_email" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="example@email.com">
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Order Address</label>
+            <textarea name="Order_address" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">Belbourne, Australia</textarea>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Order Postcode</label>
+            <input type="text" name="Order_postcode" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="3003">
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Order Phone No.</label>
+            <input type="text" name="Order_phone" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="0432 255 343">
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Order Status</label>
+            <select name="category_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="1">Success</option>
+              <option value="2">Pending</option>
+              <option value="3">Failed</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Order Date</label>
+            <input type="date" name="order_date" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="2023-08-03">
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Total Price</label>
+            <input type="text" name="total_price" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="$ 200">
+          </div>
+
+          <div>
+            <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Update</button>
+            <button type="reset" class="close focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Delete Order Modal -->
+    <!--<div id="deleteOrderModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <h2>Are you sure you want to delete this order?</h2>
+        <div>
+          <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Delete</button>
+        </div>
+      </div>
+    </div>-->
 
   </div>
-  </div>
-  </div>
-  </div>
-  </div>
-
 
   <script>
-    //Date
-    document.addEventListener("DOMContentLoaded", function () {
-        var modal = document.getElementById("myModal");
-        var openModalBtn = document.getElementById("openModalBtn");
-        var closeModal = document.getElementsByClassName("close")[0];
-        var productDropdown = document.getElementById("productDropdown");
-        var productTable = document.getElementById("productTable").getElementsByTagName("tbody")[0];
-        var selectedProductsInput = document.getElementById("selected_products");
+    // Function to open a modal
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+    }
 
-        var selectedProducts = [];
+    // Function to close a modal
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+    }
 
-        openModalBtn.onclick = function () {
-          modal.style.display = "block";
-        };
+    // Event listeners to open modals
+    document.getElementById('openAddOrderModalBtn').addEventListener('click', function () {
+      openModal('addOrderModal');
+    });
 
-        closeModal.onclick = function () {
-          modal.style.display = "none";
-        };
+    document.querySelectorAll('.openEditOrderModalBtn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openModal('editOrderModal');
+      });
+    });
 
-        window.onclick = function (event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        };
+    document.querySelectorAll('.openDeleteOrderModalBtn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openModal('deleteOrderModal');
+      });
+    });
 
-        productDropdown.addEventListener("change", function () {
-          var productName = productDropdown.options[productDropdown.selectedIndex].text;
-          var productId = productDropdown.value;
+    // Event listeners to close modals
+    document.querySelectorAll('.close').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        closeModal(btn.closest('.modal').id);
+      });
+    });
 
-          if (!selectedProducts.includes(productId)) {
-            selectedProducts.push(productId);
-
-            var row = productTable.insertRow();
-            var cellName = row.insertCell(0);
-            var cellAction = row.insertCell(1);
-
-            cellName.textContent = productName;
-
-            var deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "Delete";
-            deleteBtn.classList.add("bg-red-500", "text-white", "px-3", "py-1", "rounded");
-
-            deleteBtn.addEventListener("click", function () {
-              var rowIndex = row.rowIndex - 1; // Adjust for header row
-              productTable.deleteRow(rowIndex);
-              selectedProducts.splice(rowIndex, 1);
-              updateSelectedProducts();
-            });
-
-            cellAction.appendChild(deleteBtn);
-            updateSelectedProducts();
-          }
-        });
-
-        function updateSelectedProducts() {
-          selectedProductsInput.value = JSON.stringify(selectedProducts);
+    // Close the modal when clicking outside of the modal content
+    window.addEventListener('click', function (event) {
+      document.querySelectorAll('.modal').forEach(function (modal) {
+        if (event.target == modal) {
+          closeModal(modal.id);
         }
       });
-      
-    function updateDate() {
-      const now = new Date();
-      const day = String(now.getDate()).padStart(2, '0');
-      const month = String(now.getMonth() + 1).padStart(2, '0');
-      const year = now.getFullYear();
-      const currentDate = `${month}/${day}/${year}`;
+    });
 
-      document.getElementById('date').textContent = currentDate;
-    }
-
-    updateDate();
-
-    //button
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("openModalBtn");
-    var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
+    // Set the date in the add order form
+    document.getElementById('orderDate').textContent = new Date().toLocaleDateString();
   </script>
 
 </body>
