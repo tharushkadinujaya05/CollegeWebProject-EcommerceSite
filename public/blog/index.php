@@ -90,8 +90,6 @@
         </p>
       </div>
 
-      <!--Cards-->
-
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <a
           class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
@@ -122,7 +120,7 @@
             />
             <div>
               <h5 class="text-sm text-gray-800 dark:text-neutral-200">
-                By James Sero
+                By Tharushka Dinujaya
               </h5>
             </div>
           </div>
@@ -152,12 +150,12 @@
           <div class="mt-auto flex items-center gap-x-3">
             <img
               class="size-8 rounded-full"
-              src="../../assets/images/avatar6.png"
+              src="../../assets/images/avatar1.png"
               alt="Avatar"
             />
             <div>
               <h5 class="text-sm text-gray-800 dark:text-neutral-200">
-                By Ampelio Arsenio
+                By Savishka Dilshan
               </h5>
             </div>
           </div>
@@ -187,12 +185,12 @@
           <div class="mt-auto flex items-center gap-x-3">
             <img
               class="size-8 rounded-full"
-              src="../../assets/images/avatar5.png"
+              src="../../assets/images/avatar3.png"
               alt="Avatar"
             />
             <div>
               <h5 class="text-sm text-gray-800 dark:text-neutral-200">
-                By Ann Jackob
+                By Trevon Akesh
               </h5>
             </div>
           </div>
@@ -202,7 +200,7 @@
       <div class="mt-12 text-center">
         <a
           class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-          href="../blog/index.php"
+          href="#"
         >
           Read more
           <svg
