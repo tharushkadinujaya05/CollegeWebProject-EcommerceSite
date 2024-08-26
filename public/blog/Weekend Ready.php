@@ -4,8 +4,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Weekend Ready: Casual Outfits for Every Occasion</title>
       <link rel="stylesheet" href="style.css">
-      <link rel="shortcut icon" href="images/favicon-og.png" type="image/x-icon">
-      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="../../assets/css/style.css" rel="stylesheet" />
       <style>
         .hidden-content{
             display: none;
@@ -119,12 +118,12 @@
             <div class="mt-auto flex items-center gap-x-3">
               <img
                 class="size-8 rounded-full"
-                src="../../assets/images/dilshan-avatar.png"
+                src="../../assets/images/avatar6.png"
                 alt="Avatar"
               />
               <div>
                 <h5 class="text-sm text-gray-800 dark:text-neutral-200">
-                  By Savishka Dilshan
+                  By Ampelio Arsenio
                 </h5>
               </div>
             </div>

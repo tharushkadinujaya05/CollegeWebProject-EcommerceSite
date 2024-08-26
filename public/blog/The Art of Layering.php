@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Art of Layering: How to Stay Warm and Stylish</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/favicon-og.png" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../../assets/css/style.css" rel="stylesheet" />
     <style>
         .hidden-content {
             display: none;
@@ -136,7 +135,7 @@
     
             <a
               class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
-              href="./Discover More with Ivory Streets.php"
+              href="./Music and Streetwear.php"
             >
               <div class="aspect-w-16 aspect-h-11">
                 <img

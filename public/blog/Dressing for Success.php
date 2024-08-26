@@ -4,8 +4,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Dressing for Success: Your Guide to Business Casual</title>
       <link rel="stylesheet" href="style.css">
-      <link rel="shortcut icon" href="images/favicon-og.png" type="image/x-icon">
-      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="../../assets/css/style.css" rel="stylesheet" />
       <style>
         .hidden-content{
             display: none;
