@@ -9,24 +9,28 @@
 </head>
 
 <body>
+
     <?php include '../includes/navbar.php'; ?>
-    <div class="flex flex-col items-center bg-white-100 p-6 sm:pb-8">
-        <div class="relative isolate px-6 pt-40 pb-40 lg:px-8 mb-24">
-            <section class="text-center relative isolate px-6 pt-14 lg:px-4">
-                <h1 class="text-6xl font-bold text-gray-800">
-                    Give the Gift of <span class="text-red-500">Adventure</span>
-                </h1>
-                <p class="mt-4 text-gray-700 text-xl">
-                    We offer curated gift packages designed to inspire and equip <br />your loved ones for their next
-                    adventure.
-                </p>
-                <a href="#" class="mt-4 inline-block bg-black text-white py-2 px-4 rounded">
-                    Button
-                </a>
-            </section>
+
+    <div class="flex flex-col items-center bg-white-100 p-6 sm:pb-8 min-h-screen">
+        <div class="relative isolate px-6 lg:px-8 mb-24">
+            <div class="flex items-center justify-center h-screen pb-20 bg-white-100">
+                <section class="text-center px-6 pt-14 lg:px-4">
+                    <h1 class="text-6xl font-bold text-gray-800">
+                        Give the Gift of <span class="text-red-500">Adventure</span>
+                    </h1>
+                    <p class="mt-4 text-gray-700 text-xl">
+                        We offer curated gift packages designed to inspire and equip <br />your loved ones for their next
+                        adventure.
+                    </p>
+                    <a href="#" class="mt-4 inline-block bg-black text-white py-2 px-4 rounded">
+                        Button
+                    </a>
+                </section>
+            </div>            
         </div>
     </div>
-    <div class="flex flex-col items-center bg-white-100 p-6 mb-24 sm:pb-8">
+    
         <main class="flex flex-wrap justify-center">
             <div class="flex items-center justify-center bg-white mb-14">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl mx-auto p-6 lg:px-14">
@@ -47,10 +51,10 @@
 
             <div class="flex-col items-center justify-center bg-white mt-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl mx-auto lg:px-8 lg:-my-70">
-                    <div class="flex justify-center lg:justify-start order-2 lg:order-1 md:order-1">
+                    <div class="flex justify-center lg:justify-start order-2 lg:order-1 md:order-2 xl:order-2; 2xl:order-2;">
                         <img src="../assets/images/gift02.jpg" alt="White Claw packaging" class="w-full h-auto max-w-md" />
                     </div>
-                    <div class="justify-center lg:justify-end pl-12 pt-8 order-1 lg:order-2; md:order-1">
+                    <div class="justify-center lg:justify-end pl-12 pt-8 order-1 lg:order-2; md:order-1 xl:order-1; 2xl:order-1;">
                         <div class="lg:px-0">
                             <h2 class="text-3xl font-bold mb-2">White Claw</h2>
                             <h3 class="text-xl mb-4">Effortlessly Chic Gift Giving</h3>
@@ -116,7 +120,9 @@
             </div>
         </section>
     </div>
-    <?php include '../includes/navbar.php'; ?>
+
+    <?php include '../includes/footer.php'; ?>
+    
 </body>
 
 </html>
