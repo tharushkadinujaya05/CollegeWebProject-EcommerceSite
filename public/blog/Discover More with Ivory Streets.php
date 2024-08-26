@@ -5,7 +5,6 @@
       <title>Discover More with Ivory Streets</title>
       <link rel="stylesheet" href="style.css">
       <link href="../../assets/css/style.css" rel="stylesheet" />
-      <script src="https://cdn.tailwindcss.com"></script>
       <style>
         .hidden-content{
             display: none;
