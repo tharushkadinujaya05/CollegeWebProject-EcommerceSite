@@ -59,7 +59,7 @@
 
   <div class="flex-1 lg:ml-64 p-6 bg-gray-100 overflow-y-auto h-screen pt-16 lg:pt-6">
 
-    <?php include 'header.php'; ?>
+    <?php include 'header2.php'; ?>
 
     <!-- Products Table -->
     <div class="mt-6">
