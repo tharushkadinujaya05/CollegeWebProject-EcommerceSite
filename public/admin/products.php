@@ -79,7 +79,15 @@
 
             <div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Product Size</label>
-              <input type="text" name="product_size" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+              <select name="product_size" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+  <!-- shouldadd values-->
+                <option value="" class="block text-gray-700 font-medium mb-1">Select a Size</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">S</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">M</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">L</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">XL</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">XXL</option>
+              </select>
             </div>
 
             <div class="mb-4">
@@ -170,7 +178,15 @@
 
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-1">Product Size</label>
-            <input type="text" name="product_size" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            <select name="product_size" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+  <!-- shouldadd values-->
+                <option value="" class="block text-gray-700 font-medium mb-1">Select a Size</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">S</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">M</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">L</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">XL</option>
+                <option value="" class="block text-gray-700 font-medium mb-1">XXL</option>
+              </select>
           </div>
 
           <div class="mb-4">
