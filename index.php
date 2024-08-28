@@ -18,8 +18,8 @@
   <div class="relative h-screen">
 
     <!-- Background Image -->
-    <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/images/home01_desktop.jpg');"></div>       
-    <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/images/home01_mobile.jpg');"></div>
+    <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/images/home01_desktop.png');"></div>
+    <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('../assets/images/home01_mobile.png');"></div>
 
     <!-- Hero Text + CTA -->
     <div class="absolute inset-0 flex flex-col justify-center items-center px-8 py-12 md:items-start md:px-16 lg:items-start lg:px-24">
