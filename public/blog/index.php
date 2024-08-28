@@ -35,47 +35,48 @@
       </div>
     </div>
 
-    <div
-      class="text-black text-2xl md:text-3xl font-poppins ml-4 md:ml-12 mt-8 mb-6"
-    >
-      Latest Blog
-    </div>
-    <div
-      class="ml-4 md:ml-12 mr-4 md:mr-12 relative bg-cover bg-center h-[24rem] md:h-[30rem] rounded"
-      style="background-image: url('../../assets/images/blog02.png')"
-    >
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div
-          class="bg-white w-full md:w-[40rem] h-auto md:h-[21.5rem] backdrop-blur-lg p-4 rounded flex flex-col justify-center"
-        >
+    <div class="container mx-auto p-4">
+      <!-- Blog Title -->
+      <div class="text-black text-2xl md:text-3xl font-poppins mt-8 mb-6">
+        Latest Blog
+      </div>
+    
+      <!-- Blog Content -->
+      <div
+        class="relative bg-cover bg-center h-[24rem] md:h-[30rem] rounded-lg shadow-lg"
+        style="background-image: url('../../assets/images/blog02.png')"
+      >
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
           <div
-            class="ml-4 md:ml-8 mr-4 md:mr-8 mt-6 md:mt-2 mb-3 text-sm md:text-xl text-justify font-nunito"
+            class="bg-white bg-opacity-90 w-11/12 md:w-[40rem] h-auto md:h-[21.5rem] backdrop-blur-lg p-6 rounded-lg flex flex-col justify-between shadow-lg"
           >
-            Summer is here, and it's time to refresh your wardrobe with the
-            latest trends. At <span class="font-bold">Ivory Streets</span>, we
-            are dedicated to helping you stay ahead of the fashion curve. This
-            season, we are bringing you a blend of classic styles and
-            contemporary twists that will keep you looking chic and feeling
-            comfortable. Here are the top five summer fashion trends you need to
-            embrace with our latest collection.
+            <div class="text-sm md:text-lg font-nunito text-gray-800 leading-relaxed mb-4">
+              Summer is here, and it's time to refresh your wardrobe with the latest
+              trends. At <span class="font-bold">Ivory Streets</span>, we are dedicated
+              to helping you stay ahead of the fashion curve. This season, we are
+              bringing you a blend of classic styles and contemporary twists that
+              will keep you looking chic and feeling comfortable. Here are the top
+              five summer fashion trends you need to embrace with our latest
+              collection.
+            </div>
+            <div class="text-right text-gray-500 font-semibold text-sm md:text-base">
+              8<sup>th</sup> June 2024
+            </div>
+            <div class="text-center mt-4">
+              <a href="./Top 5 Summer Fashion Trends to Embrace with Ivory Streets.php">
+                <button
+                  type="button"
+                  class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800 transition-colors duration-300"
+                >
+                  Dive deeper
+                </button>
+              </a>
+            </div>
           </div>
-          <span
-            class="text-right mr-4 md:mr-8 text-gray-500 font-semibold text-sm md:text-base"
-            >8<sup>th</sup> June 2024</span
-          >
-          <a
-            href="./Top 5 Summer Fashion Trends to Embrace with Ivory Streets.php"
-            ><br />
-            <button
-              type="button"
-              class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-5 ml-0 md:ml-7 w-full md:w-40 mt-4 md:mt-0 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
-            >
-              Dive deeper
-            </button></a
-          >
         </div>
       </div>
     </div>
+    
 
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
@@ -114,7 +115,7 @@
           <div class="mt-auto flex items-center gap-x-3">
             <img
               class="size-8 rounded-full"
-              src="../../assets/images/tharushka-avatar.png"
+              src="../../assets/images/avatar2.png"
               alt="Avatar"
             />
             <div>
@@ -149,7 +150,7 @@
           <div class="mt-auto flex items-center gap-x-3">
             <img
               class="size-8 rounded-full"
-              src="../../assets/images/dilshan-avatar.png"
+              src="../../assets/images/avatar1.png"
               alt="Avatar"
             />
             <div>
@@ -184,7 +185,7 @@
           <div class="mt-auto flex items-center gap-x-3">
             <img
               class="size-8 rounded-full"
-              src="../../assets/images/trevon-avatar.png"
+              src="../../assets/images/avatar3.png"
               alt="Avatar"
             />
             <div>
