@@ -25,7 +25,7 @@
       </div>
 
       <!-- HERO1: Content -->
-          <div class="absolute inset-0 flex flex-col justify-center items-center px-8 py-12 md:items-start md:px-16 lg:items-start lg:px-24 space-y-4">
+          <div class="absolute inset-0 flex flex-col justify-center items-center px-8 py-12 md:items-start md:px-16 lg:items-start lg:px-24 space-y-4" style="padding-top: 30px; padding-bottom: 30px;">
           <!-- HERO1: Desktop content -->
             <h1 class="hidden sm:block text-2xl md:text-4xl lg:text-6xl font-bold text-black mb-0 font-serif">
               The<br>Statement<br>Maker
@@ -37,8 +37,8 @@
               Shop Now
             </button>
           <!-- HERO1: Mobile content -->
-              <div class="block sm:hidden" style="height: 900px; visibility: hidden;"></div>
-                <div class="block sm:hidden flex flex-col items-center justify-center h-full space-y-4">
+              <div class="block sm:hidden" style="height: 950px; visibility: hidden;"></div>
+                <div class="block sm:hidden flex flex-col items-center justify-center h-full space-y-6">
                     <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold text-black mb-0 font-serif align" style="text-align: center; font-size: xx-large">
                         The<br>Statement<br>Maker
                     </h1>
