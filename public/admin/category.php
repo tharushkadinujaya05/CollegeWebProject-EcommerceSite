@@ -1,6 +1,9 @@
+<?php
+session_start();  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +13,6 @@
     /* Styles for the modal */
     .modal {
       display: none;
-      /* Hidden by default */
       position: fixed;
       z-index: 50;
       left: 0;
@@ -19,12 +21,8 @@
       height: 100%;
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.5);
-      /* Black with opacity */
       backdrop-filter: blur(10px);
-      /* Blur the background */
     }
-
-    /* Modal Content */
     .modal-content {
       background-color: white;
       margin: 15% auto;
@@ -35,15 +33,12 @@
       border-radius: 8px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
-
-    /* Close Button */
     .close {
       color: #aaa;
       float: right;
       font-size: 28px;
       font-weight: bold;
     }
-
     .close:hover,
     .close:focus {
       color: black;
@@ -52,20 +47,24 @@
     }
   </style>
 </head>
-
 <body class="bg-gray-100 font-sans antialiased">
 
   <?php include 'side-bar.php'; ?>
 
   <div class="flex-1 lg:ml-64 p-6 bg-gray-100 overflow-y-auto h-screen pt-16 lg:pt-6">
-    <?php include 'header.php';
+    <?php
+      if (isset($_SESSION['success_message'])) {
+          echo "<p class='text-green-600'>" . $_SESSION['success_message'] . "</p>";
+          unset($_SESSION['success_message']);  
+      }
+
       $servername = "localhost";
       $username = "root";
       $password = "";
       $dbname = "ivorystreetsdb";
-    
+
       $conn = mysqli_connect($servername, $username, $password, $dbname);
-    
+
       if (!$conn) {
           die("Connection failed: " . mysqli_connect_error());
       }
@@ -77,7 +76,11 @@
           mysqli_stmt_bind_param($stmt, "i", $delete_category_id);
           mysqli_stmt_execute($stmt);
           mysqli_stmt_close($stmt);
-          echo "<p class='text-green-600'>Category deleted successfully.</p>";
+e
+          $_SESSION['success_message'] = "Category deleted successfully.";
+
+          header("Location: " . $_SERVER['PHP_SELF']);
+          exit();
       }
 
       if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_category_id'])) {
@@ -85,48 +88,55 @@
           $category_name = mysqli_real_escape_string($conn, $_POST['category_name']);
           $category_desc = mysqli_real_escape_string($conn, $_POST['category_desc']);
           $updated_at = date('Y-m-d H:i:s');
-          
+
           $edit_sql = "UPDATE category SET category_name = ?, category_desc = ?, updated_at = ? WHERE category_id = ?";
           $stmt = mysqli_prepare($conn, $edit_sql);
           mysqli_stmt_bind_param($stmt, "sssi", $category_name, $category_desc, $updated_at, $edit_category_id);
           mysqli_stmt_execute($stmt);
           mysqli_stmt_close($stmt);
-          echo "<p class='text-green-600'>Category updated successfully.</p>";
+
+          $_SESSION['success_message'] = "Category updated successfully.";
+
+          header("Location: " . $_SERVER['PHP_SELF']);
+          exit();
       }
-    
+
+      if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['delete_category_id']) && !isset($_POST['edit_category_id'])) {
+          $category_name = mysqli_real_escape_string($conn, $_POST['category_name']);
+          $category_desc = mysqli_real_escape_string($conn, $_POST['category_desc']);
+          $updated_at = date('Y-m-d H:i:s');
+          $admin_id = 1;  
+
+          $sql = "INSERT INTO category (category_name, category_desc, updated_at, admin_id) 
+                  VALUES (?, ?, ?, ?)";
+
+          $stmt = mysqli_prepare($conn, $sql);
+          if ($stmt) {
+              mysqli_stmt_bind_param($stmt, "sssi", 
+                  $category_name, 
+                  $category_desc, 
+                  $updated_at, 
+                  $admin_id
+              );
+
+              if (mysqli_stmt_execute($stmt)) {
+                  $_SESSION['success_message'] = "Category added successfully!";
+              } else {
+                  echo "Error: " . mysqli_error($conn);
+              }
+
+              mysqli_stmt_close($stmt);
+          } else {
+              echo "Error preparing statement: " . mysqli_error($conn);
+          }
+
+          header("Location: " . $_SERVER['PHP_SELF']);
+          exit();
+      }
+
       $sql = "SELECT category_id, category_name, category_desc, updated_at, admin_id FROM category";
       $result = mysqli_query($conn, $sql);
-    
-      if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['delete_category_id']) && !isset($_POST['edit_category_id'])) {
-        $category_name = mysqli_real_escape_string($conn, $_POST['category_name']);
-        $category_desc = mysqli_real_escape_string($conn, $_POST['category_desc']);
-        $updated_at = date('Y-m-d H:i:s');
-        $admin_id = 1;
-    
-        $sql = "INSERT INTO category (category_name, category_desc, updated_at, admin_id) 
-                VALUES (?, ?, ?, ?)";
-    
-        $stmt = mysqli_prepare($conn, $sql);
-        if ($stmt) {
-            mysqli_stmt_bind_param($stmt, "sssi", 
-                $category_name, 
-                $category_desc, 
-                $updated_at, 
-                $admin_id
-            );
-    
-            if (mysqli_stmt_execute($stmt)) {
-                echo "<p class='text-green-600'>Category added successfully!</p>";
-            } else {
-                echo "Error: " . mysqli_error($conn);
-            }
-    
-            mysqli_stmt_close($stmt);
-        } else {
-            echo "Error preparing statement: " . mysqli_error($conn);
-        }
-    }
-     ?>
+    ?>
 
     <!-- Categories Table -->
     <div class="mt-6">
@@ -149,7 +159,7 @@
             </div>
             <div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Updated At</label>
-              <div type="date" id="date" name="update_time" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></div>
+              <input type="date" id="addUpdatedAt" name="update_time" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
             <div>
               <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">Save</button>
@@ -244,14 +254,14 @@
   </div>
 
   <script>
-     function updateDate() {
+    function updateDate() {
       const now = new Date();
-      const day = String(now.getDate()).padStart(2, '0');
-      const month = String(now.getMonth() + 1).padStart(2, '0');
       const year = now.getFullYear();
-      const currentDate = `${month}/${day}/${year}`;
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const currentDate = `${year}-${month}-${day}`;
 
-      document.getElementById('date').textContent = currentDate;
+      document.getElementById('addUpdatedAt').value = currentDate;
     }
 
     updateDate();
@@ -295,17 +305,20 @@
     for (var i = 0; i < closeBtns.length; i++) {
       closeBtns[i].onclick = function () {
         this.parentElement.parentElement.style.display = "none";
+        resetFormFields(this.parentElement.parentElement.querySelector('form'));
       }
     }
 
     window.onclick = function (event) {
       if (event.target == addModal || event.target == editModal || event.target == deleteModal) {
-        addModal.style.display = "none";
-        editModal.style.display = "none";
-        deleteModal.style.display = "none";
+        event.target.style.display = "none";
+        resetFormFields(event.target.querySelector('form'));
       }
     }
 
+    function resetFormFields(form) {
+      if (form) form.reset();
+    }
   </script>
 </body>
 </html>
