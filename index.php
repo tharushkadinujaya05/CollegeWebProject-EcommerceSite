@@ -16,7 +16,7 @@
   
   <!-- HERO1: OFFERS -->
   <div class="relative h-screen">
-      <!-- HERO1: Desktop/Mobile background image -->
+      <!-- HERO1: Desktop/Mobile background images -->
       <div class="absolute inset-0 bg-cover bg-center"
         style="background-image: url('./assets/images/home01_desktop.png');">
       </div>
@@ -25,50 +25,46 @@
       </div>
 
       <!-- HERO1: Content -->
-          <div class="absolute inset-0 flex flex-col justify-center items-center px-8 py-12 md:items-start md:px-16 lg:items-start lg:px-24">
+          <div class="absolute inset-0 flex flex-col justify-center items-center px-8 py-12 md:items-start md:px-16 lg:items-start lg:px-24 space-y-4">
           <!-- HERO1: Desktop content -->
-            <h1 class="hidden sm:block text-2xl md:text-4xl lg:text-6xl font-bold text-black mb-4 font-serif">
+            <h1 class="hidden sm:block text-2xl md:text-4xl lg:text-6xl font-bold text-black mb-0 font-serif">
               The<br>Statement<br>Maker
             </h1>
             <h2 class="hidden sm:block text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 font-poppins" style="font-weight: 500;">
               Refresh Your Look,<br>20% Off Graphic Tees!
             </h2>
-            <button class="hidden sm:block bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline">
+            <button class="hidden sm:block bg-blue-500 hover:bg-blue-700 font-poppins text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline">
               Shop Now
             </button>
           <!-- HERO1: Mobile content -->
-            <div class="sm:hidden" style="height: 400px; visibility: hidden;"></div>
-            <h1 class="block sm:hidden text-2xl md:text-4xl lg:text-6xl font-bold text-black mb-4 font-serif align" style="text-align: center; font-size: xx-large">
-              The<br>Statement<br>Maker
-            </h1>
-            <h2 class="block sm:hidden text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 font-poppins" style="font-weight: 500; text-align: center;">
-              Refresh Your Look,<br>20% Off Graphic Tees!
-            </h2>
-            <button class="block sm:hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline">
-              Shop Now
-            </button>
+              <div class="block sm:hidden" style="height: 900px; visibility: hidden;"></div>
+                <div class="block sm:hidden flex flex-col items-center justify-center h-full space-y-4">
+                    <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold text-black mb-0 font-serif align" style="text-align: center; font-size: xx-large">
+                        The<br>Statement<br>Maker
+                    </h1>
+                    <h2 class="text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 font-poppins" style="font-weight: 500; text-align: center;">
+                        Refresh Your Look,<br>20% Off Graphic Tees!
+                    </h2>
+                    <button class="bg-blue-500 hover:bg-blue-700 font-poppins text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline">
+                        Shop Now
+                    </button>
+                </div>
           <!-- HERO1: Mobile Animated Bounce -->
-            <div class="fixed bottom-0 left-1/2 -translate-x-1/2 sm:hidden mt-4">
+            <div class="block sm:hidden">
               <svg class="animate-bounce" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="12 18 24 30 36 18"></polyline>
               </svg>
             </div>
           </div>
-      <!-- HERO1: Mobile content -->
-      <h1 class="sm:hidden text-4xl md:text-2xl lg:text-6xl font-bold text-black mb-2 font-serif text-center">
-          The<br>Statement<br>Maker
-      </h1>
-      <h2 class="sm:hidden text-lg md:text-xl lg:text-2xl text-gray-700 mb-4 font-inter text-center" style="font-weight: 500;">
-          Refresh Your Look,<br>20% Off Graphic Tees!
-      </h2>
-      <div class="sm:hidden" style="height: 25px; visibility: hidden;"> </div>
-      <button class="sm:hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline">
-          Shop Now
-      </button>
   </div>
 
 
   <!-- HERO2: DIVIDER -->
+  <section class="h-12" style="background-color: red">
+      <div class="w-full h-full flex items-center justify-center">
+          <p class="block md:hidden text-white font-poppins font-bold text-3xl flex items-center justify-center h-full">EDITOR'S CHOICE</p>
+      </div>
+  </section>
 
   <!-- HERO2-1: EDITOR'S PICKS (BLACK MAMBA) -->
   <div class="relative h-screen">
