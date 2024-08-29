@@ -55,7 +55,7 @@ session_start();
     <?php
       if (isset($_SESSION['success_message'])) {
           echo "<p class='text-green-600'>" . $_SESSION['success_message'] . "</p>";
-          unset($_SESSION['success_message']);  
+          unset($_SESSION['success_message']); 
       }
 
       $servername = "localhost";
@@ -76,7 +76,7 @@ session_start();
           mysqli_stmt_bind_param($stmt, "i", $delete_category_id);
           mysqli_stmt_execute($stmt);
           mysqli_stmt_close($stmt);
-e
+
           $_SESSION['success_message'] = "Category deleted successfully.";
 
           header("Location: " . $_SERVER['PHP_SELF']);
