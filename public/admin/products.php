@@ -58,6 +58,7 @@
 
     <?php include 'header.php'; 
 
+    // Database connection
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -137,7 +138,6 @@
         $update_time = date('Y-m-d');
         $admin_id = 1;
 
-        // Validate and set product price as a float to prevent unintended conversion
         if (!is_numeric($product_price) || floatval($product_price) <= 0) {
             $product_price = 0; 
         } else {
@@ -202,7 +202,13 @@
 
             <div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Product Size</label>
-              <input type="text" name="product_size" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+              <select name="product_size" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
             </div>
 
             <div class="mb-4">
@@ -216,7 +222,7 @@
             </div>
 
             <div class="mb-4">
-              <label class="block text-gray-700 font-medium mb-1">Product Quantity</label> 
+              <label class="block text-gray-700 font-medium mb-1">Product Quantity</label>
               <input type="number" name="product_qty" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
             </div>
 
@@ -280,7 +286,7 @@
                         echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['product_size']) . "</td>";
                         echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['product_desc']) . "</td>";
                         echo "<td class='py-2 px-4 border-b'>$" . htmlspecialchars($row['product_price']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['product_qty']) . "</td>"; 
+                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['product_qty']) . "</td>"; // Displaying product quantity
                         echo "<td class='py-2 px-4 border-b' data-category-id='" . htmlspecialchars($row['category_id']) . "'>" . htmlspecialchars($row['category_name']) . "</td>";
                         echo "<td><button class='openEditModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-slate-500 rounded-lg hover:bg-slate-600 focus:ring-4 focus:outline-none focus:ring-slate-300'>Edit</button>";
                         echo "<button class='openDeleteModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300'>Delete</button></td>";
@@ -310,7 +316,13 @@
 
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-1">Product Size</label>
-            <input type="text" name="edit_product_size" id="editProductSize" class="w-full px-3 py-2 border border-blue-300 rounded" required>
+            <select name="edit_product_size" id="editProductSize" class="w-full px-3 py-2 border border-blue-300 rounded" required>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+            </select>
           </div>
 
           <div class="mb-4">
@@ -403,7 +415,7 @@
 
           document.getElementById('editProductId').value = productId;
           document.getElementById('editProductName').value = productName;
-          document.getElementById('editProductSize').value = productSize;
+          document.getElementById('editProductSize').value = productSize; 
           document.getElementById('editProductDesc').value = productDesc;
           document.getElementById('editProductPrice').value = productPrice; 
           document.getElementById('editProductQty').value = productQty; 
@@ -458,7 +470,7 @@
     </script>
 
   </div>
-  <?php ob_end_flush(); ?>
+  <?php ob_end_flush();  ?>
 </body>
 
 </html>
