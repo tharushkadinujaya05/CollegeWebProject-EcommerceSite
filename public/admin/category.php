@@ -1,5 +1,9 @@
 <?php
-session_start();  
+session_start(); 
+if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
+  header("Location: login.php");
+  exit();
+} 
 ?>
 
 <!DOCTYPE html>
@@ -251,6 +255,7 @@ session_start();
         </div>
       </div>
     </div>
+    <a href="logout.php">Logout</a>
   </div>
 
   <script>
