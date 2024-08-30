@@ -7,10 +7,8 @@
   <title>IvoryStreets - Products</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Styles for the modal */
     .modal {
       display: none;
-      /* Hidden by default */
       position: fixed;
       z-index: 50;
       left: 0;
@@ -19,12 +17,9 @@
       height: 100%;
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.5);
-      /* Black with opacity */
       backdrop-filter: blur(10px);
-      /* Blur the background */
     }
 
-    /* Modal Content */
     .modal-content {
       background-color: white;
       margin: 15% auto;
@@ -36,7 +31,6 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* Close Button */
     .close {
       color: #aaa;
       float: right;
@@ -55,135 +49,142 @@
 
 <body class="bg-gray-100 font-sans antialiased">
 
-  <?php include 'side-bar.php'; ?>
+  <?php 
+  ob_start(); 
+  include 'side-bar.php'; 
+  ?>
 
   <div class="flex-1 lg:ml-64 p-6 bg-gray-100 overflow-y-auto h-screen pt-16 lg:pt-6">
 
     <?php include 'header.php'; 
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname = "ivorystreetsdb";
-  
-      $conn = mysqli_connect($servername, $username, $password, $dbname);
-  
-      if (!$conn) {
-          die("Connection failed: " . mysqli_connect_error());
-      }
-  
-      $sql = "SELECT p.product_id, p.product_name, p.product_size, p.product_desc, p.product_price, c.category_name FROM product p JOIN 
-      category c ON p.category_id = c.category_id";
-      $result = mysqli_query($conn, $sql);
-  
-      $sql_category = "SELECT category_id, category_name FROM category";
-      $result_category = mysqli_query($conn, $sql_category);
-      $result_categoryEdit = mysqli_query($conn, $sql_category);
 
-      //$productId = isset($_GET['edit_product_id']);
-      $sql_editSelect = "SELECT product_name, product_size, product_desc, product_price, product_qty, category_id, product_image FROM product where product_id = 1";
-      $result_editSelect = mysqli_query($conn, $sql_editSelect);
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ivorystreetsdb";
 
-      if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_product_id'])) {
-        $productId = intval($_POST['delete_product_id']);
-        
-        $sql = "DELETE FROM product WHERE product_id = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param('i', $productId);
-    
-        if ($stmt->execute()) {
-            echo "Product deleted successfully!";
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Handle Edit Request
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_product_id'])) {
+        $product_id = mysqli_real_escape_string($conn, $_POST['edit_product_id']);
+        $product_name = mysqli_real_escape_string($conn, $_POST['edit_product_name']);
+        $product_size = mysqli_real_escape_string($conn, $_POST['edit_product_size']);
+        $product_desc = mysqli_real_escape_string($conn, $_POST['edit_product_desc']);
+        $product_price = mysqli_real_escape_string($conn, $_POST['edit_product_price']);
+        $product_qty = mysqli_real_escape_string($conn, $_POST['edit_product_qty']); 
+        $category_id = mysqli_real_escape_string($conn, $_POST['edit_category_id']);
+        $update_time = date('Y-m-d');
+
+        if (!is_numeric($product_price) || floatval($product_price) <= 0) {
+            $product_price = 0; 
         } else {
-            echo '<script>alert("Error deleting product: ' . $conn->error . '");</script>';
+            $product_price = floatval($product_price);
         }
-    
-        $stmt->close();
-      }
-      else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['edit_product_id'])) {
-        // Check which form is being submitted, if you have multiple forms
-        
-            $edit_product_id = intval($_POST['edit_product_id']);
-            $editproduct_name = htmlspecialchars($_POST['editproduct_name'], ENT_QUOTES, 'UTF-8');
-            $editproduct_size = htmlspecialchars($_POST['editproduct_size'], ENT_QUOTES, 'UTF-8');
-            $editproduct_desc = htmlspecialchars($_POST['editproduct_desc'], ENT_QUOTES, 'UTF-8');
-            $editproduct_price = floatval($_POST['editproduct_price']);
-            $editproduct_quantity = intval($_POST['editproduct_quantity']);
-            $editproduct_image = htmlspecialchars($_POST['editproduct_image'], ENT_QUOTES, 'UTF-8');
-            $category_id = intval($_POST['editcategory_id']);
-    
-            // Check if required fields are not empty
-            if ($edit_product_id && $editproduct_name && $editproduct_size && $editproduct_price && $category_id) {
-                
-                // Construct the update query
-                $sql_update = "UPDATE product 
-                               SET product_name = ?, product_size = ?, product_desc = ?, product_price = ?, product_qty = ?, product_image = ?, category_id = ? 
-                               WHERE product_id = ?";
-                
-                // Prepare and execute the query
-                if ($stmt = $conn->prepare($sql_update)) {
-                    $stmt->bind_param('sssdisii', $editproduct_name, $editproduct_size, $editproduct_desc, $editproduct_price, $editproduct_quantity, $editproduct_image, $category_id, $edit_product_id);
-                    
-                    if ($stmt->execute()) {
-                        echo "Product updated successfully.";
-                    } else {
-                        echo "Error updating product: " . $stmt->error;
-                    }
-    
-                    $stmt->close();
-                } else {
-                    echo "Error preparing statement: " . $conn->error;
-                }
-            
-          }
-      }
 
-      elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Get product details
+        if (isset($_FILES['edit_image']) && $_FILES['edit_image']['error'] == 0) {
+            $picture = file_get_contents($_FILES['edit_image']['tmp_name']);
+            $sql = "UPDATE product SET product_name=?, product_size=?, product_desc=?, product_price=?, product_qty=?, category_id=?, updated_at=?, product_image=? WHERE product_id=?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "sssdissii", $product_name, $product_size, $product_desc, $product_price, $product_qty, $category_id, $update_time, $picture, $product_id);
+        } else {
+            $sql = "UPDATE product SET product_name=?, product_size=?, product_desc=?, product_price=?, product_qty=?, category_id=?, updated_at=? WHERE product_id=?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "sssdissi", $product_name, $product_size, $product_desc, $product_price, $product_qty, $category_id, $update_time, $product_id);
+        }
+
+        if (mysqli_stmt_execute($stmt)) {
+            echo "<div class='text-green-500'>Product updated successfully!</div>";
+        } else {
+            echo "<div class='text-red-500'>Error updating product: " . mysqli_error($conn) . "</div>";
+        }
+        mysqli_stmt_close($stmt);
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    }
+
+    // Handle Delete Request
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_product_id'])) {
+        $product_id = mysqli_real_escape_string($conn, $_POST['delete_product_id']);
+        $sql = "DELETE FROM product WHERE product_id=?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "i", $product_id);
+
+        if (mysqli_stmt_execute($stmt)) {
+            echo "<div class='text-green-500'>Product deleted successfully!</div>";
+        } else {
+            echo "<div class='text-red-500'>Error deleting product: " . mysqli_error($conn) . "</div>";
+        }
+        mysqli_stmt_close($stmt);
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    }
+
+    // Handle Add Product Request
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name']) && !isset($_POST['edit_product_id']) && !isset($_POST['delete_product_id'])) {
         $product_name = mysqli_real_escape_string($conn, $_POST['product_name']);
         $product_size = mysqli_real_escape_string($conn, $_POST['product_size']);
         $product_desc = mysqli_real_escape_string($conn, $_POST['product_desc']);
         $product_price = mysqli_real_escape_string($conn, $_POST['product_price']);
-        $product_qty = mysqli_real_escape_string($conn, $_POST['product_quantity']);
-        $picture = mysqli_real_escape_string($conn, $_POST['product_image']);
+        $product_qty = mysqli_real_escape_string($conn, $_POST['product_qty']); 
         $category_id = mysqli_real_escape_string($conn, $_POST['category_id']);
-        $update_time = $update_time = date('Y-m-d');
+        $update_time = date('Y-m-d');
         $admin_id = 1;
 
-          // Prepare SQL query to insert product and image blob
-          $sql = "INSERT INTO product (product_name, product_size, product_desc, product_price, product_qty, category_id, updated_at, admin_id, product_image) 
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-  
-          // Prepare the statement
-          $stmt = mysqli_prepare($conn, $sql);
-          if ($stmt) {
-              // Bind the parameters
-              mysqli_stmt_bind_param($stmt, "sssdiisis", 
-                  $product_name, 
-                  $product_size, 
-                  $product_desc, 
-                  $product_price, 
-                  $product_qty,
-                  $category_id,
-                  $update_time,
-                  $admin_id,
-                  $picture
-            
-                );
-    
-                // Execute the query
+        // Validate and set product price as a float to prevent unintended conversion
+        if (!is_numeric($product_price) || floatval($product_price) <= 0) {
+            $product_price = 0; 
+        } else {
+            $product_price = floatval($product_price);
+        }
+
+        if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+            $picture = file_get_contents($_FILES['image']['tmp_name']);
+
+            $sql = "INSERT INTO product (product_name, product_size, product_desc, product_price, product_qty, category_id, updated_at, admin_id, product_image) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            $stmt = mysqli_prepare($conn, $sql);
+            if ($stmt) {
+                mysqli_stmt_bind_param($stmt, "sssdissis", $product_name, $product_size, $product_desc, $product_price, $product_qty, $category_id, $update_time, $admin_id, $picture);
+
                 if (mysqli_stmt_execute($stmt)) {
-                    echo "Product added successfully!";
+                    echo "<div class='text-green-500'>Product added successfully!</div>";
                 } else {
-                    echo "Error: " . mysqli_error($conn);
+                    echo "<div class='text-red-500'>Error: " . mysqli_error($conn) . "</div>";
                 }
-    
-                // Close the statement
                 mysqli_stmt_close($stmt);
             } else {
-                echo "Error preparing statement: " . mysqli_error($conn);
+                echo "<div class='text-red-500'>Error preparing statement: " . mysqli_error($conn) . "</div>";
             }
+        } else {
+            echo "<div class='text-red-500'>Error with the image upload.</div>";
         }
-      
-  ?>
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    }
+
+    // Fetch Products
+    $sql = "SELECT p.product_id, p.product_name, p.product_size, p.product_desc, p.product_price, p.product_qty, p.category_id, c.category_name 
+            FROM product p 
+            JOIN category c ON p.category_id = c.category_id";
+
+    $result = mysqli_query($conn, $sql);
+
+    // Fetch Categories for Add/Edit Forms
+    $sql_category = "SELECT category_id, category_name FROM category";
+    $result_category = mysqli_query($conn, $sql_category);
+    $result_categoryEdit = mysqli_query($conn, $sql_category);
+    ?>
+
+    <!-- Products Table -->
     <div class="mt-6">
       <h3 class="text-2xl font-bold mb-4">Products</h3>
       <!-- Add Product Button -->
@@ -215,14 +216,14 @@
             </div>
 
             <div class="mb-4">
-              <label class="block text-gray-700 font-medium mb-1">Product Quantity</label>
-              <input type="text" name="product_quantity" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+              <label class="block text-gray-700 font-medium mb-1">Product Quantity</label> 
+              <input type="number" name="product_qty" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
             </div>
 
             <div class="mb-4">
-              <label class="block text-gray-700 font-medium mb-1">Product Image URL</label>
-              <input type="text" name="product_image" id="imageURL" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <img id="imagePreview" class="mt-4 w-full h-72 object-cover rounded-lg" style="display:none;" />
+              <label class="block text-gray-700 font-medium mb-1">Product Image</label>
+              <input type="file" id="productImage" name="image" accept="image/*" required class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <img id="imagePreview" class="mt-4 max-h-48 w-full object-cover rounded-lg hidden" />
             </div>
 
             <div class="mb-4">
@@ -230,12 +231,12 @@
               <select name="category_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <?php
                       if ($result_category->num_rows > 0) {
-                        echo "<option value=''>Select Product</option>";
+                        echo "<option value=''>Select Category</option>";
                         while ($row = $result_category->fetch_assoc()) {
                           echo "<option value='" . htmlspecialchars($row['category_id']) . "'>" . htmlspecialchars($row['category_name']) . "</option>";
                         }
                       } else {
-                        echo "<option value=''>No products available</option>";
+                        echo "<option value=''>No categories available</option>";
                       }
                   ?>
               </select>
@@ -243,7 +244,7 @@
 
             <div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Updated At</label>
-              <div type="date"  id="productDate" name="update_time" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required></div>
+              <div id="productDate" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"><?php echo date('Y-m-d'); ?></div>
             </div>
 
             <div>
@@ -264,14 +265,14 @@
                 <th class="py-2 px-4 border-b text-left text-gray-600">Product Size</th>
                 <th class="py-2 px-4 border-b text-left text-gray-600">Description</th>
                 <th class="py-2 px-4 border-b text-left text-gray-600">Price</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Quantity</th> 
                 <th class="py-2 px-4 border-b text-left text-gray-600">Category Name</th>
                 <th class="py-2 px-4 border-b text-left text-gray-600">Edit/Delete</th>
               </tr>
             </thead>
             <tbody>
               <?php
-            if (mysqli_num_rows($result) > 0) {
-                    // Output data of each row
+                if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
                         echo "<td class='py-2 px-4 border-b hidden'>" . htmlspecialchars($row['product_id']) . "</td>";
@@ -279,23 +280,16 @@
                         echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['product_size']) . "</td>";
                         echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['product_desc']) . "</td>";
                         echo "<td class='py-2 px-4 border-b'>$" . htmlspecialchars($row['product_price']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['category_name']) . "</td>";
-                        echo "<td><button class='openEditModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white 
-                        bg-slate-500 rounded-lg hover:bg-slate-600 focus:ring-4 focus:outline-none focus:ring-slate-300'
-                         data-id='" . htmlspecialchars($row['product_id']) . "'>Edit</button>";
-                        echo "<button class='openDeleteModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white 
-                        bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300' 
-                        data-id='" . htmlspecialchars($row['product_id']) . "'>Delete</button></td>";
+                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['product_qty']) . "</td>"; 
+                        echo "<td class='py-2 px-4 border-b' data-category-id='" . htmlspecialchars($row['category_id']) . "'>" . htmlspecialchars($row['category_name']) . "</td>";
+                        echo "<td><button class='openEditModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-slate-500 rounded-lg hover:bg-slate-600 focus:ring-4 focus:outline-none focus:ring-slate-300'>Edit</button>";
+                        echo "<button class='openDeleteModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300'>Delete</button></td>";
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='5' class='py-2 px-4 border-b text-center'>No products available</td></tr>";
+                    echo "<tr><td colspan='7' class='py-2 px-4 border-b text-center'>No products available</td></tr>";
                 }
-
-                // Close the database connection
-                mysqli_close($conn);
-                ?>
-              <!-- Add more product rows as needed -->
+              ?>
             </tbody>
           </table>
         </div>
@@ -304,124 +298,61 @@
 
     <!-- Edit Product Modal -->
     <div id="editProductModal" class="modal">
-    <div class="modal-content">
+      <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Edit Product</h2>
         <form method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="edit_product_id" id="edit_product_id">
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Product Name</label>
-                <input type="text" name="editproduct_name" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
-                  <?php 
-                      // Ensure $result_editSelect is not null and has rows
-                      if ($result_editSelect && $result_editSelect->num_rows > 0) {
-                          // Fetch the first row
-                          $row = $result_editSelect->fetch_assoc();
-                          // Set the value attribute if 'product_name' exists in the row
-                          if (isset($row['product_name'])) {
-                              echo "value='" . htmlspecialchars($row['product_name'], ENT_QUOTES, 'UTF-8') . "'";
-                          }
-                      }
-                      ?>  
-                  required>
-            </div>
-            <div class="mb-4">
-              <label class="block text-gray-700 font-medium mb-1">Product Size</label>
-              <input type="text" name="editproduct_size" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
-              <?php 
-                       if ($result_editSelect && $result_editSelect->num_rows > 0 && isset($row['product_size'])) {
-                        echo "value='" . htmlspecialchars($row['product_size'], ENT_QUOTES, 'UTF-8') . "'";
-                    }
-                      ?> 
-               required>
-            </div>
+          <input type="hidden" name="edit_product_id" id="editProductId">
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Product Name</label>
+            <input type="text" name="edit_product_name" id="editProductName" class="w-full px-3 py-2 border border-blue-300 rounded" required>
+          </div>
 
-            <div class="mb-4">
-              <label class="block text-gray-700 font-medium mb-1">Product Description</label>
-              <textarea name="editproduct_desc" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <?php 
-                      if ($result_editSelect && $result_editSelect->num_rows > 0 && isset($row['product_desc'])) {
-                        echo "" . htmlspecialchars($row['product_desc'], ENT_QUOTES, 'UTF-8') . "";
-                    }
-                ?> 
-              </textarea>
-            </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Product Size</label>
+            <input type="text" name="edit_product_size" id="editProductSize" class="w-full px-3 py-2 border border-blue-300 rounded" required>
+          </div>
 
-            <div class="mb-4">
-              <label class="block text-gray-700 font-medium mb-1">Product Price</label>
-              <input type="text" name="editproduct_price" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
-              <?php 
-                      if ($result_editSelect && $result_editSelect->num_rows > 0 && isset($row['product_price'])) {
-                              echo "value='" . htmlspecialchars($row['product_price'], ENT_QUOTES, 'UTF-8') . "'";
-                      }
-              ?>  
-              required>
-            </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Product Description</label>
+            <textarea name="edit_product_desc" id="editProductDesc" class="w-full px-3 py-2 border border-blue-300 rounded" required></textarea>
+          </div>
 
-            <div class="mb-4">
-              <label class="block text-gray-700 font-medium mb-1">Product Quantity</label>
-              <input type="text" name="editproduct_quantity" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
-              <?php 
-                      if ($result_editSelect && $result_editSelect->num_rows > 0 && isset($row['product_qty'])) {
-                              echo "value='" . htmlspecialchars($row['product_qty'], ENT_QUOTES, 'UTF-8') . "'";
-                      }
-              ?>  
-              required>
-            </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Product Price</label>
+            <input type="text" name="edit_product_price" id="editProductPrice" class="w-full px-3 py-2 border border-blue-300 rounded" required>
+          </div>
 
-            <div class="mb-4">
-              <label class="block text-gray-700 font-medium mb-1">Product Image URL</label>
-              <input type="text" name="editproduct_image" id="EditimageURL" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
-              <?php 
-                      if ($result_editSelect && $result_editSelect->num_rows > 0 && isset($row['product_image'])) {
-                        echo "value='" . htmlspecialchars($row['product_image'], ENT_QUOTES, 'UTF-8') . "'";
-                }
-                  ?> 
-                >
-              <img id="EditimagePreview" class="mt-4 w-full h-72 object-cover rounded-lg" 
-              <?php 
-                      if ($result_editSelect && $result_editSelect->num_rows > 0 && isset($row['product_image'])) {
-                        echo "src='" . htmlspecialchars($row['product_image'], ENT_QUOTES, 'UTF-8') . "'";
-                }
-                  ?> />
-            </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Product Quantity</label> 
+            <input type="number" name="edit_product_qty" id="editProductQty" class="w-full px-3 py-2 border border-blue-300 rounded" required>
+          </div>
 
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Category ID</label>
-                <select name="editcategory_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <?php
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Product Image</label>
+            <input type="file" name="edit_image" accept="image/*" class="w-full px-3 py-2 border border-blue-300 rounded">
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Category ID</label>
+            <select name="edit_category_id" id="editCategoryId" class="w-full px-3 py-2 border border-blue-300 rounded">
+              <?php
                   if ($result_categoryEdit->num_rows > 0) {
-                      echo "<option value=''>Select Category</option>";
-
-                      // Assuming $row is already fetched earlier and contains the product details
-                      $selected_category_id = null;
-                      if (isset($row['category_id'])) {
-                          $selected_category_id = $row['category_id'];
-                      }
-
-                      // Loop through all categories and create options
-                      while ($categoryRow = $result_categoryEdit->fetch_assoc()) {
-                          $category_id = htmlspecialchars($categoryRow['category_id'], ENT_QUOTES, 'UTF-8');
-                          $category_name = htmlspecialchars($categoryRow['category_name'], ENT_QUOTES, 'UTF-8');
-                          
-                          // Check if this category_id is the one selected for the product
-                          $selected = ($category_id == $selected_category_id) ? "selected" : "";
-
-                          echo "<option value='$category_id' $selected>$category_name</option>";
-                      }
-                  } else {
-                      echo "<option value=''>No categories available</option>";
+                    echo "<option value=''>Select Category</option>";
+                    while ($row = $result_categoryEdit->fetch_assoc()) {
+                      echo "<option value='" . htmlspecialchars($row['category_id']) . "'>" . htmlspecialchars($row['category_name']) . "</option>";
+                    }
                   }
-        ?>
-                </select>
-            </div>
-           
-            <div>
-                <button type="submit" id="EditBtn" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Save</button>
-                <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Clear</button>
-            </div>
+              ?>
+            </select>
+          </div>
+
+          <div>
+            <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg px-5 py-2.5">Save</button>
+            <button type="reset" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg px-5 py-2.5">Clear</button>
+          </div>
         </form>
-    </div>
+      </div>
     </div>
 
     <!-- Delete Confirmation Modal -->
@@ -431,9 +362,9 @@
         <h2>Delete Product</h2>
         <p>Are you sure you want to delete this product?</p>
         <form method="POST">
-          <input type="hidden" id="deleteProductId" name="delete_product_id">
+          <input type="hidden" name="delete_product_id" id="deleteProductId">
           <div class="mt-4">
-            <button type="submit" id="confirmDeleteBtn" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Delete</button>
+            <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg px-5 py-2.5">Delete</button>
           </div>
         </form>
       </div>
@@ -458,33 +389,38 @@
         addProductModal.style.display = "block";
       };
 
-      // Open Edit Product Modal
-      const editProductIdInput = document.getElementById('edit_product_id');
-      const confirmUpdateBtn = document.getElementById('EditBtn');
-
+      // Open Edit Product Modal and populate fields
       openEditModalBtns.forEach(button => {
         button.onclick = function () {
-          const editproductId = this.getAttribute('data-id');
-          document.getElementById('edit_product_id').value = editproductId;
+          const row = button.closest('tr');
+          const productId = row.querySelector('td:nth-child(1)').textContent;
+          const productName = row.querySelector('td:nth-child(2)').textContent;
+          const productSize = row.querySelector('td:nth-child(3)').textContent;
+          const productDesc = row.querySelector('td:nth-child(4)').textContent;
+          const productPrice = row.querySelector('td:nth-child(5)').textContent.replace('$', ''); 
+          const productQty = row.querySelector('td:nth-child(6)').textContent; 
+          const categoryId = row.querySelector('td:nth-child(7)').getAttribute('data-category-id');
+
+          document.getElementById('editProductId').value = productId;
+          document.getElementById('editProductName').value = productName;
+          document.getElementById('editProductSize').value = productSize;
+          document.getElementById('editProductDesc').value = productDesc;
+          document.getElementById('editProductPrice').value = productPrice; 
+          document.getElementById('editProductQty').value = productQty; 
+          document.getElementById('editCategoryId').value = categoryId;
+
           editProductModal.style.display = "block";
         };
       });
 
       // Open Delete Confirmation Modal
-      const deleteProductIdInput = document.getElementById('deleteProductId');
-      const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
-
       openDeleteModalBtns.forEach(button => {
         button.onclick = function () {
-          const productId = this.getAttribute('data-id');
+          const productId = button.closest('tr').querySelector('td:nth-child(1)').textContent;
           document.getElementById('deleteProductId').value = productId;
           deleteProductModal.style.display = "block";
         };
       });
-
-      confirmDeleteBtn.onclick = function () {
-        deleteProductModal.style.display = "none";
-      };
 
       // Close modals when clicking on the close button
       Array.from(closeButtons).forEach(button => {
@@ -505,39 +441,24 @@
           deleteProductModal.style.display = "none";
         }
       };
-//date
-      document.getElementById('productDate').textContent = new Date().toLocaleDateString();
 
-//Previewing Image
-      document.getElementById('imageURL').addEventListener('input', function() {
-          const url = this.value;
-          const imagePreview = document.getElementById('imagePreview');
-          
-          if (url) {
-              imagePreview.src = url;
-              imagePreview.style.display = 'block';
-          } else {
-              imagePreview.style.display = 'none';
+      // Previewing Image
+      document.getElementById('productImage').addEventListener('change', function(event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              const imagePreview = document.getElementById('imagePreview');
+              imagePreview.src = e.target.result;
+              imagePreview.classList.remove('hidden');
+            }
+            reader.readAsDataURL(file);
           }
       });
-
-//Edit Previewing Image
-document.getElementById('EditimageURL').addEventListener('input', function() {
-          const url = this.value;
-          const imagePreview = document.getElementById('EditimagePreview');
-          
-          if (url) {
-              imagePreview.src = url;
-              imagePreview.style.display = 'block';
-          } else {
-              imagePreview.style.display = 'none';
-          }
-      });
-
-
-  </script>
+    </script>
 
   </div>
+  <?php ob_end_flush(); ?>
 </body>
 
 </html>
