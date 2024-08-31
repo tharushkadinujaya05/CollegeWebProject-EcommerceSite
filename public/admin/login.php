@@ -116,11 +116,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </main>
     </div>
   </section>
-<<<<<<< HEAD
   <script src="../../assets/js/login.js"></script>
-=======
-  <script src="../assets/js/login.js"></script>
-  <?php include '../includes/footer.php'; ?>
->>>>>>> main
 </body>
 </html>
