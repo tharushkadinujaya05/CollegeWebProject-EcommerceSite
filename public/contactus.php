@@ -11,7 +11,7 @@
 <body class="bg-gray-100">
     <!-- Header Section -->
     <div class="relative w-full h-[28rem] bg-cover bg-center mb-8"
-        style="background-image: url('images/con01.jfif');">
+        style="background-image: url('../assets/images/con01.jfif');">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative flex items-center justify-center h-full text-white">
             <div class="text-center px-4">
@@ -56,11 +56,11 @@
                     <div class="mb-8">
                         <h3 class="font-bold text-xl">Socials</h3>
                         <div class="flex items-center mb-2">
-                            <img src="images/con02.png" alt="" class="w-6 h-6 mr-2">
+                            <img src="../assets/images/icons8-x-logo-50.png" alt="" class="w-6 h-6 mr-2">
                             <p>@IvoryStreets</p>
                         </div>
                         <div class="flex items-center">
-                            <img src="images/con03.png" alt="" class="w-6 h-6 mr-2">
+                            <img src="../assets/images/con03.png" alt="" class="w-6 h-6 mr-2">
                             <p>@IvoryStreets</p>
                         </div>
                     </div>
@@ -77,8 +77,8 @@
         </div>
     </div>
     <br><br>
-    <div class="bg-[#EBEBEB] py-10 px-8 md:px-16 flex flex-col-reverse md:flex-row items-center">
-        <div class="text-black font-bold text-xl md:text-2xl mb-8 md:mb-0 md:ml-12 text-center md:text-left">
+    <div class="bg-[#EBEBEB] py-10 px-8 md:px-16 flex flex-col md:flex-row items-center">
+        <div class="text-black font-bold text-xl md:text-2xl mb-8 md:mb-0 md:ml-12 text-left">
             We're always happy to hear from you!
             <div class="text-black text-sm md:text-lg font-normal mt-4">
                 Please note:<br>
@@ -94,16 +94,9 @@
             <p class="text-black font-bold text-xl md:text-2xl mt-4">Thank you for choosing Ivory Streets!</p>
         </div>
         <div class="md:ml-64 mb-4 md:mb-0 order-first md:order-last">
-            <img src="images/con04.gif" alt="Illustration" class="w-full md:w-96 h-auto">
+            <img src="../assets/images/con04.gif" alt="Illustration" class="w-full md:w-96 h-auto">
         </div>
     </div>
-    <br><br><br><br><br>
-    <div
-        class="flex items-center justify-center w-14 h-14 bg-black rounded-full fixed bottom-6 right-6 md:right-12">
-        <a href="#">
-            <img src="images/con05.png" alt="Up arrow" class="w-6 h-6">
-        </a>
-    </div>
-</body>
+    </body>
 
 </html>
