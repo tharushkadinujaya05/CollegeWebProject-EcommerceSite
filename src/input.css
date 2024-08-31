@@ -4,3 +4,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --butttondark: 0, 0, 0;
+}
+.dark {
+    --background: 0, 0, 0;
+    --whitetext: 255, 255, 255;
+    --graytext: 161, 161, 169;
+    --whiteground: 255, 255, 255;
+    --buttondark: 255, 255, 255;
+    --blackcol: 255, 255, 255;
+}
+
+* {
+    @apply transition-colors duration-200;
+}
