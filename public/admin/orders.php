@@ -148,7 +148,7 @@
                 <th class="py-2 px-4 border-b text-left text-gray-600">Order Date</th>
                 <th class="py-2 px-4 border-b text-left text-gray-600">Order Status</th>
                 <th class="py-2 px-4 border-b text-left text-gray-600">Total Price</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Edit/Delete</th>
+                <th class="py-2 px-8 border-b text-left text-gray-600"></th>
               </tr>
             </thead>
             <tbody>
@@ -162,10 +162,17 @@
                 <td class="py-2 px-4 border-b">03-08-2023</td>
                 <td class="py-2 px-4 border-b">Success</td>
                 <td class="py-2 px-4 border-b">$ 200</td>
-                <td class="py-2 px-2 border-b">
-                  <button class="openEditOrderModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-slate-500 rounded-lg hover:bg-slate-600 focus:ring-4 focus:outline-none focus:ring-slate-300">Edit</button>
-                  <button class="openDeleteOrderModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300">Delete</button>
-                </td>
+                <td class="py-2 px-4 border-b">
+  <div class="flex space-x-2">
+    <button class="openEditOrderModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-slate-500 rounded-lg hover:bg-slate-600 focus:ring-4 focus:outline-none focus:ring-slate-300">
+      Edit
+    </button>
+    <button class="openDeleteOrderModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300">
+      Delete
+    </button>
+  </div>
+</td>
+
               </tr>
               <!-- Add more order rows as needed -->
             </tbody>
