@@ -204,7 +204,6 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
           </table>
         </div>
       </div>
-      <a href="logout.php">Logout</a>
     </div>
     
     <!-- Edit Order Modal -->
