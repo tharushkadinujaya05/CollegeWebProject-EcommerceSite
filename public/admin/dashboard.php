@@ -119,7 +119,6 @@ $result_total_orders = mysqli_query($conn, $sql_total_orders);
         </div>
       </div>
     </div>
-    <a href="logout.php">Logout</a>
   </div>
 </div>
 </body>
