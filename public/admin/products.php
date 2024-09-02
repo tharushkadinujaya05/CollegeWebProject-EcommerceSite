@@ -99,7 +99,7 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
             $picture = file_get_contents($_FILES['edit_image']['tmp_name']);
             $sql = "UPDATE product SET product_name=?, product_size=?, product_desc=?, product_price=?, product_qty=?, category_id=?, updated_at=?, product_image=? WHERE product_id=?";
             $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "sssdissii", $product_name, $product_size, $product_desc, $product_price, $product_qty, $category_id, $update_time, $picture, $product_id);
+            mysqli_stmt_bind_param($stmt, "sssdisssi", $product_name, $product_size, $product_desc, $product_price, $product_qty, $category_id, $update_time, $picture, $product_id);
         } else {
             $sql = "UPDATE product SET product_name=?, product_size=?, product_desc=?, product_price=?, product_qty=?, category_id=?, updated_at=? WHERE product_id=?";
             $stmt = mysqli_prepare($conn, $sql);
@@ -141,7 +141,8 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
         $product_size = mysqli_real_escape_string($conn, $_POST['product_size']);
         $product_desc = mysqli_real_escape_string($conn, $_POST['product_desc']);
         $product_price = mysqli_real_escape_string($conn, $_POST['product_price']);
-        $product_qty = mysqli_real_escape_string($conn, $_POST['product_qty']); 
+        $product_qty = mysqli_real_escape_string($conn, $_POST['product_qty']);
+        $productisactive = 'A'; 
         $category_id = mysqli_real_escape_string($conn, $_POST['category_id']);
         $update_time = date('Y-m-d');
         $admin_id = 1;
@@ -155,12 +156,12 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
         if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
             $picture = file_get_contents($_FILES['image']['tmp_name']);
 
-            $sql = "INSERT INTO product (product_name, product_size, product_desc, product_price, product_qty, category_id, updated_at, admin_id, product_image) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO product (product_name, product_size, product_desc, product_price, product_qty, category_id, updated_at, admin_id, product_image, product_isactive) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = mysqli_prepare($conn, $sql);
             if ($stmt) {
-                mysqli_stmt_bind_param($stmt, "sssdissis", $product_name, $product_size, $product_desc, $product_price, $product_qty, $category_id, $update_time, $admin_id, $picture);
+                mysqli_stmt_bind_param($stmt, "sssdississ", $product_name, $product_size, $product_desc, $product_price, $product_qty, $category_id, $update_time, $admin_id, $picture, $productisactive);
 
                 if (mysqli_stmt_execute($stmt)) {
                     echo "<div class='text-green-500'>Product added successfully!</div>";
