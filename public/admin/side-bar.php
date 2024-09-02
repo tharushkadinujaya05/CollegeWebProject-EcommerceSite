@@ -41,7 +41,7 @@
             </nav>
             <div class="mt-auto p-6 pt-64"> 
     <button type="button" class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-m px-12 py-1.5 text-center">
-        Log out
+        <a href="logout.php">Logout</a>
     </button>
 </div>
         </div>
