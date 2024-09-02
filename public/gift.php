@@ -31,6 +31,7 @@
         </div>
     </div>
     
+    
         <main class="flex flex-wrap justify-center">
             <div class="flex items-center justify-center bg-white mb-14">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl mx-auto p-6 lg:px-14">
