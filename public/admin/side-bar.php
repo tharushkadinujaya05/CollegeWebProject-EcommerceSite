@@ -21,7 +21,7 @@
                     </li>
                     <li class="p-4 hover:bg-gray-600 cursor-pointer menu-item" data-url="stock.php">
                         <div class="flex items-center space-x-2">
-                            <img src="../../assets/images/stock.png" class="h-[1.5rem]" alt="stock Icon">
+                            <img src="../../assets/images/img007.png" class="h-[1.5rem]" alt="stock Icon">
                             <span>Stocks</span>
                         </div>
                     </li>
