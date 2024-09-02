@@ -1,12 +1,19 @@
+<?php
+session_start(); 
+if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
+  header("Location: login.php");
+  exit();
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
   <title>IvoryStreets - Orders</title>
- 
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Styles for the modal */
     .modal {
@@ -62,21 +69,34 @@
   <div class="flex-1 lg:ml-64 p-6 bg-gray-100 overflow-y-auto h-screen pt-16 lg:pt-6">
 
     <?php
-    include 'header.php';
+      include 'header.php';
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "ivorystreetsdb";
+  
+      $conn = mysqli_connect($servername, $username, $password, $dbname);
+  
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+  
+      $sql_orders = "SELECT order_id, order_email, order_name, order_address, order_postcode, order_phoneno, order_date, order_status, total_price FROM orders";
+      $result_orders = mysqli_query($conn, $sql_orders);
     ?>
 
     <div>
       <h3 class="text-2xl font-bold mt-6 mb-4">Recent Orders</h3>
-      <!-- Button for Add Order -->
-      <button id="openAddOrderModalBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 mb-4">Add Orders</button>
+      <!-- Button for Add Order HIDDEN-->
+      <button id="openAddOrderModalBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 mb-4 hidden">Add Orders</button>
 
       <!-- Add Order Modal -->
-      <div id="addOrderModal" class="modal">
+      <!--<div id="addOrderModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <form>
+          <form>-->
             <!-- Add Order Form Fields -->
-            <div class="mb-4">
+            <!--<div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Order ID</label>
               <input type="text" name="order_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
@@ -132,7 +152,7 @@
             </div>
           </form>
         </div>
-      </div>
+      </div>-->
 
       <div class="bg-white p-6 rounded-lg shadow h-[36rem]">
         <div class="overflow-x-auto overflow-y-auto h-full">
@@ -148,32 +168,44 @@
                 <th class="py-2 px-4 border-b text-left text-gray-600">Order Date</th>
                 <th class="py-2 px-4 border-b text-left text-gray-600">Order Status</th>
                 <th class="py-2 px-4 border-b text-left text-gray-600">Total Price</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Edit/Delete</th>
+                <th class="py-2 px-4 border-b text-left text-gray-600">Edit</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="py-2 px-2 border-b hidden">1023</td>
-                <td class="py-2 px-4 border-b">example@email.com</td>
-                <td class="py-2 px-4 border-b">Brayan</td>
-                <td class="py-2 px-4 border-b">Belbourne, Australia</td>
-                <td class="py-2 px-4 border-b">3003</td>
-                <td class="py-2 px-4 border-b">0432 255 343</td>
-                <td class="py-2 px-4 border-b">03-08-2023</td>
-                <td class="py-2 px-4 border-b">Success</td>
-                <td class="py-2 px-4 border-b">$ 200</td>
-                <td class="py-2 px-2 border-b">
-                  <button class="openEditOrderModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-slate-500 rounded-lg hover:bg-slate-600 focus:ring-4 focus:outline-none focus:ring-slate-300">Edit</button>
-                  <button class="openDeleteOrderModalBtn px-2 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300">Delete</button>
-                </td>
-              </tr>
+            <?php 
+              if (mysqli_num_rows($result_orders) > 0) {
+                // Output data of each row
+                while ($row = mysqli_fetch_assoc($result_orders)) {
+                    echo "<tr>";
+                    echo "<td class='py-2 px-2 border-b hidden'>" . htmlspecialchars($row['order_id']) . "</td>";
+                    echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_email']) . "</td>";
+                    echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_name']) . "</td>";
+                    echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_address']) . "</td>";
+                    echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_postcode']) . "</td>";
+                    echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_phoneno']) . "</td>";
+                    echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_date']) . "</td>";
+                    echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_status']) . "</td>";
+                    echo "<td class='py-2 px-4 border-b'>$" . htmlspecialchars($row['total_price']) . "</td>";
+                    echo "<td><button class='openEditOrderModalBtn px-2 py-2 text-xs font-medium text-center 
+                    inline-flex items-center text-white bg-slate-500 rounded-lg hover:bg-slate-600 
+                    focus:ring-4 focus:outline-none focus:ring-slate-300'>Edit</button></td>";
+                    echo "</tr>";
+                }
+              } else {
+                  echo "<tr><td colspan='5' class='py-2 px-4 border-b text-center'>No orders available</td></tr>";
+              }
+
+              // Close the database connection
+              mysqli_close($conn);
+            ?>
+                  
               <!-- Add more order rows as needed -->
             </tbody>
           </table>
         </div>
       </div>
     </div>
-
+    
     <!-- Edit Order Modal -->
     <div id="editOrderModal" class="modal">
       <div class="modal-content">
@@ -183,32 +215,32 @@
           <!-- Edit Order Form Fields -->
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-1">Order ID</label>
-            <input type="text" name="order_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="text" name="order_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="1023">
           </div>
 
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-1">Product Name</label>
-            <input type="text" name="product_name" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="text" name="product_name" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="Brayan">
           </div>
 
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-1">Order Email</label>
-            <input type="email" name="order_email" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="email" name="order_email" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="example@email.com">
           </div>
 
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-1">Order Address</label>
-            <textarea name="Order_address" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <textarea name="Order_address" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">Belbourne, Australia</textarea>
           </div>
 
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-1">Order Postcode</label>
-            <input type="text" name="Order_postcode" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" >
+            <input type="text" name="Order_postcode" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="3003">
           </div>
 
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-1">Order Phone No.</label>
-            <input type="text" name="Order_phone" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="text" name="Order_phone" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="0432 255 343">
           </div>
 
           <div class="mb-4">
@@ -219,30 +251,36 @@
               <option value="3">Failed</option>
             </select>
           </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-1">Order Date</label>
+            <input type="date" name="order_date" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="2023-08-03">
+          </div>
+
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-1">Total Price</label>
-            <input type="text" name="total_price" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="text" name="total_price" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value="$ 200">
           </div>
 
           <div>
             <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Update</button>
-            <button type="reset" class="close:focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Clear</button>
+            <button type="reset" class="close focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Clear</button>
           </div>
         </form>
       </div>
     </div>
 
     <!-- Delete Order Modal -->
-    <div id="deleteOrderModal" class="modal">
+    <!--<div id="deleteOrderModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
 
-        <h2 class="pb-3">Are you sure you want to delete this order?</h2>
+        <h2>Are you sure you want to delete this order?</h2>
         <div>
           <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Delete</button>
         </div>
       </div>
-    </div>
+    </div>-->
 
   </div>
 
