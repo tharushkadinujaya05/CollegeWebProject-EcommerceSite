@@ -41,7 +41,7 @@
   }
   // SQL Query
   $query = "
-      SELECT product_image, product_name, product_price, product_qty
+      SELECT product_id, product_image, product_name, product_price, product_qty
       FROM product
       WHERE product_price BETWEEN $priceFrom AND $priceTo
       $availabilityCondition
@@ -173,7 +173,7 @@
           <?php 
             while ($row = mysqli_fetch_assoc($result)) {
               echo '<li>';
-              echo '<a href="#" class="group block overflow-hidden">';
+              echo '<a href="products.php?product_id=' . urlencode($row['product_id']) . '" class="group block overflow-hidden">';
               echo '<div class="relative h-[350px] sm:h-[450px]">';
               echo '<img src="data:image/png;charset=utf8;base64,' . base64_encode($row['product_image']) . '" class="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"/>';
               echo '</div>';
