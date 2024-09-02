@@ -41,7 +41,7 @@
   }
   // SQL Query
   $query = "
-      SELECT product_image, product_name, product_price
+      SELECT product_image, product_name, product_price, product_qty
       FROM product
       WHERE product_price BETWEEN $priceFrom AND $priceTo
       $availabilityCondition
@@ -174,10 +174,15 @@
             while ($row = mysqli_fetch_assoc($result)) {
               echo '<li>';
               echo '<a href="#" class="group block overflow-hidden">';
-              echo '<img src="data:image/png;charset=utf8;base64,' . base64_encode($row['product_image']) . '" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"/>';
+              echo '<div class="relative h-[350px] sm:h-[450px]">';
+              echo '<img src="data:image/png;charset=utf8;base64,' . base64_encode($row['product_image']) . '" class="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"/>';
+              echo '</div>';
               echo '<div class="relative bg-white pt-3">';
-              echo '<h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">' . htmlspecialchars($row['product_name']) . '</h3>';
-              echo '<p class="mt-2"><span class="tracking-wider text-gray-900">$' . htmlspecialchars($row['product_price']) . '</span></p>';
+              echo '<h3 class="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">' . htmlspecialchars($row['product_name']) . '</h3>';
+              echo '<div class="mt-1.5 flex items-center justify-between text-gray-900">';
+              echo '<p class="tracking-wide">$' . htmlspecialchars($row['product_price']) . '</p>';
+              echo '<p class="text-xs uppercase tracking-wide">' . htmlspecialchars($row['product_qty']). ' left in stock</p>';
+              echo '</div>';
               echo '</div>';
               echo '</a>';
               echo '</li>';
