@@ -123,7 +123,7 @@
             <!-- HERO2-1: Desktop content -->
             <div class="relative h-screen hidden sm:block">
                 <h1 class="font-poppins font-bold text-black text-center hidden sm:block p-10" style="font-size: 5rem;padding-bottom: 10px;">
-                    BLACK MAMBA</h1>
+                    WHITE CLAW</h1>
                 <p class="font-poppins font-bold text-black text-center" style="font-size: 1.3rem;padding-bottom: 40px;">
                     A collection inspired by edgy street wear. Featuring bold graphics,<br>distressed jeans, and comfortable footwear, Black Mamba is perfect<br>for those who want to make a statement.</p>
                 <div class="container mx-auto text-center" id="hero3-mobile-content">
