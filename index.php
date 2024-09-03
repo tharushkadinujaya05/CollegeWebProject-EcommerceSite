@@ -48,6 +48,7 @@
                 </div>
             </div>
         </nav>
+
         <!-- HERO1: OFFERS -->
         <div class="relative h-screen" id="hero1" >
             <!-- HERO1: Desktop/Mobile background images -->

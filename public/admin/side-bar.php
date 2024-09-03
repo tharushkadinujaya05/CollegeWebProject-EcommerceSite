@@ -5,34 +5,47 @@
         <img src="../../assets/images/icon.png" class="h-[2.5rem] mt-4">
       </div>
       <nav class="flex-1 overflow-y-auto">
-        <ul>
-          <li class="p-4 hover:bg-gray-600">
-            <a href="dashboard.php" class="flex items-center space-x-2">
-              <img src="../../assets/images/img002.png" class="h-[1.5rem]">
+        <ul class="space-y-2">
+          
+        <li class="p-4 hover:bg-gray-600 cursor-pointer menu-item" data-url="dashboard.php">
+            <div class="flex items-center space-x-2">
+              <img src="../../assets/images/img002.png" class="h-[1.5rem]" alt="Dashboard Icon">
               <span>Dashboard</span>
-            </a>
+            </div>
           </li>
-          <li class="p-4 hover:bg-gray-600">
-            <a href="orders.php" class="flex items-center space-x-2">
-              <img src="../../assets/images/img004.png" class="h-[1.5rem]">
+          <li class="p-4 hover:bg-gray-600 cursor-pointer menu-item" data-url="orders.php">
+            <div class="flex items-center space-x-2">
+              <img src="../../assets/images/img004.png" class="h-[1.5rem]" alt="order Icon">
               <span>Orders</span>
-            </a>
+            </div>
           </li>
-          <li class="p-4 hover:bg-gray-600">
-            <a href="products.php" class="flex items-center space-x-2">
-              <img src="../../assets/images/img006.png" class="h-[1.5rem]">
+          <li class="p-4 hover:bg-gray-600 cursor-pointer menu-item" data-url="stock.php">
+            <div class="flex items-center space-x-2">
+              <img src="../../assets/images/stock.png" class="h-[1.5rem]" alt="stock Icon">
+              <span>Stocks</span>
+            </div>
+          </li>
+          <li class="p-4 hover:bg-gray-600 cursor-pointer menu-item" data-url="products.php">
+            <div class="flex items-center space-x-2">
+              <img src="../../assets/images/img006.png" class="h-[1.5rem]" alt="products Icon">
               <span>Products</span>
-            </a>
+            </div>
           </li>
-          <li class="p-4 hover:bg-gray-600">
-            <a href="category.php" class="flex items-center space-x-2">
-              <img src="../../assets/images/img008.png" class="h-[1.5rem]">
+          <li class="p-4 hover:bg-gray-600 cursor-pointer menu-item" data-url="category.php">
+            <div class="flex items-center space-x-2">
+              <img src="../../assets/images/img008.png" class="h-[1.5rem]" alt="category Icon">
               <span>Category</span>
-            </a>
+            </div>
           </li>
         </ul>
       </nav>
+      <div class="mt-auto p-6 pt-64"> 
+          <button type="button" class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-m px-12 py-1.5 text-center">
+            <a href="logout.php">Logout</a>
+          </button>
+      </div>
     </div>
+  </div>
 
      <!-- Mobile menu button -->
      <div class="lg:hidden w-full bg-gray-900 text-white fixed top-0 z-20">
@@ -46,7 +59,7 @@
         <ul class="space-y-2 p-4">
           <li><a href="dashboard.php" class="block p-2 bg-gray-700 rounded">Dashboard</a></li>
           <li><a href="orders.php" class="block p-2 bg-gray-700 rounded">Orders</a></li>
-          <li><a href="sales.php" class="block p-2 bg-gray-700 rounded">Sales</a></li>
+          <li><a href="stock.php" class="block p-2 bg-gray-700 rounded">Stock</a></li>
           <li><a href="products.php" class="block p-2 bg-gray-700 rounded">Products</a></li>
           <li><a href="category.php" class="block p-2 bg-gray-700 rounded">Category</a></li>
         </ul>
@@ -58,4 +71,15 @@
       var menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.menu-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            const url = this.getAttribute('data-url');
+            if (url) {
+                window.location.href = url;
+            }
+        });
+    });
+});
     </script>
