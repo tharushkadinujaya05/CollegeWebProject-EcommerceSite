@@ -29,28 +29,29 @@
     <body>
 
         <!-- NAVBAR -->
-    <nav>
-        <div class="px-4">
-            <div class="flex items-center justify-between">
-                <div class="flex shrink-0">
-                    <a aria-current="page" class="flex items-center" href="../public/index.php">
-                        <img class="h-5 px-3" src="../assets/images/logo-bl.png" alt="">
-                        <p class="sr-only">Website Title</p>
-                    </a>
-                </div>
-                <div class="flex items-center justify-end gap-1">
-                    <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/readytowear.php">Ready to Wear</a>
-                    <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/gift.php">Gifts</a>
-                    <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/contactus.php">Contact Us</a>
-                    <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/faq/index.php">FAQ</a>
-                    <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/blog/index.php">Explore</a>
-                    <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="#">
-                        <img width="20" height="20" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/></a>
-                    <a id="cart-button" class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="#"><img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/shopping-trolley--v2.png" alt="shopping-trolley--v2"/></a>
+        <nav>
+            <div class="px-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex shrink-0">
+                        <a aria-current="page" class="flex items-center" href="../public/index.php">
+                            <img class="h-5 px-3" src="../assets/images/logo-bl.png" alt="">
+                            <p class="sr-only">Website Title</p>
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-end gap-1">
+                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/readytowear.php">Ready to Wear</a>
+                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/gift.php">Gifts</a>
+                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/contactus.php">Contact Us</a>
+                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/faq/index.php">FAQ</a>
+                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/blog/index.php">Explore</a>
+                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="#">
+                            <img width="20" height="20" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/></a>
+                        <a id="cart-button" class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="#"><img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/shopping-trolley--v2.png" alt="shopping-trolley--v2"/></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+
         <!-- HERO1: OFFERS -->
         <div class="relative h-screen" id="hero1" >
             <!-- HERO1: Desktop/Mobile background images -->
@@ -87,18 +88,28 @@
         <!-- HERO2: DIVIDER -->
         <section class="h-12" style="background-color: red" id="hero2">
             <div class="w-full h-full flex items-center justify-center" id="hero2-content">
-                <p class="block md:hidden text-white font-poppins font-bold text-3xl flex items-center justify-center h-full" id="hero2-mobile-text">EDITOR'S CHOICE</p>
-            </div>
+                <p class="block md:hidden text-white font-poppins font-bold text-3xl flex items-center justify-center h-full" id="hero2-mobile-text">EDITOR'S CHOICE</p></div>
         </section>
 
         <!-- HERO2-1: EDITOR'S PICKS (BLACK MAMBA) -->
-        <div class="relative h-screen" id="hero2-1">
+        <div class="relative h-screen " id="hero2-1">
             <!-- HERO2-1: Desktop background image -->
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/home02.png');"></div>
             <!-- HERO2-1: Mobile background image -->
             <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('./assets/images/home02.png');"></div>
             <!-- Gradient overlay -->
             <div class="absolute inset-0" style="background: linear-gradient(to top, black, transparent); opacity: 100%;"></div>
+            <!-- HERO2-1: Desktop content -->
+            <div class="relative h-screen hidden sm:block">
+                <h1 class="font-poppins font-bold text-white text-center hidden sm:block p-10" style="font-size: 5rem;padding-bottom: 10px;">
+                    BLACK MAMBA</h1>
+                <p class="font-poppins font-bold text-white text-center" style="font-size: 1.3rem;padding-bottom: 40px;">
+                    A collection inspired by edgy street wear. Featuring bold graphics,<br>distressed jeans, and comfortable footwear, Black Mamba is perfect<br>for those who want to make a statement.</p>
+                <div class="container mx-auto text-center" id="hero3-mobile-content">
+                    <button class="relative bg-white text-black px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 ease-in-out font-bold font-poppins" id="hero3-mobile-button">
+                        Shop Now</button>
+                </div>
+            </div>
         </div>
 
         <!--  HERO2-2: EDITOR'S PICKS (WHITE CLAW) -->
