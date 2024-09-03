@@ -7,7 +7,33 @@
   <title>IvoryStreets | Ready to Wear</title>
 </head>
 <body>
-  <?php include '../includes/navbar.php'; ?>
+  <?php include '../includes/navbar.php'; 
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ivorystreetsdb";
+  
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+  
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $product_id = $_GET['product_id'];
+    $query_product = "
+      SELECT product_id, product_image, product_name, product_price, product_desc
+      FROM product
+      WHERE product_id = $product_id";
+
+    $result_product = mysqli_query($conn, $query_product);
+
+    $query = "
+      SELECT product_id, product_image, product_name, product_price
+      FROM product
+      WHERE product_id != $product_id LIMIT 4";
+
+    $result = mysqli_query($conn, $query);
+  ?>
   <div class="p-10">
   </div>
 
@@ -15,16 +41,18 @@
     <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
       <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
         <div class="image-container max-w-md lg:max-w-lg mx-auto">
-          <img class="image dark:hidden rounded-lg" src="../assets/images/model.png" alt="" />
-        </div>
-        <div class="mt-6 sm:mt-8 lg:mt-0">
-          <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
-            OVERSIZED DRAGON FLORAL GRAPHIC SWEATSHIRT
-          </h1>
-          <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
-            <p class="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white">
-              $19.75
-            </p>
+          <?php 
+            while ($row = mysqli_fetch_assoc($result_product)) {
+              echo '<img class="image dark:hidden rounded-lg" src="data:image/png;charset=utf8;base64,' . base64_encode($row['product_image']) . '" />';
+              echo '</div>';
+              echo '<div class="mt-6 sm:mt-8 lg:mt-0">';
+              echo '<h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">';
+              echo ''. htmlspecialchars($row['product_name']) .'';
+              echo '</h1>';
+              echo '<div class="mt-4 sm:items-center sm:gap-4 sm:flex">';
+              echo '<p class="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white">$'. htmlspecialchars($row['product_price']) .'</p>';
+            }
+          ?>
             <div class="flex items-center gap-2 mt-2 sm:mt-0">
               <div class="flex items-center gap-1">
                 <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -62,17 +90,12 @@
           </div>
 
           <hr class="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
-
-          <p class="mb-6 text-gray-500 dark:text-gray-400">
-            Keep things comfy this season with this men's oversized sweatshirt from our latest collection. An oversized style featuring a relaxed fit for maximum comfort, a men's oversized sweater is a classic staple no wardrobe is complete without. Need style inspo? Wear with cargos and trainers for weekend plans or team with jogger shorts and sliders for late night cinema trips.
-
-            Style: Printed Sweatshirt
-            Design: Oriental
-            Fabric: Jersey
-            Neckline: Crew
-            Sleeve Length: Long Sleeve
-          </p>
-
+          <?php 
+            mysqli_data_seek($result_product, 0);
+            while ($row = mysqli_fetch_assoc($result_product)) {
+              echo '<p class="mb-6 text-gray-500 dark:text-gray-400">'. htmlspecialchars($row['product_desc']) .'</p>';
+            }
+          ?>
           <p class="text-gray-500 dark:text-gray-400">
             50% POLYESTER (25% IS POLYESTER), 50% COTTON (25% IS COTTON), Model is 6'1 and wears size M
           </p>
@@ -91,62 +114,22 @@
             </p>
           </header>
           <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <li>
-              <a href="#" class="group block overflow-hidden">
-                <img src="../assets/images/$image" alt="" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-                <div class="relative bg-white pt-3">
-                  <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                    Basic Tee
-                  </h3>
-                  <p class="mt-2">
-                    <span class="sr-only"> Regular Price </span>
-                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                  </p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="group block overflow-hidden">
-                <img src="../assets/images/$image" alt="" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-                <div class="relative bg-white pt-3">
-                  <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                    Basic Tee
-                  </h3>
-                  <p class="mt-2">
-                    <span class="sr-only"> Regular Price </span>
-                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                  </p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="group block overflow-hidden">
-                <img src="../assets/images/$image" alt="" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-                <div class="relative bg-white pt-3">
-                  <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                    Basic Tee
-                  </h3>
-                  <p class="mt-2">
-                    <span class="sr-only"> Regular Price </span>
-                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                  </p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="group block overflow-hidden">
-                <img src="../assets/images/$image" alt="" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-                <div class="relative bg-white pt-3">
-                  <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                    Basic Tee
-                  </h3>
-                  <p class="mt-2">
-                    <span class="sr-only"> Regular Price </span>
-                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                  </p>
-                </div>
-              </a>
-            </li>
+            <?php 
+              while ($row = mysqli_fetch_assoc($result)) {
+                echo '<li>';
+                echo '<a href="product_description.php?product_id=' . urlencode($row['product_id']) . '" class="group block overflow-hidden">';
+                echo '<img src="data:image/png;charset=utf8;base64,' . base64_encode($row['product_image']) . '" alt="" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />';              
+                echo '<div class="relative bg-white pt-3">';
+                echo '<h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">'. htmlspecialchars($row['product_name']) .'</h3>';
+                echo '<p class="mt-2">';
+                echo '<span class="sr-only"> Regular Price </span>';
+                echo '<span class="tracking-wider text-gray-900"> £'.htmlspecialchars($row['product_price']).' </span>';
+                echo '</p>';
+                echo '</div>';
+                echo '</a>';
+                echo '</li>';
+              }            
+            ?>
           </ul>
         </div>
       </section>
