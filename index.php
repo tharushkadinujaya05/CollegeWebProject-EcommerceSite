@@ -139,11 +139,11 @@
         <div class="h-screen"></div>
 
         <!-- FOOTER -->
-        <?php include './includes/cart.php'; ?>
+        <?php include './public/includes/cart.php'; ?>
 
-        <?php include './includes/footer.php'; ?>
+        <?php include './public/includes/footer.php'; ?>
         <!-- COOKIES -->
-        <?php include './includes/cookies.php'; ?>
+        <?php include './public/includes/cookies.php'; ?>
         <script src="./assets/js/main.js"></script>
 
     </body>
