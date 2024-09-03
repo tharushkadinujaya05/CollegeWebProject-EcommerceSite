@@ -110,9 +110,9 @@
                         Shop Now</button>
                 </div>
                 <div style="display: flex; justify-content: center; width: 100%;">
-                    <img src="./assets/images/home04.png" style="width: 15%; height: 15%; margin-right: 5%">
-                    <img src="./assets/images/home05.png" style="width: 15%; height: 15%; margin-right: 5%">
-                    <img src="./assets/images/home06.png" style="width: 15%; height: 15%;">
+                    <img src="./assets/images/home04.png" style="width: 15%; height: 15%; margin-right: 5%" alt="item 1">
+                    <img src="./assets/images/home05.png" style="width: 15%; height: 15%; margin-right: 5%" alt="item 2">
+                    <img src="./assets/images/home06.png" style="width: 15%; height: 15%;" alt="item 3">
                 </div>
             </div>
         </div>
