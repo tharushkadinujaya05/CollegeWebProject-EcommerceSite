@@ -164,17 +164,14 @@
             </section>
 
         <!-- HERO4: DIVIDER -->
-        <section class="h-12" style="background-color: red" id="hero2">
+        <section class="h-12" style="background-color: red" id="hero4">
             <div class="w-full h-full flex items-center justify-center" id="hero2-content">
                 <p class="block md:hidden text-white font-poppins font-bold text-3xl flex items-center justify-center h-full" id="hero2-mobile-text">FEATURED</p>
             </div>
         </section>
 
         <!-- HERO4: FEATURED -->
-        <div class="bg-gray-800 h-screen"></div>
-
-        <!-- HERO4: FOOTNOTE -->
-        <div class="h-screen"></div>
+        <div class="h-screen bg-gray-800"></div>
 
         <!-- FOOTER -->
         <?php include './includes/footer.php'; ?>
