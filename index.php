@@ -6,7 +6,10 @@
     <title>IvoryStreets | Home</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/nav_cart.css" />
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        
+    </style>    
     </head>
     <body>
 
@@ -155,42 +158,84 @@
         <!-- HERO4: FEATURED -->
         <div class="h-screen bg-black">
             <!-- HERO4: Desktop -->
-            <div class="hidden sm:block">
-                <div class="h-screen bg-black flex items-center justify-center">
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; max-width: 90vw;">
-                        <div class="bg-white rounded-md" style="height: 100%;" id="item1">
-                            <div class="h-3/4" style="background-image: url('./assets/images/home10_feat.png'); background-size: cover; background-position: center; height: 100%"></div>
-                            <div class="p-2 bg-white" style="height: 40%; background-color: white">
-                                <h3 class="text-black font-bold mb-1 font-poppins">Card Title</h3>
-                                <p class="text-gray-600 text-sm font-poppins">Card Description</p>
-                            </div>
-                        </div>
-                        <div class="bg-white rounded-md" style="height: 100%;" id="item2">
-                            <div class="h-3/4" style="background-image: url('./assets/images/home10_feat.png'); background-size: cover; background-position: center; height: 100%"></div>
-                            <div class="p-2 bg-white" style="height: 40%; background-color: white">
-                                <h3 class="text-black font-bold mb-1 font-poppins">Card Title</h3>
-                                <p class="text-gray-600 text-sm font-poppins">Card Description</p>
-                            </div>
-                        </div>
-                        <div class="bg-white rounded-md" style="height: 100%;" id="item3">
-                            <div class="h-3/4" style="background-image: url('./assets/images/home10_feat.png'); background-size: cover; background-position: center; height: 100%"></div>
-                            <div class="p-2 bg-white" style="height: 40%; background-color: white">
-                                <h3 class="text-black font-bold mb-1 font-poppins">Card Title</h3>
-                                <p class="text-gray-600 text-sm font-poppins">Card Description</p>
-                            </div>
-                        </div>
-                        <div class="bg-white rounded-md" style="height: 100%;" id="item3">
-                            <div class="h-3/4" style="background-image: url('./assets/images/home10_feat.png'); background-size: cover; background-position: center; height: 100%"></div>
-                            <div class="p-2 bg-white" style="height: 40%; background-color: white">
-                                <h3 class="text-black font-bold mb-1 font-poppins">Card Title</h3>
-                                <p class="text-gray-600 text-sm font-poppins">Card Description</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="h-screen bg-black flex flex-col items-center justify-center">
+
+                <!-- Carousel Container -->
+                <div class="relative max-w-screen-xl mx-auto w-full">
+                    <!-- Left arrow -->
+                    <button id="prev" class="carousel-button absolute left-2 top-1/2 -translate-y-1/2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/271/271220.png" alt="Previous">
+                    </button>
+
+                    <!-- Carousel -->
+                    <ul id="carousel" class="carousel mt-8 gap-4">
+                        <!-- Example product item -->
+                        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <a href="#" class="group block overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                                    alt="Basic Tee"
+                                    class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+                                <div class="relative pt-3 p-4">
+                                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
+                                    <p class="mt-2">
+                                        <span class="sr-only">Regular Price</span>
+                                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <a href="#" class="group block overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                                    alt="Basic Tee"
+                                    class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+                                <div class="relative pt-3 p-4">
+                                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
+                                    <p class="mt-2">
+                                        <span class="sr-only">Regular Price</span>
+                                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <a href="#" class="group block overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                                    alt="Basic Tee"
+                                    class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+                                <div class="relative pt-3 p-4">
+                                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
+                                    <p class="mt-2">
+                                        <span class="sr-only">Regular Price</span>
+                                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <a href="#" class="group block overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                                    alt="Basic Tee"
+                                    class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+                                <div class="relative pt-3 p-4">
+                                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
+                                    <p class="mt-2">
+                                        <span class="sr-only">Regular Price</span>
+                                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Repeat this block for each product (total 10 items) -->
+                        <!-- ... Add additional product items here ... -->
+                    </ul>
+
+                    <!-- Right arrow -->
+                    <button id="next" class="carousel-button absolute right-2 top-1/2 -translate-y-1/2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" alt="Next">
+                    </button>
                 </div>
             </div>
-            <!-- HERO4: Mobile  -->
-            <div class="block md:hidden">This is for mobile</div>
         </div>
 
         <!-- FOOTER -->
