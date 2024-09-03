@@ -21,6 +21,9 @@
             margin: 0 auto; /* Center the navbar */
             box-sizing: border-box; /* Ensure padding is included in the width calculation */
         }
+        #hero01 {
+            height: 100vh; /* Example height for the hero section */
+        }
     </style>
     </head>
     <body>
