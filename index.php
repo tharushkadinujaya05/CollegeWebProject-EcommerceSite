@@ -173,6 +173,26 @@
                 <p class="ticker-item">FEATURED</p>
                 <p class="ticker-item">FEATURED</p>
                 <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
             </div>
         </div>
     </div>
