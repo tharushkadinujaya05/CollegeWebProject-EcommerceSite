@@ -6,7 +6,6 @@
     <title>IvoryStreets | Home</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/nav_cart.css" />
-
     </style>
     </head>
     <body>
