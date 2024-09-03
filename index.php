@@ -4,26 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IvoryStreets | Home</title>
-    <link href="./assets/css/style.css" rel="stylesheet">
-    <style>
-        nav {
-            width: 100%;
-            position: fixed;
-            top: 10px; /* Adjust this value to create space between the navbar and the top of the viewport */
-            left: 0;
-            right: 0;
-            background-color: transparent;
-            backdrop-filter: none;
-            box-shadow: none;
-            transition: all 0.5s ease; /* Adjusted transition duration */
-            z-index: 50;
-            padding: 10px 20px; /* Existing padding */
-            margin: 0 auto; /* Center the navbar */
-            box-sizing: border-box; /* Ensure padding is included in the width calculation */
-        }
-        #hero01 {
-            height: 100vh; /* Example height for the hero section */
-        }
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/nav_cart.css" />
     </style>
     </head>
     <body>
@@ -46,7 +28,7 @@
                         <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/blog/index.php">Explore</a>
                         <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="#">
                             <img width="20" height="20" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/></a>
-                        <a id="cart-button" class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="#"><img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/shopping-trolley--v2.png" alt="shopping-trolley--v2"/></a>
+                        <a id="openCartBtn" class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex"><img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/shopping-trolley--v2.png" alt="shopping-trolley--v2"/></a>
                     </div>
                 </div>
             </div>
@@ -212,62 +194,12 @@
         </div>
 
         <!-- FOOTER -->
-        <?php include './includes/footer.php'; ?>
+        <?php include './public/includes/cart.php'; ?>
+
+        <?php include './public/includes/footer.php'; ?>
         <!-- COOKIES -->
-        <?php include './includes/cookies.php'; ?>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.querySelector('nav');
-            const heroSection = document.querySelector('#hero1');
+        <?php include './public/includes/cookies.php'; ?>
+        <script src="./assets/js/main.js"></script>
 
-            if (!heroSection) {
-                console.error('Hero section element not found');
-                return;
-            }
-
-            let lastScrollTop = 0;
-
-            window.addEventListener('scroll', function() {
-                const scrollY = window.scrollY;
-                const heroSectionHeight = heroSection.offsetHeight;
-                const maxScroll = heroSectionHeight - window.innerHeight;
-
-                // Calculate the scroll percentage relative to the hero section height
-                let scrollPercent = Math.min(scrollY / maxScroll, 1);
-
-                // Smooth transition effect
-                if (scrollY > lastScrollTop) {
-                    // Scrolling down
-                    let newWidth = Math.max(80, 100 - (20 * scrollPercent)); // 100% to 80%
-                    navbar.style.width = `${newWidth}%`;
-
-                    // Adjust background, shadow, and other properties gradually
-                    if (scrollY > 50) {
-                        navbar.style.backgroundColor = `rgba(255, 255, 255, ${0.2 + 0.6 * scrollPercent})`;
-                        navbar.style.backdropFilter = `blur(${10 * scrollPercent}px)`;
-                        navbar.style.boxShadow = `0 4px 6px rgba(0, 0, 0, ${0.1 * scrollPercent})`;
-                        navbar.style.padding = `10px 40px`;
-                        navbar.style.borderRadius = '12px';
-                    } else {
-                        navbar.style.backgroundColor = 'transparent';
-                        navbar.style.backdropFilter = 'none';
-                        navbar.style.boxShadow = 'none';
-                        navbar.style.padding = '10px 20px';
-                        navbar.style.borderRadius = '0';
-                    }
-                } else {
-                    // Scrolling up
-                    navbar.style.width = '100%';
-                    navbar.style.backgroundColor = 'transparent';
-                    navbar.style.backdropFilter = 'none';
-                    navbar.style.boxShadow = 'none';
-                    navbar.style.padding = '10px 20px';
-                    navbar.style.borderRadius = '0';
-                }
-
-                lastScrollTop = scrollY <= 0 ? 0 : scrollY; // For Mobile Safari
-            });
-        });
-    </script>
     </body>
 </html>

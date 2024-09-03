@@ -243,7 +243,7 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
 
             <div class="mb-4">
               <label class="block text-gray-700 font-medium mb-1">Category ID</label>
-              <select name="category_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <select name="category_id" class="w-full px-3 py-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 <?php
                       if ($result_category->num_rows > 0) {
                         echo "<option value=''>Select Category</option>";
