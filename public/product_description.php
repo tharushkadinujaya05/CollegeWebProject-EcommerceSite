@@ -7,7 +7,7 @@
   <title>IvoryStreets | Ready to Wear</title>
 </head>
 <body>
-  <?php include '../includes/navbar.php'; 
+  <?php include './includes/navbar.php'; 
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -52,7 +52,9 @@
       $row = mysqli_fetch_assoc($result);
       $max_id = $row['max_id'];
 
-      $sql_product = "INSERT INTO orderproduct (order_id, product_id) VALUES ($max_id, $product_id)";
+      $sql_product = "INSERT INTO orderproduct (order_id, product_id, quantity) 
+                      VALUES ($max_id, $product_id, 1) 
+                      ON DUPLICATE KEY UPDATE quantity = quantity + 1";
       $stmt = mysqli_prepare($conn, $sql_product);
       mysqli_stmt_execute($stmt);
     }
@@ -160,6 +162,6 @@
       </section>
     </div>
   </section>
-  <?php include '../includes/footer.php'; ?>
+  <?php include './includes/footer.php'; ?>
 </body>
 </html>
