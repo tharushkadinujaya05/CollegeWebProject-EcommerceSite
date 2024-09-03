@@ -105,9 +105,14 @@
                     BLACK MAMBA</h1>
                 <p class="font-poppins font-bold text-white text-center" style="font-size: 1.3rem;padding-bottom: 40px;">
                     A collection inspired by edgy street wear. Featuring bold graphics,<br>distressed jeans, and comfortable footwear, Black Mamba is perfect<br>for those who want to make a statement.</p>
-                <div class="container mx-auto text-center" id="hero3-mobile-content">
+                <div class="container mx-auto text-center" style="padding-bottom: 5%" id="hero3-mobile-content">
                     <button class="relative bg-white text-black px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 ease-in-out font-bold font-poppins" id="hero3-mobile-button">
                         Shop Now</button>
+                </div>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <img src="./assets/images/home04.png" style="width: 15%; height: 15%; margin-right: 5%">
+                    <img src="./assets/images/home05.png" style="width: 15%; height: 15%; margin-right: 5%">
+                    <img src="./assets/images/home06.png" style="width: 15%; height: 15%;">
                 </div>
             </div>
         </div>
