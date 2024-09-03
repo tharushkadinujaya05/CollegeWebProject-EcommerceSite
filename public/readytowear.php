@@ -173,6 +173,7 @@
           <?php 
             while ($row = mysqli_fetch_assoc($result)) {
               echo '<li>';
+              echo '<a href="products.php?product_id=' . urlencode($row['product_id']) . '" class="group block overflow-hidden">';
               echo '<a href="product_description.php?product_id=' . urlencode($row['product_id']) . '" class="group block overflow-hidden">';              
               echo '<div class="relative h-[350px] sm:h-[450px]">';
               echo '<img src="data:image/png;charset=utf8;base64,' . base64_encode($row['product_image']) . '" class="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"/>';
