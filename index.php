@@ -92,9 +92,9 @@
                         Shop Now</button>
                 </div>
                 <div style="display: flex; justify-content: center; width: 100%;">
-                    <img src="./assets/images/home04.png" style="width: 15%; height: 15%; margin-right: 5%">
-                    <img src="./assets/images/home05.png" style="width: 15%; height: 15%; margin-right: 5%">
-                    <img src="./assets/images/home06.png" style="width: 15%; height: 15%;">
+                    <img src="./assets/images/home04.png" style="width: 15%; height: 15%; margin-right: 5%" alt="item 1">
+                    <img src="./assets/images/home05.png" style="width: 15%; height: 15%; margin-right: 5%" alt="item 2">
+                    <img src="./assets/images/home06.png" style="width: 15%; height: 15%;" alt="item 3">
                 </div>
             </div>
         </div>
@@ -153,7 +153,45 @@
         </section>
 
         <!-- HERO4: FEATURED -->
-        <div class="h-screen bg-gray-800"></div>
+        <div class="h-screen bg-black">
+            <!-- HERO4: Desktop -->
+            <div class="hidden sm:block">
+                <div class="h-screen bg-black flex items-center justify-center">
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; max-width: 90vw;">
+                        <div class="bg-white rounded-md" style="height: 100%;" id="item1">
+                            <div class="h-3/4" style="background-image: url('./assets/images/home10_feat.png'); background-size: cover; background-position: center; height: 100%"></div>
+                            <div class="p-2 bg-white" style="height: 40%; background-color: white">
+                                <h3 class="text-black font-bold mb-1 font-poppins">Card Title</h3>
+                                <p class="text-gray-600 text-sm font-poppins">Card Description</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-md" style="height: 100%;" id="item2">
+                            <div class="h-3/4" style="background-image: url('./assets/images/home10_feat.png'); background-size: cover; background-position: center; height: 100%"></div>
+                            <div class="p-2 bg-white" style="height: 40%; background-color: white">
+                                <h3 class="text-black font-bold mb-1 font-poppins">Card Title</h3>
+                                <p class="text-gray-600 text-sm font-poppins">Card Description</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-md" style="height: 100%;" id="item3">
+                            <div class="h-3/4" style="background-image: url('./assets/images/home10_feat.png'); background-size: cover; background-position: center; height: 100%"></div>
+                            <div class="p-2 bg-white" style="height: 40%; background-color: white">
+                                <h3 class="text-black font-bold mb-1 font-poppins">Card Title</h3>
+                                <p class="text-gray-600 text-sm font-poppins">Card Description</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-md" style="height: 100%;" id="item3">
+                            <div class="h-3/4" style="background-image: url('./assets/images/home10_feat.png'); background-size: cover; background-position: center; height: 100%"></div>
+                            <div class="p-2 bg-white" style="height: 40%; background-color: white">
+                                <h3 class="text-black font-bold mb-1 font-poppins">Card Title</h3>
+                                <p class="text-gray-600 text-sm font-poppins">Card Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HERO4: Mobile  -->
+            <div class="block md:hidden">This is for mobile</div>
+        </div>
 
         <!-- FOOTER -->
         <?php include './public/includes/cart.php'; ?>
