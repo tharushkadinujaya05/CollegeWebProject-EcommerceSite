@@ -153,46 +153,35 @@
     <div class="w-full h-full overflow-hidden relative flex items-center justify-center" id="hero2-content">
         <div class="ticker-wrapper">
             <div class="ticker">
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
-                <p class="ticker-item">FEATURED</p>
+                <!-- Duplicate text for seamless scrolling -->
+                <div class="ticker-inner">
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                </div>
+                <div class="ticker-inner">
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                </div>
+                <div class="ticker-inner">
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                </div>
+                <div class="ticker-inner">
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                    <p class="ticker-item">FEATURED</p>
+                </div>
             </div>
         </div>
     </div>
