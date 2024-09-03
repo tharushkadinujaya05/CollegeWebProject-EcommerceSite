@@ -131,9 +131,14 @@
                     WHITE CLAW</h1>
                 <p class="font-poppins font-bold text-black text-center" style="font-size: 1.3rem;padding-bottom: 40px;">
                     A collection of effortlessly cool essentials. With classic pieces like linen<br>shirts, skinny jeans, and chunky sneakers, White Claw is perfect for<br>creating a relaxed yet stylish look.</p>
-                <div class="container mx-auto text-center" id="hero3-mobile-content">
+                <div class="container mx-auto text-center" id="hero3-mobile-content" style="padding-bottom: 5%">
                     <button class="relative bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 ease-in-out font-bold font-poppins" id="hero3-mobile-button">
                         Shop Now</button>
+                </div>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <img src="./assets/images/home07.png" style="width: 15%; height: 15%; margin-right: 5%">
+                    <img src="./assets/images/home08.png" style="width: 15%; height: 15%; margin-right: 5%">
+                    <img src="./assets/images/home09.png" style="width: 15%; height: 15%;">
                 </div>
             </div>
         </div>
