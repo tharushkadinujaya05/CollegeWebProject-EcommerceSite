@@ -150,11 +150,33 @@
 
         <!-- HERO4: DIVIDER -->
         <section class="h-12" style="background-color: red" id="hero4">
-            <div class="w-full h-full flex items-center justify-center" id="hero2-content">
-                <p class="block md:hidden text-white font-poppins font-bold text-3xl flex items-center justify-center h-full" id="hero2-mobile-text">FEATURED</p>
+    <div class="w-full h-full overflow-hidden relative flex items-center justify-center" id="hero2-content">
+        <div class="ticker-wrapper">
+            <div class="ticker">
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
+                <p class="ticker-item">FEATURED</p>
             </div>
-        </section>
-
+        </div>
+    </div>
+</section>
         <!-- HERO4: FEATURED -->
         <div class="h-screen bg-black">
             <!-- HERO4: Desktop -->
