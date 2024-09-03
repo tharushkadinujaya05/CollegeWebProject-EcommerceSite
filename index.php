@@ -125,7 +125,7 @@
                 <h1 class="font-poppins font-bold text-black text-center hidden sm:block p-10" style="font-size: 5rem;padding-bottom: 10px;">
                     WHITE CLAW</h1>
                 <p class="font-poppins font-bold text-black text-center" style="font-size: 1.3rem;padding-bottom: 40px;">
-                    A collection inspired by edgy street wear. Featuring bold graphics,<br>distressed jeans, and comfortable footwear, Black Mamba is perfect<br>for those who want to make a statement.</p>
+                    A collection of effortlessly cool essentials. With classic pieces like linen<br>shirts, skinny jeans, and chunky sneakers, White Claw is perfect for<br>creating a relaxed yet stylish look.</p>
                 <div class="container mx-auto text-center" id="hero3-mobile-content">
                     <button class="relative bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 ease-in-out font-bold font-poppins" id="hero3-mobile-button">
                         Shop Now</button>
