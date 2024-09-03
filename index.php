@@ -87,9 +87,14 @@
                     BLACK MAMBA</h1>
                 <p class="font-poppins font-bold text-white text-center" style="font-size: 1.3rem;padding-bottom: 40px;">
                     A collection inspired by edgy street wear. Featuring bold graphics,<br>distressed jeans, and comfortable footwear, Black Mamba is perfect<br>for those who want to make a statement.</p>
-                <div class="container mx-auto text-center" id="hero3-mobile-content">
+                <div class="container mx-auto text-center" style="padding-bottom: 5%" id="hero3-mobile-content">
                     <button class="relative bg-white text-black px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 ease-in-out font-bold font-poppins" id="hero3-mobile-button">
                         Shop Now</button>
+                </div>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <img src="./assets/images/home04.png" style="width: 15%; height: 15%; margin-right: 5%">
+                    <img src="./assets/images/home05.png" style="width: 15%; height: 15%; margin-right: 5%">
+                    <img src="./assets/images/home06.png" style="width: 15%; height: 15%;">
                 </div>
             </div>
         </div>
@@ -102,6 +107,22 @@
             <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('./assets/images/home03.png');"></div>
             <!-- Gradient overlay -->
             <div class="absolute inset-0" style="background: linear-gradient(to top, white, transparent); opacity: 100%;"></div>
+            <!-- HERO2-1: Desktop content -->
+            <div class="relative h-screen hidden sm:block">
+                <h1 class="font-poppins font-bold text-black text-center hidden sm:block p-10" style="font-size: 5rem;padding-bottom: 10px;">
+                    WHITE CLAW</h1>
+                <p class="font-poppins font-bold text-black text-center" style="font-size: 1.3rem;padding-bottom: 40px;">
+                    A collection of effortlessly cool essentials. With classic pieces like linen<br>shirts, skinny jeans, and chunky sneakers, White Claw is perfect for<br>creating a relaxed yet stylish look.</p>
+                <div class="container mx-auto text-center" id="hero3-mobile-content" style="padding-bottom: 5%">
+                    <button class="relative bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 ease-in-out font-bold font-poppins" id="hero3-mobile-button">
+                        Shop Now</button>
+                </div>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <img src="./assets/images/home07.png" style="width: 15%; height: 15%; margin-right: 5%">
+                    <img src="./assets/images/home08.png" style="width: 15%; height: 15%; margin-right: 5%">
+                    <img src="./assets/images/home09.png" style="width: 15%; height: 15%;">
+                </div>
+            </div>
         </div>
 
         <!-- HERO3: GIFT WRAPPING SERVICE PITCH -->
@@ -125,17 +146,14 @@
             </section>
 
         <!-- HERO4: DIVIDER -->
-        <section class="h-12" style="background-color: red" id="hero2">
+        <section class="h-12" style="background-color: red" id="hero4">
             <div class="w-full h-full flex items-center justify-center" id="hero2-content">
                 <p class="block md:hidden text-white font-poppins font-bold text-3xl flex items-center justify-center h-full" id="hero2-mobile-text">FEATURED</p>
             </div>
         </section>
 
         <!-- HERO4: FEATURED -->
-        <div class="bg-gray-800 h-screen"></div>
-
-        <!-- HERO4: FOOTNOTE -->
-        <div class="h-screen"></div>
+        <div class="h-screen bg-gray-800"></div>
 
         <!-- FOOTER -->
         <?php include './public/includes/cart.php'; ?>
