@@ -120,6 +120,17 @@
             <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('./assets/images/home03.png');"></div>
             <!-- Gradient overlay -->
             <div class="absolute inset-0" style="background: linear-gradient(to top, white, transparent); opacity: 100%;"></div>
+            <!-- HERO2-1: Desktop content -->
+            <div class="relative h-screen hidden sm:block">
+                <h1 class="font-poppins font-bold text-black text-center hidden sm:block p-10" style="font-size: 5rem;padding-bottom: 10px;">
+                    BLACK MAMBA</h1>
+                <p class="font-poppins font-bold text-black text-center" style="font-size: 1.3rem;padding-bottom: 40px;">
+                    A collection inspired by edgy street wear. Featuring bold graphics,<br>distressed jeans, and comfortable footwear, Black Mamba is perfect<br>for those who want to make a statement.</p>
+                <div class="container mx-auto text-center" id="hero3-mobile-content">
+                    <button class="relative bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 ease-in-out font-bold font-poppins" id="hero3-mobile-button">
+                        Shop Now</button>
+                </div>
+            </div>
         </div>
 
         <!-- HERO3: GIFT WRAPPING SERVICE PITCH -->
