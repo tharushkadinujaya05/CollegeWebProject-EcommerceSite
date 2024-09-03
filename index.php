@@ -4,26 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IvoryStreets | Home</title>
-    <link href="./assets/css/style.css" rel="stylesheet">
-    <style>
-        nav {
-            width: 100%;
-            position: fixed;
-            top: 10px; /* Adjust this value to create space between the navbar and the top of the viewport */
-            left: 0;
-            right: 0;
-            background-color: transparent;
-            backdrop-filter: none;
-            box-shadow: none;
-            transition: all 0.5s ease; /* Adjusted transition duration */
-            z-index: 50;
-            padding: 10px 20px; /* Existing padding */
-            margin: 0 auto; /* Center the navbar */
-            box-sizing: border-box; /* Ensure padding is included in the width calculation */
-        }
-        #hero01 {
-            height: 100vh; /* Example height for the hero section */
-        }
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/nav_cart.css" />
+
     </style>
     </head>
     <body>
@@ -46,7 +29,7 @@
                         <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/blog/index.php">Explore</a>
                         <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="#">
                             <img width="20" height="20" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/></a>
-                        <a id="cart-button" class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="#"><img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/shopping-trolley--v2.png" alt="shopping-trolley--v2"/></a>
+                        <a id="openCartBtn" class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex"><img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/shopping-trolley--v2.png" alt="shopping-trolley--v2"/></a>
                     </div>
                 </div>
             </div>
@@ -156,6 +139,8 @@
         <div class="h-screen"></div>
 
         <!-- FOOTER -->
+        <?php include './includes/cart.php'; ?>
+
         <?php include './includes/footer.php'; ?>
         <!-- COOKIES -->
         <?php include './includes/cookies.php'; ?>

@@ -51,32 +51,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Cart Panel JavaScript
-document.addEventListener('DOMContentLoaded', () => {
-    const openCartBtn = document.getElementById('openCartBtn');
-    const closeCartBtn = document.getElementById('closeCartBtn');
-    const cartPanel = document.getElementById('cartPanel');
-    const overlay = document.getElementById('overlay');
-    const panel = document.getElementById('panel');
-  
-    openCartBtn.addEventListener('click', () => {
-      cartPanel.classList.remove('hidden');
-      setTimeout(() => {
-        overlay.classList.remove('pointer-events-none', 'opacity-0');
-        overlay.classList.add('opacity-100');
-        panel.classList.remove('translate-x-full');
-        panel.classList.add('translate-x-0');
-      }, 10);
-    });
-  
-    closeCartBtn.addEventListener('click', () => {
-      panel.classList.remove('translate-x-0');
-      panel.classList.add('translate-x-full');
-      overlay.classList.remove('opacity-100');
-      overlay.classList.add('opacity-0');
-      setTimeout(() => {
-        overlay.classList.add('pointer-events-none');
-        cartPanel.classList.add('hidden');
-      }, 500);
-    });
+// cart popup
+  const openCartBtn = document.getElementById('openCartBtn');
+  const closeCartBtn = document.getElementById('closeCartBtn');
+  const cartPanel = document.getElementById('cartPanel');
+  const overlay = document.getElementById('overlay');
+  const panel = document.getElementById('panel');
+
+  openCartBtn.addEventListener('click', () => {
+    cartPanel.classList.remove('hidden');
+    setTimeout(() => {
+      overlay.classList.remove('pointer-events-none', 'opacity-0');
+      overlay.classList.add('opacity-100');
+      panel.classList.remove('translate-x-full');
+      panel.classList.add('translate-x-0');
+    }, 10);
+  });
+
+  closeCartBtn.addEventListener('click', () => {
+    panel.classList.remove('translate-x-0');
+    panel.classList.add('translate-x-full');
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0');
+    setTimeout(() => {
+      overlay.classList.add('pointer-events-none');
+      cartPanel.classList.add('hidden');
+    }, 500);
   });

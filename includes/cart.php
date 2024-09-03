@@ -1,4 +1,7 @@
 <!-- cart.php -->
+ <style>
+    
+ </style>
 <div class="relative z-10 hidden" id="cartPanel" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
   <div id="overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity opacity-0 pointer-events-none"></div>
 
