@@ -47,10 +47,43 @@
         </div>
 
         <!-- HERO2: DIVIDER -->
-        <section class="h-12" style="background-color: red" id="hero2">
-            <div class="w-full h-full flex items-center justify-center" id="hero2-content">
-                <p class="block md:hidden text-white font-poppins font-bold text-3xl flex items-center justify-center h-full" id="hero2-mobile-text">EDITOR'S CHOICE</p></div>
-        </section>
+        <section class="h-12" style="background-color: black" id="hero4">
+    <div class="w-full h-full overflow-hidden relative flex items-center justify-center" id="hero2-content">
+        <div class="ticker-wrapper">
+            <div class="ticker">
+                <!-- Duplicate text for seamless scrolling -->
+                <div class="ticker-inner">
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                </div>
+                <div class="ticker-inner">
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                </div>
+                <div class="ticker-inner">
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                </div>
+                <div class="ticker-inner">
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                    <p class="ticker-item">EDITOR'S CHOICE</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- HERO2-1: EDITOR'S PICKS (BLACK MAMBA) -->
         <div class="relative h-screen " id="hero2-1">
