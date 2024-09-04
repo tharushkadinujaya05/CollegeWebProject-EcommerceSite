@@ -1,11 +1,11 @@
 <?php 
 session_start();
-
-$servername = "autorack.proxy.rlwy.net";  // Host extracted from MYSQL_PUBLIC_URL
+mysql://root:PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu@:3306/railway
+$servername = "";  // Host extracted from MYSQL_PUBLIC_URL
 $username = "root";  // Use MYSQLUSER from Railway
 $password = "PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu";  // Use MYSQLPASSWORD from Railway
 $dbname = "railway";  // Use MYSQL_DATABASE from Railway
-$port = 3306;  // Port extracted from MYSQL_PUBLIC_URL
+$port = 21186;  // Port extracted from MYSQL_PUBLIC_URL
 
 $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 
