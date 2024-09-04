@@ -1,15 +1,15 @@
 <?php 
 session_start();
-mysql://root:PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu@:3306/railway
-$servername = "";  // Host extracted from MYSQL_PUBLIC_URL
-$username = "root";  // Use MYSQLUSER from Railway
-$password = "PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu";  // Use MYSQLPASSWORD from Railway
-$dbname = "railway";  // Use MYSQL_DATABASE from Railway
-$port = 21186;  // Port extracted from MYSQL_PUBLIC_URL
 
-$conn = mysqli_connect($servername, $username, $password, $dbname, $port);
+$DB_HOST = $_ENV["DB_HOST"];
+$DB_USER = $_ENV["DB_USER"];
+$DB_PASSWORD = $_ENV["DB_PASSWORD"];
+$DB_NAME = $_ENV["DB_NAME"];
+$DB_PORT = $_ENV["DB_PORT"];
 
-if (!$conn) {
+$db = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME, $DB_PORT);
+
+if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
