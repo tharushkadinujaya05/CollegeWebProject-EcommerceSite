@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Product Carousel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        @media (min-width: 640px) {
+            .carousel-item {
+                width: 33.3333%; /* 3 items visible at once on desktop */
+            }
+        }
+
+        /* Arrow button styles */
+        .carousel-button {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            padding: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .carousel-button img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    </style>  
+</head>
+<body class="bg-black">
+
+<div class="relative max-w-screen-xl mx-auto">
+    <!-- Left arrow -->
+    <button id="prev" class="carousel-button absolute left-2 top-1/2 -translate-y-1/2">
+        <img src="https://cdn-icons-png.flaticon.com/512/271/271220.png" alt="Previous">
+    </button>
+
+    <!-- Carousel -->
+    <ul id="carousel" class="carousel mt-8 gap-4">
+        <!-- Example product item -->
+        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <a href="#" class="group block overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                     alt="Basic Tee"
+                     class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+                <div class="relative pt-3 p-4">
+                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
+                    <p class="mt-2">
+                        <span class="sr-only">Regular Price</span>
+                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <a href="#" class="group block overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                     alt="Basic Tee"
+                     class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+                <div class="relative pt-3 p-4">
+                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
+                    <p class="mt-2">
+                        <span class="sr-only">Regular Price</span>
+                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <a href="#" class="group block overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                     alt="Basic Tee"
+                     class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+                <div class="relative pt-3 p-4">
+                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
+                    <p class="mt-2">
+                        <span class="sr-only">Regular Price</span>
+                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <a href="#" class="group block overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                     alt="Basic Tee"
+                     class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+                <div class="relative pt-3 p-4">
+                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
+                    <p class="mt-2">
+                        <span class="sr-only">Regular Price</span>
+                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <a href="#" class="group block overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                     alt="Basic Tee"
+                     class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+                <div class="relative pt-3 p-4">
+                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
+                    <p class="mt-2">
+                        <span class="sr-only">Regular Price</span>
+                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+        <!-- Repeat this block for each product (total 10 items) -->
+        <!-- ... Add additional product items here ... -->
+    </ul>
+
+    <!-- Right arrow -->
+    <button id="next" class="carousel-button absolute right-2 top-1/2 -translate-y-1/2">
+        <img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" alt="Next">
+    </button>
+</div>
+
+<script>
+ const carousel = document.getElementById('carousel');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+function scrollCarousel(direction) {
+    const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    let scrollAmount = carousel.scrollLeft + direction * itemWidth;
+
+    // Ensure scrollAmount is within the bounds
+    if (scrollAmount < 0) {
+        scrollAmount = 0;
+    } else if (scrollAmount > maxScroll) {
+        scrollAmount = maxScroll;
+    }
+
+    // Scroll to the calculated position, ensuring it snaps to the nearest item
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+prevButton.addEventListener('click', () => scrollCarousel(-1));
+nextButton.addEventListener('click', () => scrollCarousel(1));
+</script>
+
+</body>
+</html>
