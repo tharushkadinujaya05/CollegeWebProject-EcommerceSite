@@ -335,5 +335,8 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
       if (form) form.reset();
     }
   </script>
+  <?php
+  ob_end_flush(); 
+  ?>
 </body>
 </html>
