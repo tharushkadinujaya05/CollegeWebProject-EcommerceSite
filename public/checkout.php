@@ -555,26 +555,18 @@
             </div>
           </div>
 
-          <div
-            class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md"
-          >
-          <div class="max-w-lg mx-auto mt-8">
-    <div class="text-center text-gray-500 text-sm font-medium mb-4">Express checkout</div>
-    <div class="flex flex-col space-y-4">
-      <button class="bg-yellow-400 hover:bg-yellow-500 text-blue-800 font-semibold py-3 rounded-lg shadow-lg flex items-center justify-center w-full">
-        <img class="h-6 w-30 mr-2" src="../assets/images/paypal.png" alt="PayPal">
-      </button>
-      <button class="bg-black hover:bg-gray-900 text-white font-semibold py-3 rounded-lg shadow-lg flex items-center justify-center w-full">
-        <img class="h-6 w-16 mr-2" src="../assets/images/gpay.png" alt="Google Pay">
-      </button>
-    </div>
-    <div class="flex items-center justify-center mt-6">
-        <div class="border-t border-gray-300 w-full"></div>
-        <span class="text-gray-500 mx-4">OR</span>
-        <div class="border-t border-gray-300 w-full"></div>
-    </div>
-</div>
-<div>
+                        <div
+                          class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md"
+                        >
+                        <div class="max-w-lg mx-auto mt-8">
+                  <div class="text-center text-gray-500 text-sm font-medium mb-4"></div>
+                  <div class="flex flex-col space-y-4">
+                    
+                  </div>
+                  <div class="flex items-center justify-center mt-6">
+                  </div>
+              </div>
+              <div>
               <label
                 for="voucher"
                 class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
@@ -641,16 +633,6 @@
               >
                 Proceed to Payment
               </button>
-
-              <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
-                One or more items in your cart require an account.
-                <a
-                  href="#"
-                  title=""
-                  class="font-medium text-primary-700 underline hover:no-underline dark:text-primary-500"
-                  >Sign in or create an account now.</a
-                >.
-              </p>
             </div>
           </div>
         </div>
