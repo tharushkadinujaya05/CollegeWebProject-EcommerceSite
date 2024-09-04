@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 session_start(); 
 if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
   header("Location: login.php");
@@ -146,7 +148,14 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
 
     <!-- Categories Table -->
     <div class="mt-6">
-      <h3 class="text-2xl font-bold mb-4">Categories</h3>
+      <div class="flex justify-between items-center mt-6 mb-4">
+        <h3 class="text-2xl font-bold">Categories</h3>
+        <div>
+          <button type="button" class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-m px-12 py-1.5 text-center">
+            <a href="logout.php">Logout</a>
+          </button>
+        </div>
+      </div>
       <!-- Add Category Button -->
       <button id="openAddModalBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 mb-4">Add Category</button>
 
