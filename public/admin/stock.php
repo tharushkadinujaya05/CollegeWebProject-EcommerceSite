@@ -1,9 +1,9 @@
 <?php
-    session_start(); 
-    if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
-        header("Location: login.php");
-        exit();
-    }
+session_start(); 
+if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,7 @@
     // Updated SQL query with GROUP BY clause
     $sql = "SELECT product_name, product_price, admin_id, SUM(product_qty) AS stock_quantity 
             FROM product 
-            GROUP BY product_name, product_price";
+            GROUP BY product_name, product_price, admin_id";
     $result = mysqli_query($conn, $sql);
     ?>
 
@@ -109,7 +109,7 @@
                                         echo "</tr>";
                                     }
                                 } else {
-                                    echo "<tr><td colspan='4' class='py-2 px-4 border-b text-center'>No category available</td></tr>";
+                                    echo "<tr><td colspan='4' class='py-2 px-4 border-b text-center'>No products available</td></tr>";
                                 }
 
                                 mysqli_close($conn);
