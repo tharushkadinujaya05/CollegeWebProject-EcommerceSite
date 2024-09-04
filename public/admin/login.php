@@ -1,28 +1,20 @@
 <?php 
 session_start();
 
-$DB_HOST = $_ENV["DB_HOST"];
-$DB_USER = $_ENV["DB_USER"];
-$DB_PASSWORD = $_ENV["DB_PASSWORD"];
-$DB_NAME = $_ENV["DB_NAME"];
-$DB_PORT = $_ENV["DB_PORT"];
+$DB_HOST = 'autorack.proxy.rlwy.net'; // Replace with actual host if different
+$DB_USER = 'root';
+$DB_PASSWORD = 'PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu';
+$DB_NAME = 'railway';
+$DB_PORT = 21186;
 
+// Attempt to connect to the database
 $db = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME, $DB_PORT);
 
 if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $sql = "SELECT admin_id, username, admin_password FROM admin WHERE username = ?";
-    $stmt = mysqli_prepare($conn, $sql);
-
-    mysqli_stmt_bind_param($stmt, "s", $email); 
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_store_result($stmt);
 
     if (mysqli_stmt_num_rows($stmt) > 0) {
         mysqli_stmt_bind_result($stmt, $admin_id, $username, $stored_password);

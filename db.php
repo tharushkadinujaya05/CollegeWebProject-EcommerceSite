@@ -1,10 +1,10 @@
 <?php
 // Database connection details
-$DB_HOST = ''; // Replace with actual host if different
+$DB_HOST = 'autorack.proxy.rlwy.net'; // Replace with actual host if different
 $DB_USER = 'root';
 $DB_PASSWORD = 'PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu';
 $DB_NAME = 'railway';
-$DB_PORT = 3306;
+$DB_PORT = 21186;
 
 // Attempt to connect to the database
 $db = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME, $DB_PORT);
