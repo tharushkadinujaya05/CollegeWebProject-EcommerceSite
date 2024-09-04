@@ -78,3 +78,29 @@ document.addEventListener('DOMContentLoaded', function() {
       cartPanel.classList.add('hidden');
     }, 500);
   });
+
+  const carousel = document.getElementById('carousel');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+  
+  function scrollCarousel(direction) {
+      const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      let scrollAmount = carousel.scrollLeft + direction * itemWidth;
+  
+      // Ensure scrollAmount is within the bounds
+      if (scrollAmount < 0) {
+          scrollAmount = 0;
+      } else if (scrollAmount > maxScroll) {
+          scrollAmount = maxScroll;
+      }
+  
+      // Scroll to the calculated position, ensuring it snaps to the nearest item
+      carousel.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth'
+      });
+  }
+  
+  prevButton.addEventListener('click', () => scrollCarousel(-1));
+  nextButton.addEventListener('click', () => scrollCarousel(1));
