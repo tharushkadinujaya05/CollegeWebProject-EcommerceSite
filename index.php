@@ -251,7 +251,7 @@
         <?php include './public/includes/footer.php'; ?>
         <!-- COOKIES -->
         <?php include './public/includes/cookies.php'; ?>
-        <script src="./assets/js/main.js"></script>
 
+        <script src="./assets/js/main.js"></script>
     </body>
 </html>
