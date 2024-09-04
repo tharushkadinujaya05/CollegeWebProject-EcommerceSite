@@ -8,12 +8,14 @@
 </head>
 <body>
 <?php include '../includes/navbar.php'; 
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "ivorystreetsdb";
+  $DB_HOST = 'autorack.proxy.rlwy.net'; // Replace with actual host if different
+  $DB_USER = 'root';
+  $DB_PASSWORD = 'PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu';
+  $DB_NAME = 'railway';
+  $DB_PORT = 21186;
 
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
+  // Attempt to connect to the database
+  $conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME, $DB_PORT);
 
   if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
