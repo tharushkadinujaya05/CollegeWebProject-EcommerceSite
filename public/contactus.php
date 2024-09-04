@@ -9,6 +9,8 @@
 </head>
 
 <body class="bg-gray-100">
+<?php include './includes/navbar.php'; ?>
+
     <!-- Header Section -->
     <div class="relative w-full h-[28rem] bg-cover bg-center mb-8"
         style="background-image: url('../assets/images/con01.jfif');">
@@ -97,6 +99,8 @@
             <img src="../assets/images/con04.gif" alt="Illustration" class="w-full md:w-96 h-auto">
         </div>
     </div>
+    <?php include './includes/footer.php'; ?>
+
     </body>
 
 </html>
