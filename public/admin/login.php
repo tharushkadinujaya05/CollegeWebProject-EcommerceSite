@@ -8,9 +8,9 @@ $DB_NAME = 'railway';
 $DB_PORT = 21186;
 
 // Attempt to connect to the database
-$db = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME, $DB_PORT);
+$conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME, $DB_PORT);
 
-if (!$db) {
+if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
