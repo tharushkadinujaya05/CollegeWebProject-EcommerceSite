@@ -8,13 +8,14 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
 
 include 'side-bar.php';
 
-$servername = "autorack.proxy.rlwy.net";  // Host extracted from MYSQL_PUBLIC_URL
-$username = "root";  // Use MYSQLUSER from Railway
-$password = "PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu";  // Use MYSQLPASSWORD from Railway
-$dbname = "railway";  // Use MYSQL_DATABASE from Railway
-$port = 3306;  // Port extracted from MYSQL_PUBLIC_URL
+$DB_HOST = 'autorack.proxy.rlwy.net'; // Replace with actual host if different
+$DB_USER = 'root';
+$DB_PASSWORD = 'PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu';
+$DB_NAME = 'railway';
+$DB_PORT = 21186;
 
-$conn = mysqli_connect($servername, $username, $password, $dbname, $port);
+// Attempt to connect to the database
+$conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME, $DB_PORT);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
