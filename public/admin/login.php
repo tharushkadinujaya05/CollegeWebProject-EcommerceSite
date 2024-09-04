@@ -14,7 +14,16 @@ if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
+    $sql = "SELECT admin_id, username, admin_password FROM admin WHERE username = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+
+    mysqli_stmt_bind_param($stmt, "s", $email); 
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
 
     if (mysqli_stmt_num_rows($stmt) > 0) {
         mysqli_stmt_bind_result($stmt, $admin_id, $username, $stored_password);
