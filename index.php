@@ -11,28 +11,7 @@
     <body>
 
         <!-- NAVBAR --> 
-        <nav>
-            <div class="px-4">
-                <div class="flex items-center justify-between">
-                    <div class="flex shrink-0">
-                        <a aria-current="page" class="flex items-center" href="../public/index.php">
-                            <img class="h-5 px-3" src="./assets/images/logo-bl.png" alt="">
-                            <p class="sr-only">Website Title</p>
-                        </a>
-                    </div>
-                    <div class="flex items-center justify-end gap-1">
-                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/readytowear.php">Ready to Wear</a>
-                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/gift.php">Gifts</a>
-                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/contactus.php">Contact Us</a>
-                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/faq/index.php">FAQ</a>
-                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="../public/blog/index.php">Explore</a>
-                        <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex" href="#">
-                            <img width="20" height="20" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/></a>
-                        <a id="openCartBtn" class="hidden items-center justify-center px-3 py-2 text-sm font-nunito sm:inline-flex"><img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/shopping-trolley--v2.png" alt="shopping-trolley--v2"/></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <?php include './public/includes/navbar.php'; ?>
 
         <!-- HERO1: OFFERS -->
         <div class="relative h-screen" id="hero1" >
