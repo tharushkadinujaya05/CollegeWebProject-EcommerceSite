@@ -3,7 +3,7 @@
     <div class="px-4">
         <div class="flex items-center justify-between">
             <div class="flex shrink-0">
-            <a aria-current="page" class="flex items-center" href="../public/index.php">
+            <a aria-current="page" class="flex items-center" href="../../../index.php">
                 <img class="h-5 px-3" src="../assets/images/logo-bl.png" alt="">
                 <p class="sr-only">Website Title</p>
             </a>
