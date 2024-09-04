@@ -7,8 +7,42 @@
     <title>IvoryStreets | Checkout</title>
   </head>
   <body>
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ivorystreetsdb";
+  
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+  
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $order_id = intval($_GET['order_id']);
+    $subtotal = floatval($_GET['subtotal']);
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+      $order_name = mysqli_real_escape_string($conn, $_POST['first_name'] . ' ' . $_POST['last_name']);
+      $order_email = mysqli_real_escape_string($conn, $_POST['email']);
+      $order_address = mysqli_real_escape_string($conn, $_POST['address']);
+      $order_postcode = mysqli_real_escape_string($conn, $_POST['postal']);
+      $order_phoneno = mysqli_real_escape_string($conn, $_POST['phone']);
+      $order_status = 'Placed';
+      $order_totalprice = $subtotal;
+      $order_date = date('Y-m-d H:i:s');
+
+      $sql = "UPDATE orders SET order_email='$order_email', order_name='$order_name', order_address='$order_address',
+      order_postcode='$order_postcode', order_phoneno='$order_phoneno', order_date='$order_date', 
+      order_status='$order_status',
+      total_price=$subtotal WHERE order_id=$order_id";
+
+      $stmt = mysqli_prepare($conn, $sql);
+      mysqli_stmt_execute($stmt);
+    }
+    ?>
     <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
-      <form action="#" class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+      <form method="POST" class="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <ol
           class="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base"
         >
@@ -160,8 +194,8 @@
                   <input
                     type="text"
                     id="first_name"
+                    name="first_name"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                    placeholder="Tharushka"
                     required
                   />
                 </div>
@@ -176,8 +210,8 @@
                   <input
                     type="text"
                     id="last_name"
+                    name="last_name"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                    placeholder="Dinujaya"
                     required
                   />
                 </div>
@@ -190,8 +224,8 @@
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                    placeholder="+94 77 598 2859"
                     required
                   />
                 </div>
@@ -206,8 +240,8 @@
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                    placeholder="tharushkadinujaya05@icloud.com"
                     required
                   />
                 </div>
@@ -222,8 +256,8 @@
                 <input
                   type="text"
                   id="address"
+                  name="address"
                   class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                  placeholder="Mahenwaththa, Pitipana"
                   required
                 />
               </div>
@@ -238,8 +272,8 @@
                   <input
                     type="text"
                     id="postal"
+                    name="postal"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                    placeholder="10200"
                     required
                   />
                 </div>
@@ -252,9 +286,8 @@
                   </label>
                   <input
                     type="text"
-                    id="postal"
+                    id="city"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                    placeholder="Homagama"
                     required
                   />
                 </div>
@@ -552,7 +585,6 @@
                   id="voucher"
                   class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                   placeholder=""
-                  required
                 />
                 <button
                   type="button"
@@ -573,7 +605,7 @@
                   <dd
                     class="text-base font-medium text-gray-900 dark:text-white"
                   >
-                    $120.34
+                    $<?php echo''.$subtotal.''?>
                   </dd>
                 </dl>
                 <dl class="flex items-center justify-between gap-4 py-3">
@@ -585,7 +617,7 @@
                   <dd
                     class="text-base font-medium text-gray-900 dark:text-white"
                   >
-                    - 10$
+                    - 0$
                   </dd>
                 </dl>
 
@@ -594,7 +626,7 @@
                     Total
                   </dt>
                   <dd class="text-base font-bold text-gray-900 dark:text-white">
-                    $110.34
+                    $<?php echo''.$subtotal.''?>
                   </dd>
                 </dl>
               </div>
