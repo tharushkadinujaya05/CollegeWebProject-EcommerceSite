@@ -39,6 +39,13 @@
 
       $stmt = mysqli_prepare($conn, $sql);
       mysqli_stmt_execute($stmt);
+<<<<<<< HEAD
+
+      $sql_delete = "DELETE from orderproduct";
+      $stmt_delete = mysqli_prepare($conn, $sql_delete);
+      mysqli_stmt_execute($stmt_delete);
+=======
+>>>>>>> parent of 6f930c3 (fixed cart)
     }
     ?>
     <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
