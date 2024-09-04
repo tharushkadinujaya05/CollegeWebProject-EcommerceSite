@@ -42,6 +42,14 @@ $result_total_orders = mysqli_query($conn, $sql_total_orders);
 <body class="bg-gray-100 font-sans antialiased">
 
 <div class="flex-1 lg:ml-64 p-6 bg-gray-100 overflow-y-auto h-screen pt-16 lg:pt-6">
+  <div class="flex justify-between items-center mt-6 mb-4">
+    <h3 class="text-2xl font-bold">Dashboard</h3>
+    <div>
+      <button type="button" class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-m px-12 py-1.5 text-center">
+        <a href="logout.php">Logout</a>
+      </button>
+    </div>
+  </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
 
     <div class="bg-white p-6 rounded-lg shadow">

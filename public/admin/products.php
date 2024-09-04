@@ -64,7 +64,7 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
 
   <div class="flex-1 lg:ml-64 p-6 bg-gray-100 overflow-y-auto h-screen pt-16 lg:pt-6">
 
-    <?php include 'header.php'; 
+    <?php 
 
     // Database connection
     $DB_HOST = 'autorack.proxy.rlwy.net'; // Replace with actual host if different
@@ -197,7 +197,14 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
 
     <!-- Products Table -->
     <div class="mt-6">
-      <h3 class="text-2xl font-bold mb-4">Products</h3>
+      <div class="flex justify-between items-center mt-6 mb-4">
+        <h3 class="text-2xl font-bold">Products</h3>
+        <div>
+          <button type="button" class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-m px-12 py-1.5 text-center">
+            <a href="logout.php">Logout</a>
+          </button>
+        </div>
+      </div>
       <!-- Add Product Button -->
       <button id="openAddModalBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 mb-4">Add Product</button>
 

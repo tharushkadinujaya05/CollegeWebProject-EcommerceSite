@@ -85,7 +85,14 @@ if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
     <div class="flex-1 lg:ml-64 p-6 bg-gray-100 overflow-y-auto h-screen pt-16 lg:pt-6">
 
         <div>
-            <h3 class="text-2xl font-bold mt-6 mb-4">Stock</h3>
+            <div class="flex justify-between items-center mt-6 mb-4">
+                <h3 class="text-2xl font-bold">Stock</h3>
+                <div>
+                    <button type="button" class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-m px-12 py-1.5 text-center">
+                        <a href="logout.php">Logout</a>
+                    </button>
+                </div>
+            </div>
 
             <!-- Stock Table -->
             <div class="bg-white p-6 rounded-lg shadow h-[36rem]">
