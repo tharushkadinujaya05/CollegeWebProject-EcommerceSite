@@ -10,7 +10,7 @@
 
 <body>
 
-    <?php include '../includes/navbar.php'; ?>
+    <?php include './includes/navbar.php'; ?>
 
     <div class="flex flex-col items-center bg-white-100 p-6 sm:pb-8 min-h-screen">
         <div class="relative isolate px-6 lg:px-8 mb-24">
@@ -122,7 +122,7 @@
         </section>
     </div>
 
-    <?php include '../includes/footer.php'; ?>
+    <?php include './includes/footer.php'; ?>
     
 </body>
 
