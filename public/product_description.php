@@ -37,8 +37,8 @@
     $result = mysqli_query($conn, $query);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-      $sql_order = "INSERT INTO orders (order_name)
-                    SELECT 'temporary name'
+      $sql_order = "INSERT INTO orders (order_name, order_email, order_address, order_postcode, order_phoneno, order_status, order_date, total_price)
+                    SELECT 'temporary name', 'tmp', 'tmp', 'tmp', 'tmp', 'In Progress', '2000-01-01', 0
                     WHERE NOT EXISTS (
                       SELECT 1 FROM orders
                       WHERE order_name = 'temporary name'
