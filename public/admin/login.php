@@ -1,12 +1,13 @@
 <?php 
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ivorystreetsdb";
+$servername = "autorack.proxy.rlwy.net";  // Host extracted from MYSQL_PUBLIC_URL
+$username = "root";  // Use MYSQLUSER from Railway
+$password = "PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu";  // Use MYSQLPASSWORD from Railway
+$dbname = "railway";  // Use MYSQL_DATABASE from Railway
+$port = 3306;  // Port extracted from MYSQL_PUBLIC_URL
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
