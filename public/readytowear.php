@@ -7,7 +7,7 @@
     <title>IvoryStreets | Ready to Wear</title>
 </head>
 <body>
-<?php include '../includes/navbar.php'; 
+<?php include './includes/navbar.php'; 
   $DB_HOST = 'autorack.proxy.rlwy.net'; // Replace with actual host if different
   $DB_USER = 'root';
   $DB_PASSWORD = 'PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu';
@@ -53,6 +53,7 @@
   $result = mysqli_query($conn, $query);
 
 ?>
+
 <div class="relative bg-cover bg-center h-[36rem] md:h-[40rem]" style="background-image: url('../assets/images/readytowearhero.png')">
   <div class="absolute inset-0 bg-gradient-to-l w-4/4 from-transparent to-black opacity-80"></div>
   <div class="absolute inset-0 flex flex-col items-center justify-center px-4">
@@ -241,5 +242,6 @@
     </div>
   </div>
 </section>
+<?php include './includes/footer.php'; ?>
 </body>
 </html>
