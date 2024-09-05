@@ -28,7 +28,7 @@
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
                 href="../public/faq/index.php">FAQ</a>
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
-                href="../../public/blog/index.php">Explore</a>
+                 href="../../public/blog/index.php">Explore</a>
             <a class="hidden items-center justify-center px-3 py-2 text-sm font-nunito  sm:inline-flex"
                 href="#">
                 <img width="20" height="20" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/></i></a>

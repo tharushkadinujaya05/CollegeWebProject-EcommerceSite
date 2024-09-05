@@ -164,6 +164,7 @@
       </section>
     </div>
   </section>
+  
   <?php include './includes/footer.php'; ?>
 <?php include './includes/cart.php'; ?>
 <script src="../assets/js/main.js"></script>
