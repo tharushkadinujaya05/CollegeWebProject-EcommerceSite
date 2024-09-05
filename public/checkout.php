@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/nav_cart.css" />
     <title>IvoryStreets | Checkout</title>
   </head>
   <body>
+  <?php include './includes/navbar.php'; ?>
     <?php
       $DB_HOST = 'autorack.proxy.rlwy.net'; // Replace with actual host if different
       $DB_USER = 'root';
@@ -47,7 +49,7 @@
       mysqli_stmt_execute($stmt_delete);
     }
     ?>
-    <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
+<section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16 mt-20">
       <form method="POST" class="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <ol
           class="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base"
@@ -104,27 +106,6 @@
               </svg>
               Checkout
             </span>
-          </li>
-
-          <li class="flex shrink-0 items-center">
-            <svg
-              class="me-2 h-4 w-4 sm:h-5 sm:w-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            Order summary
           </li>
         </ol>
 
@@ -642,5 +623,8 @@
         </div>
       </form>
     </section>
+    <?php include './includes/footer.php'; ?>
+    <?php include './includes/cart.php'; ?>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>
