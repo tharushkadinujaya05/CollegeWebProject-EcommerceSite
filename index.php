@@ -10,6 +10,23 @@
     </head>
     <body>
 
+        <?php
+            $DB_HOST = 'autorack.proxy.rlwy.net'; // Replace with actual host if different
+            $DB_USER = 'root';
+            $DB_PASSWORD = 'PEGbmEIwMKaaCDlkKYfWVGndPSDXtNgu';
+            $DB_NAME = 'railway';
+            $DB_PORT = 21186;
+        
+            // Attempt to connect to the database
+            $conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME, $DB_PORT);
+        
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+
+            $query = "SELECT product_id, product_image, product_name, product_price FROM product LIMIT 10";
+            $result = mysqli_query($conn, $query);
+        ?>
         <!-- NAVBAR --> 
         <?php include './public/includes/navbar.php'; ?>
 
@@ -210,64 +227,23 @@
                     <!-- Carousel -->
                     <ul id="carousel" class="carousel mt-8 gap-4">
                         <!-- Example product item -->
-                        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <a href="#" class="group block overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                    alt="Basic Tee"
-                                    class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-                                <div class="relative pt-3 p-4">
-                                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
-                                    <p class="mt-2">
-                                        <span class="sr-only">Regular Price</span>
-                                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <a href="#" class="group block overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                    alt="Basic Tee"
-                                    class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-                                <div class="relative pt-3 p-4">
-                                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
-                                    <p class="mt-2">
-                                        <span class="sr-only">Regular Price</span>
-                                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <a href="#" class="group block overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                    alt="Basic Tee"
-                                    class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-                                <div class="relative pt-3 p-4">
-                                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
-                                    <p class="mt-2">
-                                        <span class="sr-only">Regular Price</span>
-                                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                            <a href="#" class="group block overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                    alt="Basic Tee"
-                                    class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-                                <div class="relative pt-3 p-4">
-                                    <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">Basic Tee</h3>
-                                    <p class="mt-2">
-                                        <span class="sr-only">Regular Price</span>
-                                        <span class="tracking-wider text-gray-900">£24.00 GBP</span>
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                        <!-- Repeat this block for each product (total 10 items) -->
-                        <!-- ... Add additional product items here ... -->
+                        <?php 
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '<li class="carousel-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">';
+                                echo '<a href="public/product_description.php?product_id=' . urlencode($row['product_id']) . '" class="group block overflow-hidden">';
+                                echo '<img src="data:image/png;charset=utf8;base64,' . base64_encode($row['product_image']) . '" 
+                                class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />';
+                                echo '<div class="relative pt-3 p-4">';
+                                echo '<h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">'. htmlspecialchars($row['product_name']) .'</h3>';
+                                echo '<p class="mt-2">';
+                                echo '<span class="sr-only">Regular Price</span>';
+                                echo '<span class="tracking-wider text-gray-900">£'. htmlspecialchars($row['product_price']) .' GBP</span>';
+                                echo '</p>
+                                        </div>
+                                            </a>
+                                            </li>';
+                            }
+                        ?>       
                     </ul>
 
                     <!-- Right arrow -->
