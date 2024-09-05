@@ -1,104 +1,93 @@
 # CollegeWebProject-EcommerceSite
 A PHP-based e-commerce website for a clothing brand, featuring CRUD operations, user and admin authentication, and a responsive UI built with Tailwind CSS.
 
+## Table of Contents
+
+- [Features](#features)
+- [Folder Structure](#folder-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Features
 
-- User Registration and Login
-- Admin Panel for Product Management
-- CRUD Operations for Products
-- Responsive Design with Tailwind CSS
-- Secure Authentication for Users and Admins
+- **User Authentication**: Secure user registration and login system.
+- **Product Listings**: Display available products with descriptions, images, and categories.
+- **Shopping Cart**: Add items to the cart and proceed to checkout.
+- **Admin Panel**: Manage products, categories, and orders (CRUD operations).
+- **Responsive Design**: Optimized for mobile and desktop screens using Tailwind CSS.
+- **Checkout Process**: Smooth and secure payment integration (future).
+- **Blog Section**: Informative blog posts (optional).
 
-## Technologies Used
+## Folder Structure
 
-- PHP
-- MySQL
-- Tailwind CSS
-- JavaScript
-- HTML
-
-## Project Structure
-```
-CollegeWebProject-EcommerceSite/
+```bash
+.
 ├── assets/
-│   ├── css/
-│   ├── js/
-│   ├── images/
+│   ├── css/                     # Styling files
+│   │   ├── nav_cart.css
+│   │   └── style.css
+│   ├── images/                  # Image assets
+│   │   └── con01.jfif
+│   └── js/                      # JavaScript files
+│       ├── login.js
+│       └── main.js
 ├── config/
-│   └── config.php
+│   └── config.php               # Database configuration
 ├── database/
-│   └── schema.sql
-├── includes/
-│   ├── header.php
-│   ├── footer.php
-│   ├── navbar.php
+│   ├── ivorystreetsdb.sql       # Database dump
+│   └── schema.sql               # Schema file for database setup
 ├── public/
-│   ├── index.php
-│   ├── products.php
-│   ├── about.php
-│   ├── contact.php
-│   ├── login.php
-│   ├── register.php
-│   ├── admin/
-│   │   ├── dashboard.php
-│   │   ├── add_product.php
-│   │   ├── edit_product.php
-│   │   ├── delete_product.php
-│   │   ├── login.php
+│   ├── admin/                   # Admin panel pages
+│   ├── blog/                    # Blog section
+│   ├── checkout.php             # Checkout process page
+│   ├── contactus.php            # Contact page
+│   ├── faq/                     # Frequently asked questions
+│   ├── gift.php                 # Gift card page
+│   ├── includes/                # Reusable components (headers, footers, etc.)
+│   ├── product_description.php  # Product details page
+│   └── readytowear.php          # Category page (Ready to Wear)
 ├── src/
-│   ├── db/
-│   │   └── Database.php
-│   ├── models/
-│   │   ├── Product.php
-│   │   ├── User.php
-│   ├── controllers/
-│   │   ├── ProductController.php
-│   │   ├── UserController.php
-├── vendor/
-│   ├── autoload.php
-│   └── composer.json
-├── .env
-├── .gitignore
-└── README.md
+│   ├── controllers/             # Controllers for handling requests
+│   ├── db/                      # Database interaction files
+│   ├── input.css                # Tailwind CSS input
+│   └── models/                  # Data models for the application
+├── .DS_Store                    # macOS system file (can be removed)
+├── .env                         # Environment variables
+├── .gitignore                   # Git ignore rules
+├── .htaccess                    # Apache server configuration
+├── 404.php                      # Error page
+├── LICENSE                      # License information
+├── README.md                    # Project documentation
+├── index.php                    # Main entry point
+├── package.json                 # Node.js dependencies (if any)
+└── tailwind.config.js           # Tailwind CSS configuration
 ```
----
 
 ## Installation
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/your-username/college-ecommerce-web-project.git
-    ```
+### Clone the repository:
+```bash
+git clone https://github.com/your-username/ivory-street-ecommerce.git
+cd ivory-street-ecommerce
+```
+### Install Dependencies (Optional):
+If you’re using Node.js for development:
+```bash
+npm install
+```
+### Database Setup:
+Create a MySQL database and import the ivorystreetsdb.sql or schema.sql file located in the `/database/` directory.
 
-2. Navigate to the project directory:
-    ```sh
-    cd college-ecommerce-web-project
-    ```
-
-3. Install dependencies using Composer:
-    ```sh
-    composer install
-    ```
-
-4. Create a `.env` file in the root directory and add your database credentials:
-    ```
-    DB_HOST=localhost
-    DB_USERNAME=root
-    DB_PASSWORD=
-    DB_NAME=ecommerce
-    ```
-
-5. Import the database schema:
-    ```sh
-    mysql -u your_username -p your_database_name < database/schema.sql
-    ```
-
-6. Start your local server (e.g., XAMPP, WAMP, or MAMP) and navigate to the project directory.
-
-## Usage
-
-- Register as a user and explore the product catalog.
-- Admins can log in to manage products, including creating, updating, and deleting products.
+### Tailwind CSS:
+If you’re making changes to the front-end styles, run Tailwind’s build process:
+```bash
+npx tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch
+```
+## Usage 
+- User can explore product catalogue and add to cart and then checkout 
+- Admins can log in to manage products, including creating, updating, and deleting products. (CRUD)
 
 ## Contributing
 
