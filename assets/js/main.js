@@ -49,5 +49,3 @@
       });
   }
   
-  prevButton.addEventListener('click', () => scrollCarousel(-1));
-  nextButton.addEventListener('click', () => scrollCarousel(1));
