@@ -99,10 +99,8 @@
             <img src="../assets/images/con04.gif" alt="Illustration" class="w-full md:w-96 h-auto">
         </div>
     </div>
+    <?php include './includes/footer.php'; ?>
 
-<?php include './includes/footer.php'; ?>
-<?php include './includes/cart.php'; ?>
-<script src="../assets/js/main.js"></script>
     </body>
 
 </html>
