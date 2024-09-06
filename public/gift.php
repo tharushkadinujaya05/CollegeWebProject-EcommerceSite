@@ -5,6 +5,7 @@
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gift of Adventure</title>
+    <link rel="stylesheet" href="../assets/css/nav_cart.css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
 
@@ -123,6 +124,8 @@
     </div>
 
     <?php include './includes/footer.php'; ?>
+    <?php include './includes/cart.php'; ?>
+    <script src="../assets/js/main.js"></script>
     
 </body>
 
