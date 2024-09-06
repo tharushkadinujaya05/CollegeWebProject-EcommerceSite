@@ -49,7 +49,7 @@
       </p>
 
       <div class="grid md:grid-cols-5 gap-10 pt-10">
-      <div class="md:col-span-2">
+        <div class="md:col-span-2">
           <div class="max-w-xs">
             <h1
               class="text-2xl font-poppins md:text-2xl md:leading-tight dark:text-white"
@@ -69,7 +69,7 @@
               </a>
               <a
                 href="./returns.php"
-                class="block text-blue-500 dark:text-blue-400 hover:underline"
+                class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Returns, exchanges and refunds
               </a>
               <a
@@ -79,7 +79,7 @@
               </a>
               <a
                 href="./personaldata.php"
-                class="block text-gray-500 dark:text-gray-300 hover:underline"
+                class="block text-blue-500 dark:text-blue-400 hover:underline"
                 >Personal data and notifications</a
               >
             </div>
@@ -99,8 +99,8 @@
                 aria-expanded="true"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
               >
-              How do I return an order?
-              <svg
+              How do you protect my personal data?
+                <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -136,9 +136,7 @@
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
               >
                 <p class="text-gray-600 dark:text-neutral-400">
-                To return an item, log into your Ivory Street account, navigate to 'Cart,' select the order containing the item you wish to return, and follow the instructions for initiating a return. If you checked out as a guest, please contact our customer support team for assistance.
-
-</p>
+                We prioritize the security of your personal data and employ industry-standard encryption and security measures to protect your information.                </p>
               </div>
             </div>
 
@@ -151,7 +149,7 @@
                 aria-expanded="false"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
               >
-              How long do I have to return an item?
+              Can I request to view or deleted my personal data?
 
                 <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
@@ -189,9 +187,7 @@
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
               >
                 <p class="text-gray-600 dark:text-neutral-400">
-You have 3 days from the date of delivery to initiate a return. Items must be in their original condition with tags attached to be eligible for a refund.
-
-                </p>
+                Yes, you can request access to or deletion of your personal data. Contact our customer service team or refer to our Privacy Policy for more information.                </p>
               </div>
             </div>
 
@@ -204,7 +200,7 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-expanded="false"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
               >
-              How long does it take to process a return?
+              How do I contact customer service about my personal data?
               <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                   xmlns="http://www.w3.org/2000/svg"
@@ -241,9 +237,7 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
               >
                 <p>
-                Once we receive your returned item, please allow 3 business days for us to process your return and issue a refund to your original payment method. You will receive an email confirmation once the refund is processed.
-
-</p>
+                For inquiries regarding your personal data, please contact our customer service team directly. They will assist you with any questions or requests you may have.                </p>
               </div>
             </div>
 
@@ -256,7 +250,7 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-expanded="false"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
               >
-              How can I exchange an item?
+              How do I sign up for notifications?
                 <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                   xmlns="http://www.w3.org/2000/svg"
@@ -293,10 +287,103 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
               >
                 <p class="text-gray-600 dark:text-neutral-400">
-                If you wish to exchange an item for a different size or color, please initiate a return as described above and place a new order for the desired item through our website. This ensures faster processing and availability.
-
-</p>
+                You can sign up for notifications by subscribing to our newsletter or opting in during checkout. You may also manage your notification preferences in your account settings.                </p>
               </div>
+            </div>
+            <div
+              class="hs-accordion pt-6 pb-3"
+              id="hs-basic-with-title-and-arrow-stretched-heading-four"
+            >
+              <button
+                class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                aria-expanded="false"
+                aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
+              >
+              What types of notifications will I receive?
+              <svg
+                  class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+                <svg
+                  class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m18 15-6-6-6 6" />
+                </svg>
+              </button>
+              <div
+                id="hs-basic-with-title-and-arrow-stretched-collapse-four"
+                class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                role="region"
+                aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
+              >
+                <p class="text-gray-600 dark:text-neutral-400">
+                Notifications may include order updates, promotional offers, and important announcements related to your account and preferences.</div>
+            </div>
+            <div
+              class="hs-accordion pt-6 pb-3"
+              id="hs-basic-with-title-and-arrow-stretched-heading-four"
+            >
+              <button
+                class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                aria-expanded="false"
+                aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
+              >
+              Why am I not receiving notifications?                <svg
+                  class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+                <svg
+                  class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m18 15-6-6-6 6" />
+                </svg>
+              </button>
+              <div
+                id="hs-basic-with-title-and-arrow-stretched-collapse-four"
+                class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                role="region"
+                aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
+              >
+                <p class="text-gray-600 dark:text-neutral-400">
+                If you're not receiving notifications, check your email spam folder and ensure your notification preferences are correctly set in your account settings. If issues persist, contact our customer support for assistance.              </div>
             </div>
           </div>
         </div>

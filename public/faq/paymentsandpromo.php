@@ -64,12 +64,12 @@
               </a>
               <a
                 href="./paymentsandpromo.php"
-                class="block text-gray-500 dark:text-gray-300 hover:underline"
+                class="block text-blue-500 dark:text-blue-400 hover:underline"
                 >Payments and promotions
               </a>
               <a
                 href="./returns.php"
-                class="block text-blue-500 dark:text-blue-400 hover:underline"
+                class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Returns, exchanges and refunds
               </a>
               <a
@@ -99,8 +99,8 @@
                 aria-expanded="true"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
               >
-              How do I return an order?
-              <svg
+              What payment methods do you accept?
+                <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -136,9 +136,8 @@
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
               >
                 <p class="text-gray-600 dark:text-neutral-400">
-                To return an item, log into your Ivory Street account, navigate to 'Cart,' select the order containing the item you wish to return, and follow the instructions for initiating a return. If you checked out as a guest, please contact our customer support team for assistance.
-
-</p>
+                We accept major credit cards (Visa, MasterCard, American Express), Bank Transfers or PayPal, Google Pay, Apple Pay and Ivory Street gift cards for online purchases.
+                </p>
               </div>
             </div>
 
@@ -151,7 +150,7 @@
                 aria-expanded="false"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
               >
-              How long do I have to return an item?
+              Can I use a gift card to make a purchase?
 
                 <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
@@ -189,8 +188,7 @@
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
               >
                 <p class="text-gray-600 dark:text-neutral-400">
-You have 3 days from the date of delivery to initiate a return. Items must be in their original condition with tags attached to be eligible for a refund.
-
+                Yes, you can use an Ivory Street gift card to pay for your order during checkout.
                 </p>
               </div>
             </div>
@@ -204,8 +202,8 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-expanded="false"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
               >
-              How long does it take to process a return?
-              <svg
+              Do you accept international credit cards?
+                <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -241,9 +239,8 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
               >
                 <p>
-                Once we receive your returned item, please allow 3 business days for us to process your return and issue a refund to your original payment method. You will receive an email confirmation once the refund is processed.
-
-</p>
+                Yes, we accept international credit cards. Please ensure that your billing address matches the address associated with your credit card for successful processing.
+                </p>
               </div>
             </div>
 
@@ -256,8 +253,7 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-expanded="false"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
               >
-              How can I exchange an item?
-                <svg
+              What should I do if my promo code isn't working?                <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -293,9 +289,8 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
               >
                 <p class="text-gray-600 dark:text-neutral-400">
-                If you wish to exchange an item for a different size or color, please initiate a return as described above and place a new order for the desired item through our website. This ensures faster processing and availability.
-
-</p>
+                If your promo code isn't working, double-check the spelling and expiration date. Ensure it applies to the items in your cart and meets any minimum purchase requirements. If issues persist, contact our customer support for assistance.
+                </p>
               </div>
             </div>
           </div>

@@ -49,7 +49,7 @@
       </p>
 
       <div class="grid md:grid-cols-5 gap-10 pt-10">
-      <div class="md:col-span-2">
+        <div class="md:col-span-2">
           <div class="max-w-xs">
             <h1
               class="text-2xl font-poppins md:text-2xl md:leading-tight dark:text-white"
@@ -69,12 +69,12 @@
               </a>
               <a
                 href="./returns.php"
-                class="block text-blue-500 dark:text-blue-400 hover:underline"
+                class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Returns, exchanges and refunds
               </a>
               <a
                 href="./sizesandproducts.php"
-                class="block text-gray-500 dark:text-gray-300 hover:underline"
+                class="block text-blue-500 dark:text-blue-400 hover:underline"
                 >Information on sizes and products
               </a>
               <a
@@ -99,8 +99,7 @@
                 aria-expanded="true"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
               >
-              How do I return an order?
-              <svg
+              Do you have a size chart?                <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -136,10 +135,7 @@
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
               >
                 <p class="text-gray-600 dark:text-neutral-400">
-                To return an item, log into your Ivory Street account, navigate to 'Cart,' select the order containing the item you wish to return, and follow the instructions for initiating a return. If you checked out as a guest, please contact our customer support team for assistance.
-
-</p>
-              </div>
+                Yes, we provide a size chart for each product category to help you find the best fit. You can find it on the product page or under our Size Guide section.              </div>
             </div>
 
             <div
@@ -151,7 +147,7 @@
                 aria-expanded="false"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
               >
-              How long do I have to return an item?
+              How do I measure myself for the best fit?
 
                 <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
@@ -189,10 +185,9 @@
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
               >
                 <p class="text-gray-600 dark:text-neutral-400">
-You have 3 days from the date of delivery to initiate a return. Items must be in their original condition with tags attached to be eligible for a refund.
+                Follow our detailed size guide instructions to measure yourself accurately. This ensures you select the correct size based on your measurements and the product's fit.
 
-                </p>
-              </div>
+                </div>
             </div>
 
             <div
@@ -204,7 +199,7 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-expanded="false"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
               >
-              How long does it take to process a return?
+              What should I do if I'm in between sizes?
               <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                   xmlns="http://www.w3.org/2000/svg"
@@ -241,10 +236,9 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
               >
                 <p>
-                Once we receive your returned item, please allow 3 business days for us to process your return and issue a refund to your original payment method. You will receive an email confirmation once the refund is processed.
+                If you're between sizes, we recommend sizing up or down based on the fit description provided on the product page. You can also refer to customer reviews for additional guidance.
 
-</p>
-              </div>
+                </div>
             </div>
 
             <div
@@ -256,8 +250,8 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-expanded="false"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
               >
-              How can I exchange an item?
-                <svg
+              What matiriels are you products made from?
+              <svg
                   class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -293,15 +287,112 @@ You have 3 days from the date of delivery to initiate a return. Items must be in
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
               >
                 <p class="text-gray-600 dark:text-neutral-400">
-                If you wish to exchange an item for a different size or color, please initiate a return as described above and place a new order for the desired item through our website. This ensures faster processing and availability.
+                Our products are made from high-quality materials such as cotton, polyester, nylon, and blends specified on each product page.
 
-</p>
-              </div>
+</div>
             </div>
+            <div
+              class="hs-accordion pt-6 pb-3"
+              id="hs-basic-with-title-and-arrow-stretched-heading-four"
+            >
+              <button
+                class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                aria-expanded="false"
+                aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
+              >
+              Where are your products manufactured?
+              <svg
+                  class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+                <svg
+                  class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m18 15-6-6-6 6" />
+                </svg>
+              </button>
+              <div
+                id="hs-basic-with-title-and-arrow-stretched-collapse-four"
+                class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                role="region"
+                aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
+              >
+                <p class="text-gray-600 dark:text-neutral-400">
+                Our products are proudly manufactured in several locations to ensure the highest quality and ethical standards. United States Some of our premium collections are produced in state-of-the-art facilities across the country.We partner with skilled artisans in Italy and Portugal for our luxury lines.Our everyday wear is made in factories in China and Bangladesh, where we maintain strict oversight to ensure fair labor practices and high-quality production standards
+
+</div>
+            <div
+              class="hs-accordion pt-6 pb-3"
+              id="hs-basic-with-title-and-arrow-stretched-heading-four"
+            >
+              <button
+                class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                aria-expanded="false"
+                aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
+              >
+              How do I know if a product is in sock?               <svg
+                  class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+                <svg
+                  class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m18 15-6-6-6 6" />
+                </svg>
+              </button>
+              <div
+                id="hs-basic-with-title-and-arrow-stretched-collapse-four"
+                class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                role="region"
+                aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
+              >
+                <p class="text-gray-600 dark:text-neutral-400">
+                On each product page, availability status (in stock/out of stock) is indicated near the size selection. If a product is out of stock, you may choose to receive notifications when it becomes available.            </div>
           </div>
         </div>
       </div>
-    </div>
+    </div>    
+</div>
+</div>
+
 
     <footer class="bg-gray-200 text-gray-700 py-10">
     <div class="container mx-auto px-4">
