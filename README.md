@@ -86,8 +86,10 @@ If you’re making changes to the front-end styles, run Tailwind’s build proce
 npx tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch
 ```
 ## Usage 
-- User can explore product catalogue and add to cart and then checkout 
+- User can explore product catalogue and add to cart and then checkout
+- **Live Website**: [Visit the user-facing site here](https://www.ivorystreets.live).  
 - Admins can log in to manage products, including creating, updating, and deleting products. (CRUD)
+- **Admin Pannele**: [Visit the user-facing site here](https://www.ivorystreets.live/admin.index.php).  
 
 ## Contributing
 
