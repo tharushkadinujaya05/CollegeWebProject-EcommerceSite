@@ -63,22 +63,22 @@
                 >Delivery and order tracking
               </a>
               <a
-                href="#"
+                href="./paymentsandpromo.php"
                 class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Payments and promotions
               </a>
               <a
-                href="#"
+                href="./returns.php"
                 class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Returns, exchanges and refunds
               </a>
               <a
-                href="#"
+                href="./sizesandproducts.php"
                 class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Information on sizes and products
               </a>
               <a
-                href="#"
+                href="./personaldata.php"
                 class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Personal data and notifications</a
               >
