@@ -49,7 +49,7 @@
       </p>
 
       <div class="grid md:grid-cols-5 gap-10 pt-10">
-        <div class="md:col-span-2">
+      <div class="md:col-span-2">
           <div class="max-w-xs">
             <h1
               class="text-2xl font-poppins md:text-2xl md:leading-tight dark:text-white"
@@ -64,21 +64,21 @@
               </a>
               <a
                 href="./paymentsandpromo.php"
-                class="block text-blue-500 dark:text-blue-400 hover:underline"
+                class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Payments and promotions
               </a>
               <a
-                href="#"
+                href="./returns.php"
                 class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Returns, exchanges and refunds
               </a>
               <a
-                href="#"
-                class="block text-gray-500 dark:text-gray-300 hover:underline"
+                href="./sizesandproducts.php"
+                class="block text-blue-500 dark:text-blue-400 hover:underline"
                 >Information on sizes and products
               </a>
               <a
-                href="#"
+                href="./personaldata.php"
                 class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Personal data and notifications</a
               >
