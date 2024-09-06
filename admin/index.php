@@ -1,12 +1,5 @@
-<?php
+<?php 
 session_start();
-
-if (!isset($_SESSION['admin_id']) || $_SESSION['admin_id'] != 1) {
-    header("Location: login.php");
-    exit();
-}
-
-include 'side-bar.php';
 
 $DB_HOST = 'autorack.proxy.rlwy.net'; // Replace with actual host if different
 $DB_USER = 'root';
@@ -21,115 +14,110 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql_orders = "SELECT order_id, order_email, order_name, order_address, order_postcode, order_phoneno, order_date, order_status, total_price FROM orders";
-$result_orders = mysqli_query($conn, $sql_orders);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-$sql_total_sales = "SELECT SUM(total_price) AS total_sales FROM orders";
-$result_total_sales = mysqli_query($conn, $sql_total_sales);
+    $sql = "SELECT admin_id, username, admin_password FROM admin WHERE username = ?";
+    $stmt = mysqli_prepare($conn, $sql);
 
-$sql_total_orders = "SELECT COUNT(*) AS total_orders FROM orders";
-$result_total_orders = mysqli_query($conn, $sql_total_orders);
+    mysqli_stmt_bind_param($stmt, "s", $email); 
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        mysqli_stmt_bind_result($stmt, $admin_id, $username, $stored_password);
+        mysqli_stmt_fetch($stmt);
+
+        if ($password === $stored_password) {
+            $_SESSION['admin_id'] = $admin_id;
+            $_SESSION['username'] = $username;
+            
+            header("Location: dashboard.php");
+            exit();
+        } else {
+            $error = 'Invalid credentials';
+        }
+    } else {
+        $error = 'Invalid credentials';
+    }
+
+    mysqli_stmt_close($stmt);
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IvoryStreets - Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <link href="../../assets/css/style.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IvoryStreets | Login</title>
 </head>
-<body class="bg-gray-100 font-sans antialiased">
-
-<div class="flex-1 lg:ml-64 p-6 bg-gray-100 overflow-y-auto h-screen pt-16 lg:pt-6">
-  <div class="flex justify-between items-center mt-6 mb-4">
-    <h3 class="text-2xl font-bold">Dashboard</h3>
-    <div>
-      <button type="button" class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-m px-12 py-1.5 text-center">
-        <a href="logout.php">Logout</a>
-      </button>
-    </div>
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h3 class="text-2xl font-semibold text-gray-800">Total Orders</h3>
-      <p class="text-2xl font-bold text-gray-800 mt-4 text-green-500">
-        <?php 
-          if (mysqli_num_rows($result_total_orders) > 0) {
-              while ($row = mysqli_fetch_assoc($result_total_orders)) {
-                  echo htmlspecialchars($row['total_orders']);
-              }
-          } else {
-              echo "No orders available";
-          }
-        ?>
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h3 class="text-2xl font-semibold text-gray-800">Total Sales</h3>
-      <p class="text-2xl font-bold text-gray-800 mt-4 text-red-500">
-        <?php 
-          if (mysqli_num_rows($result_total_sales) > 0) {
-              while ($row = mysqli_fetch_assoc($result_total_sales)) {
-                  echo "$" . htmlspecialchars($row['total_sales']);
-              }
-          } else {
-              echo "No orders available";
-          }
-        ?>
-      </p>
-    </div>
-  </div>
-
-  <div class="grid grid-cols-1 gap-6 mt-6">
-    <div>
-      <h3 class="text-xl font-bold mt-6 mb-4">Recent Orders</h3>
-      <div class="bg-white p-6 rounded-lg shadow h-[24rem]">
-        <div class="overflow-x-auto overflow-y-auto h-full">
-          <table class="min-w-full bg-white text-sm">
-            <thead class="sticky top-0 z-10 bg-white">
-              <tr>
-                <th class="py-2 px-0 border-b text-left text-gray-600 hidden">Order ID</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Order Email</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Order Name</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Order Address</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Order Postal Code</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Order Phone Number</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Order Date</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Order Status</th>
-                <th class="py-2 px-4 border-b text-left text-gray-600">Total Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php 
-                if (mysqli_num_rows($result_orders) > 0) {
-                    while ($row = mysqli_fetch_assoc($result_orders)) {
-                        echo "<tr>";
-                        echo "<td class='py-2 px-2 border-b hidden'>" . htmlspecialchars($row['order_id']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_email']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_name']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_address']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_postcode']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_phoneno']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_date']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['order_status']) . "</td>";
-                        echo "<td class='py-2 px-4 border-b'>$" . htmlspecialchars($row['total_price']) . "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='9' class='py-2 px-4 border-b text-center'>No orders available</td></tr>";
-                }
-
-                mysqli_close($conn);
-              ?>
-            </tbody>
-          </table>
+<body>
+  <section class="bg-background">
+    <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
+      <section class="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
+        <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-black to-[#130F40] opacity-80"></div>
+        <a class="absolute top-0 left-0 p-12 hidden lg:block" href="#">
+          <span class="sr-only">Ivory Streets Login Page</span>
+          <img src="../../assets/images/logo-wh.png" alt="Logo" class="h-7" />
+        </a>
+        <div class="hidden lg:relative lg:block lg:p-12">
+          <h2 class="font-poppins mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+          "Discover the Extraordinary"
+          </h2>
+          <p class="font-nunito mt-4 leading-relaxed text-white/90">
+          IvoryStreets is your gateway to a world of fashion and exclusive finds. Join us to explore a curated selection that speaks to your unique taste.
+          </p>
         </div>
-      </div>
+      </section>
+      
+      <main class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+        <div class="bg-background max-w-xl lg:max-w-3xl">
+          <div class="bg-background pt-4 flex items-center justify-center h-full">
+            <div class="bg-background relative flex flex-col sm:w-[30rem] rounded-lg border-gray-400 shadow-lg">
+              <div class="bg-background flex-auto p-6">
+                <h4 class="bg-background mb-2 font-bold text-whitetext xl:text-xl font-poppins">Sign in to IvoryStreets</h4>
+                <p class="bg-background mb-6 text-whitetext font-nunito">Welcome back! Please sign in to continue</p>
+
+                <?php if (!empty($error)) { ?>
+                  <div style="color: red; font-weight: bold;"><?php echo $error; ?></div>
+                <?php } ?>
+
+                <form id="login-form" class="mb-4" action="index.php" method="POST">
+                  <div class="mb-4">
+                    <label for="email" class="mb-2 inline-block text-xs font-medium uppercase text-whitetext font-nunito">Email or Username</label>
+                    <input type="text" name="email" class="bg-background block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" id="email" placeholder="Enter your email or username" autofocus="" />
+                  </div>
+                  <div class="mb-4">
+                    <div class="flex justify-between">
+                      <label class="mb-2 inline-block text-xs font-medium uppercase text-whitetext font-nunito" for="password">Password</label>
+                      <a href="auth-forgot-password-basic.html" class="cursor-pointer text-indigo-500 no-underline hover:text-indigo-500">
+                        <small class="font-nunito text-graytext">Forgot Password?</small>
+                      </a>
+                    </div>
+                    <div class="relative flex w-full flex-wrap items-stretch">
+                      <input type="password" name="password" id="password" class="bg-background relative block flex-auto cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-blue-600 focus:bg-background  focus:text-gray-600 focus:shadow" placeholder="············" />
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="block">
+                      <input class="mt-1 mr-2 h-5 w-5 appearance-none rounded border border-gray-300 bg-contain bg-no-repeat align-top text-black shadow checked:bg-blue-500 focus:border-blue-500 focus:shadow" type="checkbox" id="remember-me" checked />
+                      <label class="inline-block text-whitetext" for="remember-me"> Remember Me </label>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <button class="grid w-full cursor-pointer select-none rounded-md bg-black py-2 px-5 text-center align-middle text-sm text-white shadow hover:border border-black hover:bg-white hover:text-black focus:border-black focus:bg-white focus:text-black transition-colors duration-300 ease-in-out group-hover:text-white focus:shadow-none" type="submit">Sign in</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-  </div>
-</div>
+  </section>
+  <script src="../../assets/js/login.js"></script>
 </body>
 </html>
