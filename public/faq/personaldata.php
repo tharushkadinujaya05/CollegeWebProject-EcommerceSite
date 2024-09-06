@@ -78,7 +78,7 @@
                 >Information on sizes and products
               </a>
               <a
-                href="#"
+                href="./personaldata.php"
                 class="block text-blue-500 dark:text-blue-400 hover:underline"
                 >Personal data and notifications</a
               >
