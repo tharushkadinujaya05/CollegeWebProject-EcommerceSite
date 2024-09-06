@@ -64,7 +64,7 @@
               </a>
               <a
                 href="./paymentsandpromo.php"
-                class="block text-gray-500 dark:text-gray-300 hover:underline"
+                class="block text-blue-500 dark:text-blue-400 hover:underline"
                 >Payments and promotions
               </a>
               <a
@@ -74,7 +74,7 @@
               </a>
               <a
                 href="./sizesandproducts.php"
-                class="block text-blue-500 dark:text-blue-400 hover:underline"
+                class="block text-gray-500 dark:text-gray-300 hover:underline"
                 >Information on sizes and products
               </a>
               <a
