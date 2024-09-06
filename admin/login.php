@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   <div style="color: red; font-weight: bold;"><?php echo $error; ?></div>
                 <?php } ?>
 
-                <form id="login-form" class="mb-4" action="index.php" method="POST">
+                <form id="login-form" class="mb-4" action="login.php" method="POST">
                   <div class="mb-4">
                     <label for="email" class="mb-2 inline-block text-xs font-medium uppercase text-whitetext font-nunito">Email or Username</label>
                     <input type="text" name="email" class="bg-background block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" id="email" placeholder="Enter your email or username" autofocus="" />
