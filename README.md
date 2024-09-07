@@ -69,8 +69,8 @@ A PHP-based e-commerce website for a clothing brand, featuring CRUD operations, 
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/your-username/ivory-street-ecommerce.git
-cd ivory-street-ecommerce
+git clone https://github.com/tharushkadinujaya05/CollegeWebProject-EcommerceSite.git
+cd CollegeWebProject-EcommerceSite
 ```
 ### Install Dependencies (Optional):
 If you’re using Node.js for development:
