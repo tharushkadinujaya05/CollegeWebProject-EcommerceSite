@@ -90,7 +90,7 @@ npx tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch
 - **Live Website**: [Visit the user-facing site here](https://www.ivorystreets.live).  
 - Admins can log in to manage products, including creating, updating, and deleting products. (CRUD)
 - **Admin Pannele**: [Visit the admin-facing site here](https://www.ivorystreets.live/admin/index.php).
-- Admin Panel Credetials : admin@admin | Admin@123
+- Admin Panel Credetials : admin@email | Admin@123
 
 ## Contributing
 
